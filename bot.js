@@ -259,13 +259,13 @@ bot.on('message', message =>
 
 
      /****/
-
+     
     if (command === "mover")
     {
         if(message.mentions.users.size === 0)
         {
             return message.reply("Digite um nome correto para mover").catch(console.error);
-        }        
+        }                  
     }
 
 
