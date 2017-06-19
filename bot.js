@@ -264,7 +264,7 @@ bot.on('message', message =>
     {
         message.reply("Morra você! Humn");
     }
-    if(command === "escrava")
+    if ((command === "escrava") || (command === "Escrava"))
     {
         message.reply("Me chamou? Se precisar de algo use o comando !ajuda para saber como mandar em mim!");
     }
