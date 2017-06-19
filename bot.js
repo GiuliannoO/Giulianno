@@ -107,7 +107,7 @@ bot.on('message', message =>
     //roll
     if(command === "roll") 
     {
-        var roll = Math.floor(Math.random() * 1000) + 1;
+        var roll = Math.floor(Math.random() * 6) + 1;
         message.reply("Você tirou " + roll);
     }    
 
@@ -147,7 +147,7 @@ bot.on('message', message =>
     
     
     //msg sala #supremosos - id 167715230082662401 -------------------------------
-    if(command === "sfalar")
+    if(command === "supremososfalar")
     {
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
@@ -161,7 +161,7 @@ bot.on('message', message =>
     }  
 
     //msg sala #eventos id - 269005594462126080 -------------------------------
-    if(command === "efalar")
+    if(command === "eventosfalar")
     {
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
@@ -175,7 +175,7 @@ bot.on('message', message =>
     }
 
     //msg sala #restrito id 269010915456843777 -------------------------------
-    if(command === "rfalar")
+    if(command === "restritofalar")
     {
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
@@ -189,7 +189,7 @@ bot.on('message', message =>
     }
 
     //msg sala #admin id 269009554308726784 -------------------------------
-    if(command === "afalar")
+    if(command === "adminfalar")
     {
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
@@ -231,26 +231,18 @@ bot.on('message', message =>
     //help
     if(command === "ajuda")
     {
-        message.channel.sendMessage("Comandos para mandar em mim: :heartpulse:\n"+
-                                    "**!ajuda** - Todos os comandos\n"+
-                                    "**!ping** - O seu ping\n"+
-                                    "**!roll** - Um valor random entre 1 a 1000\n"+
-                                    "**!salvar texto** - Salvar coisas importantes no canal **#salvos**\n"+
-                                    "O canal **#salvos** está configurado para não deletar mensagens\n"+
-                                    "Use ele para salvar links ou avisos importantes\n"+
+        message.channel.sendMessage("Lista de comandos para mandar em mim. :heartpulse:\n\n"+
+        
+                                    "**!ajuda** - Listar todos os comandos existentes.\n"+
+                                    "**!ping** - Mostra o seu ping atual.\n"+
+                                    "**!roll** - Rolar um dado comum.\n\n"+
+
+                                    "**!salvar SEU TEXTO** - Salvar mensagens no canal **#salvos**\n"+
+                                    "__**Aviso**__\n"+
+                                    "O canal **#salvos** está configurado para não deletar mensagens.\n"+
+                                    "Use ele para salvar links ou avisos importantes.\n\n"+
                                     
-                                    "__**Comandos restritos**__\n"+
-                                    "**!limpar** - Deleta as msg do servidor no canal onde foi usado\n"+
-                                    "**!limpar numero** - Escolhe quantas mensagens deseja apagar\n"+
-                                    "**!falar texto** - Cria comandos de fala para mim **Apenas: Mestre**\n"+
-                                    "**!sfalar texto** - Cria comandos de fala para mim **Apenas: Mestre**\n"+
-                                    "**!efalar texto** - Cria comandos de fala para mim **Apenas: Mestre**\n"+
-                                    "**!rfalar texto** - Cria comandos de fala para mim **Apenas: Mestre**\n"+
-                                    "**!afalar texto** - Cria comandos de fala para mim **Apenas: Mestre**\n"+
-                                    "**!kick @nome** - Kickar usuário do servidor **Apenas: Mestre**\n"+
-                                    "**!ban @nome** - Banir usuário do servidor **Apenas: Mestre**\n"+
-                                    
-                                    "**Sistema de webhook** - Gerenciado pelo **Mestre**\n");
+                                    "**O sistema de webhook** é Gerenciado pelo **Mestre.**\n");
     }                                    
 
 
