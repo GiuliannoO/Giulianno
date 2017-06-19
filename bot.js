@@ -222,16 +222,16 @@ bot.on('message', message =>
     //não use !limpar <numero> pois está meio bugado
     if(command === "limpar")
     {//inicio
-        let modRole = message.guild.roles.find("name", "Mestre");
-        if(message.member.roles.has(modRole.id))
-        {//inicio if
+        //let modRole = message.guild.roles.find("name", "Mestre");
+        //if(message.member.roles.has(modRole.id))
+        //{//inicio if
             let messagecount = parseInt(args.join(' '));
             message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages)); 
-        }//fim if
-        else
-        {//inicio else
-            message.reply("Você não tem poder para usar este comando! Morra. :heartpulse:");
-        }//fim else
+        //}//fim if
+        //else
+        //{//inicio else
+            //message.reply("Você não tem poder para usar este comando! Morra. :heartpulse:");
+        //}//fim else
     }//fim
 
 
@@ -496,10 +496,11 @@ bot.on('message', message =>
     {//inicio
         message.channel.sendMessage("Lista de comandos para mandar em mim. :revolving_hearts: \n"+
                                     "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
+                                    "**!limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
+                                    "**!salvar texto** - Salvar mensagens ou links importantes no canal **#salvos**.\n"+
                                     "**!ping** - Mostra o seu ping atual.\n"+
                                     "**!roll** - Rolar um dado comum de 6 lados.\n"+
-                                    "**!mover @nome canal** - (Hmm o meu mestre ainda está tendo problemas com esse código hihi).\n"+
-                                    "**!salvar texto** - Salvar mensagens no canal **#salvos**.\n"+
+                                    "**!mover @nome canal** - (Hmm o meu mestre ainda está tendo problemas com esse código hihi).\n"+                                    
                                     "**O sistema de webhook** é Gerenciado pelo **Mestre.**\n");
     }//fim                                    
 
