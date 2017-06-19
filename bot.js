@@ -225,7 +225,7 @@ bot.on('message', message =>
         if(message.member.roles.has(modRole.id))
         {
             //let messagecount = parseInt(args.join(' '));
-            message.channel.bulkDelete(messages);
+            then(message.channel.bulkDelete(messages));
             //message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages)); 
         }
         else
