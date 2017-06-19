@@ -10,7 +10,8 @@ const config = require("./config.json");
  * ***************************************************************/
 bot.on('ready', () =>
 {   
-    console.log('A sua Escrava esta pronta!');  
+    bot.user.setGame('Hentai : Digite !escrava');
+    console.log('A sua Escrava esta pronta!');
 });
 
 
