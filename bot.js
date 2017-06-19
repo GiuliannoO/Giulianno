@@ -22,7 +22,7 @@ bot.on('ready', () =>
 bot.on("guildMemberAdd", member =>
 {
     let guild = member.guild;
-    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu serei a sua escrava! Seja bem vindo(a)! :heartpulse:');
+    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu serei a sua escrava! Seja bem vindo(a)! :revolving_hearts:');
 });
 
 
@@ -82,7 +82,7 @@ bot.on('message', message =>
         }
         else
         {   
-            message.reply("Você não tem poder para usar este comando! Morra :heartpulse:");   
+            message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");   
         }
     }
 
@@ -130,7 +130,7 @@ bot.on('message', message =>
         }
         else
         {
-            message.reply("Você não tem poder para usar este comando! Morra :heartpulse:");
+            message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");
         }
     }
 
@@ -158,7 +158,7 @@ bot.on('message', message =>
         }
         else
         {
-            message.reply("Você não tem poder para usar este comando! Morra :heartpulse:");
+            message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");
         }
     }  
 
@@ -172,7 +172,7 @@ bot.on('message', message =>
         }
         else
         {
-            message.reply("Você não tem poder para usar este comando! Morra :heartpulse:");
+            message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");
         }
     }
 
@@ -186,7 +186,7 @@ bot.on('message', message =>
         }
         else
         {
-            message.reply("Você não tem poder para usar este comando! Morra :heartpulse:");
+            message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts: ");
         }
     }
 
@@ -200,7 +200,7 @@ bot.on('message', message =>
         }
         else
         {
-            message.reply("Você não tem poder para usar este comando! Morra :heartpulse:");
+            message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts: ");
         }
     } 
 
@@ -220,7 +220,7 @@ bot.on('message', message =>
         }
         else
         {
-            message.reply("Você não tem poder para usar este comando! Morra :heartpulse:");
+            message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts: ");
         }
     }
 
@@ -233,11 +233,12 @@ bot.on('message', message =>
     //help
     if(command === "ajuda")
     {
-        message.channel.sendMessage("Lista de comandos para mandar em mim. :heartpulse:\n"+
+        message.channel.sendMessage("Lista de comandos para mandar em mim. :revolving_hearts: \n"+
                                     "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
                                     "**!ping** - Mostra o seu ping atual.\n"+
-                                    "**!roll** - Rolar um dado comum.\n"+
-                                    "**!salvar SEU TEXTO** - Salvar mensagens no canal **#salvos**\n"+
+                                    "**!roll** - Rolar um dado comum de 6 lados.\n"+
+                                    "**!mover @nome - (Hmm o meu mestre ainda está tendo problemas com esse código hihi)\n"+
+                                    "**!salvar** texto - Salvar mensagens no canal **#salvos**\n"+
                                     "**O sistema de webhook** é Gerenciado pelo **Mestre.**\n");
     }                                    
 
@@ -283,7 +284,7 @@ bot.on('message', message =>
         
     if (!message.member.roles.has(modRole.id))
         {
-            return message.reply("Você não tem poder para usar este comando! Morra :heartpulse:").catch(console.error);
+            return message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts: ").catch(console.error);
         }
 
         if(message.mentions.users.size === 0)
@@ -301,7 +302,7 @@ bot.on('message', message =>
         }
         kickMember.kick().then(member =>
         {
-            message.reply('${member.user.username} foi kickado com sucesso. Morra :heartpulse:').catch(console.error);
+            message.reply('${member.user.username} foi kickado com sucesso. Morra :revolving_hearts: ').catch(console.error);
         }).catch(console.error)
     }
 
