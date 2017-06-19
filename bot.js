@@ -86,6 +86,8 @@ bot.on('message', message =>
         }
     }
 
+   
+
 
     /******************************************************************
      * 
@@ -232,15 +234,10 @@ bot.on('message', message =>
     if(command === "ajuda")
     {
         message.channel.sendMessage("Lista de comandos para mandar em mim. :heartpulse:\n"+
-                                    "________________________________________________________________________\n"+
-                                    "**!ajuda** - Listar todos os comandos existentes.\n"+
+                                    "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
                                     "**!ping** - Mostra o seu ping atual.\n"+
                                     "**!roll** - Rolar um dado comum.\n"+
                                     "**!salvar SEU TEXTO** - Salvar mensagens no canal **#salvos**\n"+
-                                    "________________________________________________________________________\n"+
-                                    "__**Aviso**__ : Use o canal **#salvos** para guardar coisas importantes."+
-                                    "O canal **#salvos** está configurado para não deletar mensagens.\n"+
-                                    "________________________________________________________________________\n"+                                      
                                     "**O sistema de webhook** é Gerenciado pelo **Mestre.**\n");
     }                                    
 
@@ -259,6 +256,20 @@ bot.on('message', message =>
     {
         message.reply("Me chamou? Se precisar de algo use o comando !ajuda para saber como mandar em mim!");
     }
+
+
+     /****/
+
+    if (command === "mover")
+    {
+        if(message.mentions.users.size === 0)
+        {
+            return message.reply("Digite um nome correto para mover").catch(console.error);
+        }        
+    }
+
+
+    /*****/
 
 
 /******************************************************************
@@ -295,6 +306,8 @@ bot.on('message', message =>
     }
 
 }); //fim para prefixo commando
+
+
 
 
 /******************************************************************
