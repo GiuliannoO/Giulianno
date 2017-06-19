@@ -3,44 +3,86 @@ const bot = new Discord.Client();
 const config = require("./config.json");
 
 
+
+
+
+
+
+
+
+
+
 /******************************************************************
  * 
- *  bot online CONSOLE
+ *  BoT ready
+ *  Informa se o BoT realmente está online
+ *  Mostra o gaming status atual do BoT
  * 
  * ***************************************************************/
 bot.on('ready', () =>
-{   
-    bot.user.setGame('Hentai !escrava');
-    console.log('A sua Escrava esta pronta!');
-});
+{//inicio  
+    bot.user.setGame('Hentai !escrava');    
+    console.log('A sua Escrava esta pronta!');  
+});//fim
+
+
+
+
+
+
+
+
+
 
 
 /******************************************************************
  * 
- *  novo usuario - bem vindo CANAL
+ *  Novo usuario adicionado
+ *  Manda mensagem de boas vindas no chat para o novo usuario
  * 
  * ***************************************************************/
 bot.on("guildMemberAdd", member =>
-{
+{//inicio
     let guild = member.guild;
-    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu serei a sua escrava! Seja bem vindo(a)! :revolving_hearts:');
-});
+    guild.defaultChannel.sendMessage('Olá!, ${member.user}. Eu serei a sua escrava. Seja bem vindo(a). Se precisar de mim use o comando **!escrava** para me chamar. :revolving_hearts:');
+});//fim
+
+
+
+
+
+
+
+
+
 
 
 /******************************************************************
  * 
- *  novo usuario - CONSOLE
+ *  Novo usuario adicionado
+ *  Log informativo no console
  * 
  * ***************************************************************/ 
 bot.on("guildCreate", guild =>
-{   
-    console.log('Nova usuario : ${guild.name}, Adicionado por ${guild.owner.user.username}');   
-});
+{//inicio   
+    console.log('Novo(a) usuário : ${guild.name}, foi adicionado por ${guild.owner.user.username}');    
+});//fim
+
+
+
+
+
+
+
+
+
 
 
 /******************************************************************
  * 
- *  enviar msg - commando " ! "
+ *  Comando
+ *  Prefixo = !
+ *  Usado para enviar os comandos para o BoT
  * 
  * ***************************************************************/ 
 //inicio commando
@@ -55,85 +97,151 @@ bot.on('message', message =>
     let args = message.content.split(" ").slice(1);
 
 
+
+
+
+
+
+
+
+
+
     /******************************************************************
      * 
-     *  calculos
+     *  Calculos matemáticos
+     *  Somar, Subtrair, Multiplicar, Dividr
+     *  Qualquer um pode usar
      * 
      * ***************************************************************/ 
     //somar
-    /*if(command === "soma") { let numArray = args.map(n=> parseInt(n)); let total = numArray.reduce( (p,c) => p+c);  message.channel.sendMessage(total); }
+    /*if(command === "soma")    { let numArray = args.map(n=> parseInt(n));    let total = numArray.reduce( (p,c) => p+c);  message.channel.sendMessage(total);   }
+
     //subtrair
-    if(command === "sub") { let numArray = args.map(n=> parseInt(n));  let total = numArray.reduce( (p,c) => p-c);  message.channel.sendMessage(total); }
+    if(command === "sub")   { let numArray = args.map(n=> parseInt(n));   let total = numArray.reduce( (p,c) => p-c);  message.channel.sendMessage(total);    }
+
     //multiplicar
-    if(command === "mult") { let numArray = args.map(n=> parseInt(n)); let total = numArray.reduce( (p,c) => p*c); message.channel.sendMessage(total);  }*/
+    if(command === "mult")  { let numArray = args.map(n=> parseInt(n));  let total = numArray.reduce( (p,c) => p*c); message.channel.sendMessage(total);  }*/
+
+
+
+
+
+
+
+
+
 
 
     /******************************************************************
      * 
-     *  fazer o bot falar - !falar
+     *  Comando Falar
+     *  Usado para enviar mensagens em nome do BoT
+     *  Apenas o Mestre pode usa-lo
      * 
      * ***************************************************************/
     //Faz o bot dizer alguma coisa
     if(command === "falar")
-    {
+    {//inicio
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
-        {   
+        {//inicio if 
             message.channel.sendMessage(args.join(" "));    
-        }
+        }//fim if
         else
-        {   
+        {//inicio else  
             message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");   
-        }
-    }
+        }//fim else
+    }//fim
 
-   
+
+
+
+
+
+
+
+
 
 
     /******************************************************************
      * 
-     *  ping
+     *  Comando Ping
+     *  Usado para mostrar o ping atual no servidor
+     *  Qualquer um pode usar
      * 
      * ***************************************************************/
     //ping
     if(command === "ping")
-    {   
+    {//inicio
         message.channel.sendMessage(`**Pong!** \`${Date.now() - message.createdTimestamp } ms\``);  
-    }
+    }//fim
+
+
+
+
+
+
+
+
+
 
 
     /******************************************************************
      * 
-     *  roll
+     *  Comando Roll
+     *  Usado para rolar um dado comum de 6 lados
+     *  e obter um valor random entre esses números
+     *  Qualquer um pode usar
      * 
      * ***************************************************************/
     //roll
     if(command === "roll") 
-    {
+    {//inicio
         var roll = Math.floor(Math.random() * 6) + 1;
         message.reply("Você tirou " + roll);
-    }    
+    }//fim 
+
+
+
+
+
+
+
+
+
 
 
     /******************************************************************
      * 
-     *  purge - limpar tela
+     *  Comando Limpar / Purge / Clear
+     *  Usado para limpar / apagar tudo que existe na tela
+     *  Apenas o mestre pode usar
      * 
      * ***************************************************************/
-    //purge - deleta msg do servidor - escolhe quantas msg
+    //purge - deleta msg do servidor
     if(command === "limpar")
     {
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
         {
-            let messagecount = parseInt(args.join(' '));
-            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages)); 
+            //let messagecount = parseInt(args.join(' '));
+            message.channel.bulkDelete(messages);
+            //message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages)); 
         }
         else
         {
             message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");
         }
     }
+
+
+
+
+
+
+
+
+
 
 
     /******************************************************************
@@ -162,6 +270,8 @@ bot.on('message', message =>
             message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");
         }
     }  
+
+    
 
     //msg sala #eventos id - 269005594462126080 -------------------------------
     if(command === "eventosfalar")
@@ -307,7 +417,7 @@ bot.on('message', message =>
         }).catch(console.error)
     }
 
-}); //fim para prefixo commando
+});//fim para prefixo commando
 
 
 
