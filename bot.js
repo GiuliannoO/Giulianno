@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require("./config.json");
 
-
+;
 /******************************************************************
  * 
  *  bot online CONSOLE
@@ -10,7 +10,7 @@ const config = require("./config.json");
  * ***************************************************************/
 bot.on('ready', () =>
 {   
-    //bot.user.setGame('Hentai !escrava');
+    bot.user.setGame('Hentai !escrava');
     console.log('A sua Escrava esta pronta!');
 });
 
