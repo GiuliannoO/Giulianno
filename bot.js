@@ -1,12 +1,24 @@
-// Requires
-const Discord = require('discord.js')
+const Discord = require('discord.js');
+const bot = new Discord.Client();
 
-// Create an instance of a Discord client
-const client = new Discord.Client()
+/******************************************************************
+ * 
+ *  bot online CONSOLE
+ * 
+ * ***************************************************************/
+bot.on('ready', () =>
+{   
+    console.log('A sua Escrava esta pronta!');  
+});
 
-// The bot is ready
-client.on('ready', () => {
-  console.log('Bot Started')
-})
+
+/************************************************************* */
+
+
+
+
+
+/************************************************************* */
+
 
 client.login(process.env.BOT_TOKEN)
