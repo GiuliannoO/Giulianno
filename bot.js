@@ -412,7 +412,7 @@ bot.on('message', message =>
         //digite um nome para banir
         if(message.mentions.users.size < 1)
         {
-            return message.reply("Digite um nome para banir.").catch(console.error);
+            return message.reply("Digite um nome correto para banir.").catch(console.error);
         }
         let banir = message.guild.member(message.mentions.users.first());
 
@@ -436,6 +436,42 @@ bot.on('message', message =>
         {
             message.reply('${member.user.username} foi banido do servidor com sucesso. Morra. :revolving_hearts: ').catch(console.error);
         }).catch(console.error)
+    }//fim
+
+
+
+
+
+
+
+
+
+
+    /******************************************************************
+     * 
+     *  Comando unBan
+     *  Usado para desbanir usuário do canal
+     *  Apenas o mestre pode usar
+     * 
+     * ***************************************************************/
+    if(command === "unban")
+    {//inicio
+        //mod
+        let modRole = message.guild.roles.find("name", "Mestre");
+        if (!message.member.roles.has(modRole.id))
+        {
+            return message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts: ").catch(console.error);
+        }
+
+
+        //digite um nome para desbanir
+        if(!user)
+        {
+            return message.reply("Digite o número do **id** do usuário que deseja desbanir.").catch(console.error);
+        }
+
+        //desbanido com sucesso
+        message.guild.unban(user);        
     }//fim
 
 
@@ -549,7 +585,7 @@ bot.on('message', message =>
         //digite um nome para kickar
         if(message.mentions.users.size < 1)
         {
-            return message.reply("Digite um nome para kickar.").catch(console.error);
+            return message.reply("Digite um nome correto para kickar.").catch(console.error);
         }
         let kickMember = message.guild.member(message.mentions.users.first());
 
