@@ -44,7 +44,7 @@ bot.on('ready', () =>
 bot.on("guildMemberAdd", member =>
 {//inicio
     let guild = member.guild;
-    guild.defaultChannel.sendMessage('Olá!, ${member.user}. Eu serei a sua escrava. Seja bem vindo(a). Se precisar de mim use o comando **!escrava** para me chamar. :revolving_hearts:');
+    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu serei a sua escrava. Seja bem vindo(a). Se precisar de mim use o comando **!escrava** para me chamar. :revolving_hearts:');
 });//fim
 
 
