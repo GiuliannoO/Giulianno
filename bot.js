@@ -220,19 +220,19 @@ bot.on('message', message =>
      * ***************************************************************/
     //purge - deleta msg do servidor
     if(command === "limpar")
-    {
+    {//inicio
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
-        {
-            //let messagecount = parseInt(args.join(' '));
+        {//inicio if
+            let messagecount = parseInt(args.join(' '));
             then(message.channel.bulkDelete(messages));
-            //message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages)); 
-        }
+            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages)); 
+        }//fim if
         else
-        {
+        {//inicio else
             message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");
-        }
-    }
+        }//fim else
+    }//fim
 
 
 
