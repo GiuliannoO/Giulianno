@@ -454,7 +454,7 @@ bot.on('message', message =>
      *  Apenas o mestre pode usar
      * 
      * ***************************************************************/
-    if(command === "unban")
+    /*if(command === "unban")
     {//inicio
         //mod
         let modRole = message.guild.roles.find("name", "Mestre");
@@ -472,7 +472,7 @@ bot.on('message', message =>
 
         //desbanido com sucesso
         message.guild.unban(user);        
-    }//fim
+    }//fim*/
 
 
 
