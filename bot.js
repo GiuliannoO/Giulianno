@@ -225,12 +225,11 @@ bot.on('message', message =>
         if(message.member.roles.has(modRole.id))
         {//inicio if
             let messagecount = parseInt(args.join(' '));
-            then(message.channel.bulkDelete(messages));
             message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages)); 
         }//fim if
         else
         {//inicio else
-            message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts:");
+            message.reply("Você não tem poder para usar este comando! Morra :heartpulse:");
         }//fim else
     }//fim
 
