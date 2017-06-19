@@ -239,7 +239,7 @@ bot.on('message', message =>
                                     "**!ping** - Mostra o seu ping atual.\n"+
                                     "**!roll** - Rolar um dado comum de 6 lados.\n"+
                                     "**!mover @nome canal** - (Hmm o meu mestre ainda está tendo problemas com esse código hihi)\n"+
-                                    "**!salvar** texto - Salvar mensagens no canal **#salvos**\n"+
+                                    "**!salvar texto** - Salvar mensagens no canal **#salvos**\n"+
                                     "**O sistema de webhook** é Gerenciado pelo **Mestre.**\n");
     }                                    
 
