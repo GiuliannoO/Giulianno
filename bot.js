@@ -300,6 +300,37 @@ bot.on('message', message =>
 
     /******************************************************************
      * 
+     *  Comando Randomfalar
+     *  Usado para enviar mensagens em nome do BoT para o canal #random
+     *  Apenas o mestre pode usar
+     *  id do canal : id 326555780713283594
+     * 
+     * ***************************************************************/  
+    //msg sala #random - id 326555780713283594 
+    if(command === "randomfalar")
+    {//inicio
+        let modRole = message.guild.roles.find("name", "Mestre");
+        if(message.member.roles.has(modRole.id))
+        {//inicio if
+            bot.channels.get('326555780713283594').sendMessage(args.join(" "));
+        }//fim if
+        else
+        {//inicio else
+            message.reply("Você não tem poder para usar este comando! Morra. :revolving_hearts:");
+        }//fim else
+    }//fim
+
+
+
+
+
+
+
+
+
+
+    /******************************************************************
+     * 
      *  Comando Eventosfalar
      *  Usado para enviar mensagens em nome do BoT para o canal #eventos
      *  Apenas o mestre pode usar
