@@ -21,8 +21,8 @@ const config = require("./config.json");
  * ***************************************************************/
 bot.on('ready', () =>
 {//inicio  
-    bot.user.setGame('Hentai !escrava');    
-    console.log('A sua Escrava esta pronta!');  
+    bot.user.setGame('Digite !maid ');    
+    console.log('A sua Maid esta pronta!');  
 });//fim
 
 
@@ -44,7 +44,7 @@ bot.on('ready', () =>
 bot.on("guildMemberAdd", member =>
 {//inicio
     let guild = member.guild;
-    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu serei a sua escrava. Seja bem vindo(a). Se precisar de mim use o comando **!escrava** para me chamar. :revolving_hearts:');
+    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu serei a sua Maid. Seja bem vindo(a). Se precisar de mim use o comando **!maid** para me chamar. :revolving_hearts:');
 });//fim
 
 
@@ -525,7 +525,7 @@ bot.on('message', message =>
     //help
     if(command === "ajuda")
     {//inicio
-        message.channel.sendMessage("Lista de comandos para mandar em mim. :revolving_hearts: \n"+
+        message.channel.sendMessage("Lista de comandos para usar. :revolving_hearts: \n"+
                                     "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
                                     "**!limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
                                     "**!salvar texto** - Salvar mensagens ou links importantes no canal **#salvos**.\n"+
@@ -557,9 +557,9 @@ bot.on('message', message =>
         message.reply("Morra você! Humn!");
     }//fim
 
-    if ((command === "escrava") || (command === "Escrava"))
+    if ((command === "maid") || (command === "Maid"))
     {//inicio
-        message.reply("Me chamou? Se precisar de algo use o comando !ajuda para saber como mandar em mim!");
+        message.reply("Me chamou? Se precisar de algo use o comando !ajuda! :revolving_hearts:");
     }//fim
 
 
