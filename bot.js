@@ -531,7 +531,7 @@ bot.on('message', message =>
                                     "**!salvar texto** - Salvar mensagens ou links importantes no canal **#salvos**.\n"+
                                     "**!ping** - Mostra o seu ping atual.\n"+
                                     "**!roll** - Rolar um dado comum de 6 lados.\n"+
-                                    "**!mover @nome canal** - (Hmm o meu mestre ainda está tendo problemas com esse código hihi).\n"+                                    
+                                    "**Mover outros usuários de canal** - Clique, segure e arraste o alvo desejado.\n"+                                    
                                     "**O sistema de webhook** é Gerenciado pelo **Mestre.**\n");
     }//fim                                    
 
