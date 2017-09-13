@@ -21,8 +21,8 @@ const config = require("./config.json");
  * ***************************************************************/
 bot.on('ready', () =>
 {//inicio  
-    bot.user.setGame('Digite !maid ');    
-    console.log('A sua Maid esta pronta!');  
+    bot.user.setGame('Digite !bot ');    
+    console.log('O Giu BoT esta pronto!');  
 });//fim
 
 
@@ -44,7 +44,7 @@ bot.on('ready', () =>
 bot.on("guildMemberAdd", member =>
 {//inicio
     let guild = member.guild;
-    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu serei a sua Maid. Seja bem vindo(a). Se precisar de mim use o comando **!maid** para me chamar. :revolving_hearts:');
+    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu sou o BoT do servidor. Seja bem vindo(a). Se precisar de mim use o comando **!bot** para me chamar.');
 });//fim
 
 
@@ -149,7 +149,7 @@ bot.on('message', message =>
         }//fim if
         else
         {//inicio else  
-            message.reply("Você não tem poder para usar este comando! Morra. :revolving_hearts:");   
+            message.reply("Você não tem poder para usar este comando!");   
         }//fim else
     }//fim
 
@@ -285,7 +285,7 @@ bot.on('message', message =>
         }//fim if
         else
         {//inicio else
-            message.reply("Você não tem poder para usar este comando! Morra. :revolving_hearts:");
+            message.reply("Você não tem poder para usar este comando!");
         }//fim else
     }//fim
 
@@ -316,7 +316,7 @@ bot.on('message', message =>
         }//fim if
         else
         {//inicio else
-            message.reply("Você não tem poder para usar este comando! Morra. :revolving_hearts:");
+            message.reply("Você não tem poder para usar este comando!");
         }//fim else
     }//fim
 
@@ -347,7 +347,7 @@ bot.on('message', message =>
         }//fim if
         else
         {//inicio else
-            message.reply("Você não tem poder para usar este comando! Morra. :revolving_hearts:");
+            message.reply("Você não tem poder para usar este comando!");
         }//fim else
     }//fim
 
@@ -378,7 +378,7 @@ bot.on('message', message =>
         }//fim if
         else
         {//inicio else
-            message.reply("Você não tem poder para usar este comando! Morra. :revolving_hearts: ");
+            message.reply("Você não tem poder para usar este comando!");
         }//fim else
     }//fim
 
@@ -409,7 +409,7 @@ bot.on('message', message =>
         }//fim if
         else
         {//inicio else
-            message.reply("Você não tem poder para usar este comando! Morra. :revolving_hearts: ");
+            message.reply("Você não tem poder para usar este comando!");
         }//fim else
     }//fim
 
@@ -436,7 +436,7 @@ bot.on('message', message =>
         let modRole = message.guild.roles.find("name", "Mestre");
         if (!message.member.roles.has(modRole.id))
         {
-            return message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts: ").catch(console.error);
+            return message.reply("Você não tem poder para usar este comando!").catch(console.error);
         }
 
 
@@ -465,7 +465,7 @@ bot.on('message', message =>
         //banido com sucesso
         banir.ban().then(member =>
         {
-            message.reply('${member.user.username} foi banido do servidor com sucesso. Morra. :revolving_hearts: ').catch(console.error);
+            message.reply('${member.user.username} foi banido do servidor com sucesso.').catch(console.error);
         }).catch(console.error)
     }//fim
 
@@ -525,7 +525,7 @@ bot.on('message', message =>
     //help
     if(command === "ajuda")
     {//inicio
-        message.channel.sendMessage("Lista de comandos para usar. :revolving_hearts: \n"+
+        message.channel.sendMessage("Lista de comandos para usar. \n"+
                                     "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
                                     "**!limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
                                     "**!salvar texto** - Salvar mensagens ou links importantes no canal **#salvos**.\n"+
@@ -557,9 +557,9 @@ bot.on('message', message =>
         message.reply("Morra você! Humn!");
     }//fim
 
-    if ((command === "maid") || (command === "Maid"))
+    if ((command === "bot") || (command === "Bot"))
     {//inicio
-        message.reply("Me chamou? Se precisar de algo use o comando !ajuda! :revolving_hearts:");
+        message.reply("Me chamou? Se precisar de algo use o comando !ajuda!");
     }//fim
 
 
@@ -610,7 +610,7 @@ bot.on('message', message =>
         let modRole = message.guild.roles.find("name", "Mestre");
         if (!message.member.roles.has(modRole.id))
         {
-            return message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts: ").catch(console.error);
+            return message.reply("Você não tem poder para usar este comando! ").catch(console.error);
         }
 
 
@@ -639,7 +639,7 @@ bot.on('message', message =>
         //kickado com sucesso
         kickMember.kick().then(member =>
         {
-            message.reply('${member.user.username} foi kickado do servidor com sucesso. Morra :revolving_hearts: ').catch(console.error);
+            message.reply('${member.user.username} foi kickado do servidor com sucesso. ').catch(console.error);
         }).catch(console.error)
     }//fim
 });//fim para prefixo commando
