@@ -528,6 +528,7 @@ bot.on('message', message =>
         message.channel.sendMessage("Lista de comandos para usar. \n"+
                                     "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
                                     "**!limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
+                                    "*( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
                                     "**!salvar texto** - Salvar mensagens ou links importantes no canal **#salvos**.\n"+
                                     "**!ping** - Mostra o seu ping atual.\n"+
                                     "**!roll** - Rolar um dado comum de 6 lados.\n"+
