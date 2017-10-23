@@ -184,7 +184,8 @@ bot.on('message', message =>
     //ping
     if(command === "ping")
     {//inicio
-        message.channel.sendMessage(`**Pong!** \`${Date.now() - message.createdTimestamp } ms\``);  
+        //message.channel.sendMessage(`**Pong!** \`${Date.now() - message.createdTimestamp } ms\``);  
+        message.reply(`**Pong!** \`${Date.now() - message.createdTimestamp } ms\``);
     }//fim
 
 
