@@ -21,7 +21,7 @@ const config = require("./config.json");
  * ***************************************************************/
 bot.on('ready', () =>
 {//inicio  
-    bot.user.setGame('Digite !bot ');    
+    client.user.setGame('Digite !bot');    
     console.log('O Giu BoT esta pronto!');  
 });//fim
 
@@ -529,7 +529,8 @@ bot.on('message', message =>
                                     "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
                                     "**!limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
                                     "*( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
-                                    "**!salvar texto** - Salvar mensagens ou links importantes no canal **#salvos**.\n"+
+                                    "**salvar msgs ou links importantes** - Use o canal de chat **#salvos**.\n"+
+                                    "*( O canal salvos está configurado para não deletar msgs. )*\n"+
                                     "**!ping** - Mostra o seu ping atual.\n"+
                                     "**!roll** - Rolar um dado comum de 6 lados.\n"+
                                     "**Mover outros usuários de canal** - Clique, segure e arraste o alvo desejado.\n"+                                    
