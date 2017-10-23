@@ -563,7 +563,7 @@ bot.on('message', message =>
 
     if ((command === "bot") || (command === "Bot"))
     {//inicio
-        message.reply("Me chamou? Se precisar de algo use o comando !ajuda!");
+        message.reply("Me chamou? Se precisar de algo use o comando **!ajuda**!");
     }//fim
 
 
