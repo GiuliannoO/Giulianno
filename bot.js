@@ -25,7 +25,7 @@ bot.on('ready', () =>
 {//inicio  
     //bot.user.setGame('Digite !bot');    
     //console.log('O Giu BoT esta pronto!'); 
-    bot.user.setPresence({ game: { name: 'Digite !ajuda', type: 0 } });
+    bot.user.setPresence({ game: { name: 'Digite /ajuda', type: 0 } });
 });//fim
 
 
@@ -48,7 +48,7 @@ bot.on('ready', () =>
 bot.on("guildMemberAdd", member =>
 {//inicio
     let guild = member.guild;
-    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu sou o BoT do servidor. Seja bem vindo(a). Se precisar de mim use o comando **!bot** para me chamar.');
+    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu sou o BoT do servidor. Seja bem vindo(a). Se precisar de mim use o comando **/bot** para me chamar.');
 });//fim
 
 
@@ -538,13 +538,13 @@ bot.on('message', message =>
     if(command === "ajuda")
     {//inicio
         message.channel.sendMessage("Lista de comandos para usar. \n"+
-                                    "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
-                                    "**!limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
+                                    "**/ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
+                                    "**/limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
                                     "*( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
                                     "**salvar msgs ou links importantes** - Use o canal de chat **#salvos**.\n"+
                                     "*( O canal **salvos** está configurado para não deletar msgs. )*\n"+
-                                    "**!ping** - Mostra o seu ping atual.\n"+
-                                    "**!roll** - Rolar um dado comum de 6 lados.\n"+
+                                    "**/ping** - Mostra o seu ping atual.\n"+
+                                    "**/roll** - Rolar um dado comum de 6 lados.\n"+
                                     "**Mover outros usuários de canal** - Clique, segure e arraste o alvo desejado.\n"+                                    
                                     "**O sistema de webhook** é Gerenciado pelo **Mestre.**\n");
     }//fim                                    
@@ -573,7 +573,7 @@ bot.on('message', message =>
 
     if ((command === "bot") || (command === "Bot"))
     {//inicio
-        message.reply("Me chamou? Se precisar de algo use o comando **!ajuda**!");
+        message.reply("Me chamou? Se precisar de algo use o comando **/ajuda**!");
     }//fim
 
 
