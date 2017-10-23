@@ -23,7 +23,7 @@ bot.on('ready', () =>
 {//inicio  
     //bot.user.setGame('Digite !bot');    
     //console.log('O Giu BoT esta pronto!'); 
-    bot.user.setPresence({ game: { name: 'Digite !bot', type: 0 } });
+    bot.user.setPresence({ game: { name: 'Digite !ajuda', type: 0 } });
 });//fim
 
 
