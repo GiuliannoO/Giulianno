@@ -12,6 +12,8 @@ const config = require("./config.json");
 
 
 
+
+
 /******************************************************************
  * 
  *  BoT ready
@@ -731,4 +733,4 @@ bot.on('message', message =>
  * 
  * ***************************************************************/
 //bot.login(config.token)
-bot.login(process.env.BOT_TOKEN)
+bot.login(process.env.BOT_TOKEN);
