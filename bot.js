@@ -439,7 +439,7 @@ bot.on('message', message =>
      *  Apenas o mestre pode usar
      * 
      * ***************************************************************/
-    if(command === "ban")
+    /*if(command === "ban")
     {//inicio
         //mod
         let modRole = message.guild.roles.find("name", "Mestre");
@@ -476,7 +476,7 @@ bot.on('message', message =>
         {
             message.reply('${member.user.username} foi banido do servidor com sucesso.').catch(console.error);
         }).catch(console.error)
-    }//fim
+    }//fim*/
 
 
 
@@ -590,13 +590,70 @@ bot.on('message', message =>
      *  Ainda em testes
      * 
      * ***************************************************************/
-    if (command === "mover")
+    /*if (command === "mover")
     {
         if(message.mentions.users.size < 1)
         {
             return message.reply("Digite um nome para mover.").catch(console.error);
         }                  
-    }
+    }*/
+
+
+
+
+
+
+    if(command === "kick") {
+    // This command must be limited to mods and admins. In this example we just hardcode the role names.
+    // Please read on Array.some() to understand this bit: 
+    if(!message.member.roles.some(r=>["Mestre", "Admin"].includes(r.name)) )
+      return message.reply("Você não ter permissão para usar este comando!");
+    
+    // Let's first check if we have a member and if we can kick them!
+    // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
+    let member = message.mentions.members.first();
+    if(!member)
+      return message.reply("Por favor digite um nome válido.");
+    if(!member.kickable) 
+      return message.reply("Eu não posso kickar este usuário.");
+    
+    // slice(1) removes the first part, which here should be the user mention!
+    let reason = args.slice(1).join(' ');
+    if(!reason)
+      return message.reply("Por favor informe o motivo do kick.");
+    
+    // Now, time for a swift kick in the nuts!
+    await member.kick(reason)
+      .catch(error => message.reply(`Desculpe ${message.author} Eu não posso kickar : Causa = ${error}`));
+    message.reply(`${member.user.tag} foi kickado por ${message.author.tag} Motivo = ${reason}`);
+
+  }
+
+
+
+
+
+  
+  if(command === "ban") {
+    // Most of this command is identical to kick, except that here we'll only let admins do it.
+    // In the real world mods could ban too, but this is just an example, right? ;)
+    if(!message.member.roles.some(r=>["Mestre"].includes(r.name)) )
+      return message.reply("Você não tem permissão para usar este comando.");
+    
+    let member = message.mentions.members.first();
+    if(!member)
+      return message.reply("Por favor digite um nome válido.");
+    if(!member.bannable) 
+      return message.reply("Eu não posso banir este usuário.");
+
+    let reason = args.slice(1).join(' ');
+    if(!reason)
+      return message.reply("Por favor informe o motivo do ban.");
+    
+    await member.ban(reason)
+      .catch(error => message.reply(`Desculpe ${message.author} Eu não posso banir : Causa = ${error}`));
+    message.reply(`${member.user.tag} foi banido pory ${message.author.tag} Motivo = ${reason}`);
+  }
 
 
 
@@ -615,7 +672,7 @@ bot.on('message', message =>
  *  Apenas o mestre pode usar
  * 
  * ***************************************************************/    
-    if(command === "kick")
+    /*if(command === "kick")
     {//inicio
         //mod
         let modRole = message.guild.roles.find("name", "Mestre");
@@ -652,7 +709,10 @@ bot.on('message', message =>
         {
             message.reply('${member.user.username} foi kickado do servidor com sucesso. ').catch(console.error);
         }).catch(console.error)
-    }//fim
+    }//fim*/
+
+
+
 });//fim para prefixo commando
 
 
