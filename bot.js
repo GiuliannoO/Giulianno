@@ -730,4 +730,5 @@ bot.on('message', message =>
  *  BoT login e prefix !
  * 
  * ***************************************************************/
-bot.login(config.token)
+//bot.login(config.token)
+bot.login(process.env.BOT_TOKEN)
