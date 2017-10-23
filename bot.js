@@ -606,7 +606,7 @@ bot.on('message', message =>
 
 
 
-    if(command === "kick") {
+    /*if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     if(!message.member.roles.some(r=>["Mestre", "Admin"].includes(r.name)) )
@@ -656,7 +656,7 @@ bot.on('message', message =>
     await member.ban(reason)
       .catch(error => message.reply(`Desculpe ${message.author} Eu não posso banir : Causa = ${error}`));
     message.reply(`${member.user.tag} foi banido pory ${message.author.tag} Motivo = ${reason}`);
-  }
+  }*/
 
 
 
