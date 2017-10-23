@@ -164,7 +164,7 @@ bot.on('message', message =>
     {
         if (message.author.id !== config.ownerID) return message.reply('Arrooo???');
         message.channel.send(args.join(' '));
-        message.delete();
+        message.author.bulkDelete();
     }
 
 
