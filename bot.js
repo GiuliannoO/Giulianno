@@ -21,9 +21,10 @@ const config = require("./config.json");
  * ***************************************************************/
 bot.on('ready', () =>
 {//inicio  
-    client.user.setGame('Digite !bot');    
-    console.log('O Giu BoT esta pronto!');  
+    bot.user.setGame('Digite !bot');    
+    //console.log('O Giu BoT esta pronto!');  
 });//fim
+
 
 
 
