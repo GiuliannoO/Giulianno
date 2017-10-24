@@ -599,36 +599,36 @@ bot.on('message', message =>
 
 const Discord = require('discord.js');
 
-const bot = new Discord.Client();
-bot.config = require('./config.json');
+const client = new Discord.Client();
+client.config = require('./config.json');
 
-bot.log = require('./functions/log.js');
-
-
+client.log = require('./functions/log.js');
 
 
 
 
 
-bot.commands = new Discord.Collection();
+
+
+client.commands = new Discord.Collection();
 
 
 
 
 
-bot.commands.set('ping', require('./commands/ping.js'));
+client.commands.set('ping', require('./commands/ping.js'));
 //bot.commands.set('serverinfo', require('./commands/serverinfo.js'));
 //bot.commands.set('speak', require('./commands/speak.js'));
 //bot.commands.set('react', require('./commands/react.js'));
 
-bot.on('message', message => require('./events/message.js')(bot, message));
-bot.on('guildCreate', guild => require('./events/guildCreate.js')(bot, guild));
-bot.on('ready', () => require('./events/ready.js')(bot));
-bot.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(bot, member));
-bot.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(bot, reaction, user));
+client.on('message', message => require('./events/message.js')(client, message));
+client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
+client.on('ready', () => require('./events/ready.js')(client));
+client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
+client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
 
 
 
 //bot.login(config.token)
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
