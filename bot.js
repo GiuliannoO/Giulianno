@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+/*const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require("./config.json");
 
@@ -14,13 +14,7 @@ const config = require("./config.json");
 
 
 
-/******************************************************************
- * 
- *  BoT ready
- *  Informa se o BoT realmente está online
- *  Mostra o gaming status atual do BoT
- * 
- * ***************************************************************/
+
 bot.on('ready', () =>
 {//inicio  
     //bot.user.setGame('Digite !bot');    
@@ -39,12 +33,7 @@ bot.on('ready', () =>
 
 
 
-/******************************************************************
- * 
- *  Novo usuario adicionado
- *  Manda mensagem de boas vindas no chat para o novo usuario
- * 
- * ***************************************************************/
+
 bot.on("guildMemberAdd", member =>
 {//inicio
     let guild = member.guild;
@@ -61,12 +50,7 @@ bot.on("guildMemberAdd", member =>
 
 
 
-/******************************************************************
- * 
- *  Novo usuario adicionado
- *  Log informativo no console
- * 
- * ***************************************************************/ 
+
 bot.on("guildCreate", guild =>
 {//inicio   
     console.log('Novo(a) usuário : ${guild.name}, foi adicionado por ${guild.owner.user.username}');    
@@ -82,13 +66,7 @@ bot.on("guildCreate", guild =>
 
 
 
-/******************************************************************
- * 
- *  Comando
- *  Prefixo = !
- *  Usado para enviar os comandos para o BoT
- * 
- * ***************************************************************/ 
+
 //inicio commando
 bot.on('message', message =>
 { //inicio para prefixo comando
@@ -110,21 +88,15 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Calculos matemáticos
-     *  Somar, Subtrair, Multiplicar, Dividr
-     *  Qualquer um pode usar
-     * 
-     * ***************************************************************/ 
+     
     //somar
-    /*if(command === "soma")    { let numArray = args.map(n=> parseInt(n));    let total = numArray.reduce( (p,c) => p+c);  message.channel.sendMessage(total);   }
+    if(command === "soma")    { let numArray = args.map(n=> parseInt(n));    let total = numArray.reduce( (p,c) => p+c);  message.channel.sendMessage(total);   }
 
     //subtrair
     if(command === "sub")   { let numArray = args.map(n=> parseInt(n));   let total = numArray.reduce( (p,c) => p-c);  message.channel.sendMessage(total);    }
 
     //multiplicar
-    if(command === "mult")  { let numArray = args.map(n=> parseInt(n));  let total = numArray.reduce( (p,c) => p*c); message.channel.sendMessage(total);  }*/
+    if(command === "mult")  { let numArray = args.map(n=> parseInt(n));  let total = numArray.reduce( (p,c) => p*c); message.channel.sendMessage(total);  }
 
 
 
@@ -135,16 +107,10 @@ bot.on('message', message =>
 
 
 
-    bot.commands.set('falar', require('./comandos/falar.js'));
-    /******************************************************************
-     * 
-     *  Comando Falar
-     *  Usado para enviar mensagens em nome do BoT
-     *  Apenas o Mestre pode usa-lo
-     * 
-     * ***************************************************************/
+    //bot.commands.set('falar', require('./comandos/falar.js'));
+    
     //Faz o bot dizer alguma coisa
-    /*if(command === "falar")
+    if(command === "falar")
     {//inicio
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
@@ -155,7 +121,7 @@ bot.on('message', message =>
         {//inicio else  
             message.reply("Você não tem poder para usar este comando!");   
         }//fim else
-    }//fim*/
+    }//fim
 
 
 
@@ -174,13 +140,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Ping
-     *  Usado para mostrar o ping atual no servidor
-     *  Qualquer um pode usar
-     * 
-     * ***************************************************************/
+    
     //ping
     if(command === "ping")
     {//inicio
@@ -198,14 +158,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Roll
-     *  Usado para rolar um dado comum de 6 lados
-     *  e obter um valor random entre esses números
-     *  Qualquer um pode usar
-     * 
-     * ***************************************************************/
+    
     //roll
     if(command === "roll") 
     {//inicio
@@ -223,13 +176,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Limpar / Purge / Clear
-     *  Usado para limpar / apagar tudo que existe na tela
-     *  Apenas o mestre pode usar
-     * 
-     * ***************************************************************/
+    
     //purge - deleta msg do servidor
     //não use !limpar <numero> pois está meio bugado
     if(command === "limpar")
@@ -256,14 +203,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Salvar
-     *  Usado para enviar mensagens em nome do BoT para o canal #salvos
-     *  Qualquer um pode usar
-     *  id do canal : id 269932626482167810
-     * 
-     * ***************************************************************/
+    
     //msg sala #salvos - id 269932626482167810
     if(command === "salvar")
     {//inicio
@@ -279,14 +219,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Supremososfalar
-     *  Usado para enviar mensagens em nome do BoT para o canal #supremosos
-     *  Apenas o mestre pode usar
-     *  id do canal : id 167715230082662401
-     * 
-     * ***************************************************************/  
+      
     //msg sala #supremosos - id 167715230082662401 
     if(command === "supremososfalar")
     {//inicio
@@ -310,14 +243,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Randomfalar
-     *  Usado para enviar mensagens em nome do BoT para o canal #random
-     *  Apenas o mestre pode usar
-     *  id do canal : id 326555780713283594
-     * 
-     * ***************************************************************/  
+    
     //msg sala #random - id 326555780713283594 
     if(command === "randomfalar")
     {//inicio
@@ -341,14 +267,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Eventosfalar
-     *  Usado para enviar mensagens em nome do BoT para o canal #eventos
-     *  Apenas o mestre pode usar
-     *  id do canal : id 269005594462126080
-     * 
-     * ***************************************************************/
+    
     //msg sala #eventos id - 269005594462126080 
     if(command === "eventosfalar")
     {//inicio
@@ -372,14 +291,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Restritofalar
-     *  Usado para enviar mensagens em nome do BoT para o canal #restrito
-     *  Apenas o mestre pode usar
-     *  id do canal : id 269010915456843777
-     * 
-     * ***************************************************************/
+    
     //msg sala #restrito id 269010915456843777 
     if(command === "restritofalar")
     {//inicio
@@ -403,14 +315,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Adminfalar
-     *  Usado para enviar mensagens em nome do BoT para o canal #admin
-     *  Apenas o mestre pode usar
-     *  id do canal : id 269009554308726784
-     * 
-     * ***************************************************************/
+    
     //msg sala #admin id 269009554308726784 
     if(command === "adminfalar")
     {//inicio
@@ -435,14 +340,8 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Ban
-     *  Usado para banir usuário do canal
-     *  Apenas o mestre pode usar
-     * 
-     * ***************************************************************/
-    /*if(command === "ban")
+    
+    if(command === "ban")
     {//inicio
         //mod
         let modRole = message.guild.roles.find("name", "Mestre");
@@ -479,7 +378,7 @@ bot.on('message', message =>
         {
             message.reply('${member.user.username} foi banido do servidor com sucesso.').catch(console.error);
         }).catch(console.error)
-    }//fim*/
+    }//fim
 
 
 
@@ -490,14 +389,8 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando unBan
-     *  Usado para desbanir usuário do canal
-     *  Apenas o mestre pode usar
-     * 
-     * ***************************************************************/
-    /*if(command === "unban")
+    
+    if(command === "unban")
     {//inicio
         //mod
         let modRole = message.guild.roles.find("name", "Mestre");
@@ -515,7 +408,7 @@ bot.on('message', message =>
 
         //desbanido com sucesso
         message.guild.unban(user);        
-    }//fim*/
+    }//fim
 
 
 
@@ -527,13 +420,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando Ajuda
-     *  Usado para listar todos os comandos do servidor
-     *  Qualquer um pode usar
-     * 
-     * ***************************************************************/
+    
     //help
     if(command === "ajuda")
     {//inicio
@@ -559,12 +446,7 @@ bot.on('message', message =>
 
 
 
-    /******************************************************************
-     * 
-     *  Comando conversar com o BoT
-     *  Ainda em testes
-     * 
-     * ***************************************************************/
+   
     //conversar
     if(command === "morra")
     {//inicio
@@ -586,27 +468,21 @@ bot.on('message', message =>
 
 
 
-     /******************************************************************
-     * 
-     *  Comando Mover
-     *  Usado para mover um usuário para outro canal
-     *  Ainda em testes
-     * 
-     * ***************************************************************/
-    /*if (command === "mover")
+     
+    if (command === "mover")
     {
         if(message.mentions.users.size < 1)
         {
             return message.reply("Digite um nome para mover.").catch(console.error);
         }                  
-    }*/
+    }
 
 
 
 
 
 
-    /*if(command === "kick") {
+    if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     if(!message.member.roles.some(r=>["Mestre", "Admin"].includes(r.name)) )
@@ -630,14 +506,14 @@ bot.on('message', message =>
       .catch(error => message.reply(`Desculpe ${message.author} Eu não posso kickar : Causa = ${error}`));
     message.reply(`${member.user.tag} foi kickado por ${message.author.tag} Motivo = ${reason}`);
 
-  }*/
+  }
 
 
 
 
 
   
-  /*if(command === "ban") {
+  if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
     if(!message.member.roles.some(r=>["Mestre"].includes(r.name)) )
@@ -656,7 +532,7 @@ bot.on('message', message =>
     await member.ban(reason)
       .catch(error => message.reply(`Desculpe ${message.author} Eu não posso banir : Causa = ${error}`));
     message.reply(`${member.user.tag} foi banido pory ${message.author.tag} Motivo = ${reason}`);
-  }*/
+  }
 
 
 
@@ -668,14 +544,8 @@ bot.on('message', message =>
 
 
 
-/******************************************************************
- * 
- *  Comando Kick
- *  Usado para kickar um usuário do canal
- *  Apenas o mestre pode usar
- * 
- * ***************************************************************/    
-    /*if(command === "kick")
+   
+    if(command === "kick")
     {//inicio
         //mod
         let modRole = message.guild.roles.find("name", "Mestre");
@@ -712,15 +582,11 @@ bot.on('message', message =>
         {
             message.reply('${member.user.username} foi kickado do servidor com sucesso. ').catch(console.error);
         }).catch(console.error)
-    }//fim*/
+    }//fim
 
 
 
-});//fim para prefixo commando
-
-
-
-
+});//fim para prefixo commando*/
 
 
 
@@ -728,10 +594,41 @@ bot.on('message', message =>
 
 
 
-/******************************************************************
- * 
- *  BoT login e prefix !
- * 
- * ***************************************************************/
+
+
+
+const Discord = require('discord.js');
+
+const bot = new Discord.Client();
+bot.config = require('./config.json');
+
+bot.log = require('./functions/log.js');
+
+
+
+
+
+
+
+bot.commands = new Discord.Collection();
+
+
+
+
+
+bot.commands.set('ping', require('./commands/ping.js'));
+//bot.commands.set('serverinfo', require('./commands/serverinfo.js'));
+//bot.commands.set('speak', require('./commands/speak.js'));
+//bot.commands.set('react', require('./commands/react.js'));
+
+bot.on('message', message => require('./events/message.js')(bot, message));
+bot.on('guildCreate', guild => require('./events/guildCreate.js')(bot, guild));
+bot.on('ready', () => require('./events/ready.js')(bot));
+bot.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(bot, member));
+bot.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(bot, reaction, user));
+
+
+
+
 //bot.login(config.token)
 bot.login(process.env.BOT_TOKEN);
