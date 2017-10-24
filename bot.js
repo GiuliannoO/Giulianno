@@ -258,45 +258,12 @@ bot.on('message', message =>
 
 
    
-    //conversar
-    if(command === "morra")
-    {//inicio
-        message.reply("Morra você! Humn!");
-    }//fim
-
-    if ((command === "bot") || (command === "Bot"))
-    {//inicio
-        message.reply("Me chamou? Se precisar de algo use o comando **!ajuda**!");
-    }//fim
+   
 
 
 
 
 
-
-
-
-
-
-
-     
-    if (command === "mover")
-    {
-        if(message.mentions.users.size < 1)
-        {
-            return message.reply("Digite um nome para mover.").catch(console.error);
-        }                  
-    }
-
-
-
-
-
-
-
-
-
-  
 
 
 
@@ -351,6 +318,8 @@ client.commands.set('ban', require('./commands/ban.js'));
 client.commands.set('kick', require('./commands/kick.js'));
 client.commands.set('unban', require('./commands/unban.js'));
 client.commands.set('roll', require('./commands/roll.js'));
+client.commands.set('bot', require('./commands/conversaBot.js'));
+client.commands.set('morra', require('./commands/conversaMorra.js'));
 
 
 //
