@@ -135,7 +135,7 @@ bot.on('message', message =>
 
 
 
-
+    bot.commands.set('falar', require('./comandos/falar.js'));
     /******************************************************************
      * 
      *  Comando Falar
@@ -144,7 +144,7 @@ bot.on('message', message =>
      * 
      * ***************************************************************/
     //Faz o bot dizer alguma coisa
-    if(command === "falar")
+    /*if(command === "falar")
     {//inicio
         let modRole = message.guild.roles.find("name", "Mestre");
         if(message.member.roles.has(modRole.id))
@@ -155,7 +155,7 @@ bot.on('message', message =>
         {//inicio else  
             message.reply("Você não tem poder para usar este comando!");   
         }//fim else
-    }//fim
+    }//fim*/
 
 
 
