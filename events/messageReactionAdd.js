@@ -1,3 +1,3 @@
 module.exports = (client, reaction, user) => {
-  client.log('Log', `${user.tag} reacted to message id ${reaction.message.id} with the reaction: ${reaction.emoji}`);
+  client.log('Log', `${user.tag} reagiu à mensagem de id ${reaction.message.id} com a reação: ${reaction.emoji}`);
 };

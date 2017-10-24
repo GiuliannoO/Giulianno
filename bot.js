@@ -618,11 +618,11 @@ client.commands = new Discord.Collection();
 
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
-client.commands.set('sinfo', require('./commands/serverinfo.js'));
+//client.commands.set('sinfo', require('./commands/serverinfo.js')); EM TESTES
 client.commands.set('ajuda', require('./commands/ajuda.js'));
 client.commands.set('limpar', require('./commands/limpar.js'));
-//bot.commands.set('speak', require('./commands/speak.js'));
-//bot.commands.set('react', require('./commands/react.js'));
+
+
 
 client.on('message', message => require('./events/message.js')(client, message));
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));

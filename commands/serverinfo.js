@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+/*const Discord = require('discord.js');
 
 module.exports = (client, message, args) => {
   const embed = new Discord.MessageEmbed()
@@ -9,4 +9,4 @@ module.exports = (client, message, args) => {
     .addField('Channels', `${message.guild.channels.filter(chan => chan.type === 'voice').size} voice / ${message.guild.channels.filter(chan => chan.type === 'text').size} text`)
     .addField('Roles', message.guild.roles.map(role => role.name).join(', '));
   message.channel.send({ embed });
-};
+};*/
