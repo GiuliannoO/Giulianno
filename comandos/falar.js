@@ -1,4 +1,4 @@
-module.exports (bot, message, args){
+module.exports = (bot, message, args) => {
 //if(command === "falar")
 //{//inicio
     let modRole = message.guild.roles.find("name", "Mestre");
