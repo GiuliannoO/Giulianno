@@ -1,6 +1,6 @@
 module.exports = (client, message, args) => {
-    message.channel.send('Pong...').then((msg) => {
+    message.channel.reply('Pong...').then((msg) => {
     msg.edit(`Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-    message.delete(); 
+    
     });
   };
