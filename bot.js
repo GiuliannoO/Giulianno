@@ -617,6 +617,7 @@ client.commands = new Discord.Collection();
 
 
 client.commands.set('ping', require('./commands/ping.js'));
+client.commands.set('falar', require('./commands/falar.js'));
 //bot.commands.set('serverinfo', require('./commands/serverinfo.js'));
 //bot.commands.set('speak', require('./commands/speak.js'));
 //bot.commands.set('react', require('./commands/react.js'));
