@@ -14,59 +14,6 @@ const config = require("./config.json");
 
 
 
-
-bot.on('ready', () =>
-{//inicio  
-    //bot.user.setGame('Digite !bot');    
-    //console.log('O Giu BoT esta pronto!'); 
-    bot.user.setPresence({ game: { name: 'Digite !ajuda', type: 0 } });
-});//fim
-
-
-
-
-
-
-
-
-
-
-
-
-
-bot.on("guildMemberAdd", member =>
-{//inicio
-    let guild = member.guild;
-    guild.defaultChannel.sendMessage('Ola!, ${member.user}. Eu sou o BoT do servidor. Seja bem vindo(a). Se precisar de mim use o comando **!bot** para me chamar.');
-});//fim
-
-
-
-
-
-
-
-
-
-
-
-
-bot.on("guildCreate", guild =>
-{//inicio   
-    console.log('Novo(a) usuário : ${guild.name}, foi adicionado por ${guild.owner.user.username}');    
-});//fim
-
-
-
-
-
-
-
-
-
-
-
-
 //inicio commando
 bot.on('message', message =>
 { //inicio para prefixo comando
@@ -125,46 +72,6 @@ bot.on('message', message =>
 
 
 
-
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-    
-    //ping
-    if(command === "ping")
-    {//inicio
-        //message.channel.sendMessage(`**Pong!** \`${Date.now() - message.createdTimestamp } ms\``);  
-        message.reply(`**Pong!** \`${Date.now() - message.createdTimestamp } ms\``);
-    }//fim
-
-
-
-
-
-
-
-
-
-
-
-    
-    //roll
-    if(command === "roll") 
-    {//inicio
-        var roll = Math.floor(Math.random() * 6) + 1;
-        message.reply("Você tirou " + roll);
-    }//fim 
 
 
 
@@ -340,102 +247,6 @@ bot.on('message', message =>
 
 
 
-    
-    if(command === "ban")
-    {//inicio
-        //mod
-        let modRole = message.guild.roles.find("name", "Mestre");
-        if (!message.member.roles.has(modRole.id))
-        {
-            return message.reply("Você não tem poder para usar este comando!").catch(console.error);
-        }
-
-
-        //digite um nome para banir
-        if(message.mentions.users.size < 1)
-        {
-            return message.reply("Digite um nome correto para banir.").catch(console.error);
-        }
-        let banir = message.guild.member(message.mentions.users.first());
-
-
-        //digite um nome correto para banir
-        if(!banir)
-        {
-            return message.reply("O usuário digitado não existe.");
-        }
-
-
-        //caso o bot não conseguir banir
-        if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS"))
-        {   
-            return message.reply("Eu não tenho permissão para banir este usuário.").catch(console.error);
-        }
-
-
-        //banido com sucesso
-        banir.ban().then(member =>
-        {
-            message.reply('${member.user.username} foi banido do servidor com sucesso.').catch(console.error);
-        }).catch(console.error)
-    }//fim
-
-
-
-
-
-
-
-
-
-
-    
-    if(command === "unban")
-    {//inicio
-        //mod
-        let modRole = message.guild.roles.find("name", "Mestre");
-        if (!message.member.roles.has(modRole.id))
-        {
-            return message.reply("Você não tem poder para usar este comando! Morra :revolving_hearts: ").catch(console.error);
-        }
-
-
-        //digite um nome para desbanir
-        if(!user)
-        {
-            return message.reply("Digite o número do **id** do usuário que deseja desbanir.").catch(console.error);
-        }
-
-        //desbanido com sucesso
-        message.guild.unban(user);        
-    }//fim
-
-
-
-
-
-
-
-
-
-
-
-    
-    //help
-    if(command === "ajuda")
-    {//inicio
-        message.channel.sendMessage("Lista de comandos para usar. \n"+
-                                    "**!ajuda** - Listar todos os comandos liberados para usuários normais.\n"+
-                                    "**!limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
-                                    "*( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
-                                    "**salvar msgs ou links importantes** - Use o canal de chat **#salvos**.\n"+
-                                    "*( O canal **salvos** está configurado para não deletar msgs. )*\n"+
-                                    "**!ping** - Mostra o seu ping atual.\n"+
-                                    "**!roll** - Rolar um dado comum de 6 lados.\n"+
-                                    "**Mover outros usuários de canal** - Clique, segure e arraste o alvo desejado.\n"+                                    
-                                    "**O sistema de webhook** é Gerenciado pelo **Mestre.**\n");
-    }//fim                                    
-
 
 
 
@@ -482,58 +293,10 @@ bot.on('message', message =>
 
 
 
-    if(command === "kick") {
-    // This command must be limited to mods and admins. In this example we just hardcode the role names.
-    // Please read on Array.some() to understand this bit: 
-    if(!message.member.roles.some(r=>["Mestre", "Admin"].includes(r.name)) )
-      return message.reply("Você não ter permissão para usar este comando!");
-    
-    // Let's first check if we have a member and if we can kick them!
-    // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
-    let member = message.mentions.members.first();
-    if(!member)
-      return message.reply("Por favor digite um nome válido.");
-    if(!member.kickable) 
-      return message.reply("Eu não posso kickar este usuário.");
-    
-    // slice(1) removes the first part, which here should be the user mention!
-    let reason = args.slice(1).join(' ');
-    if(!reason)
-      return message.reply("Por favor informe o motivo do kick.");
-    
-    // Now, time for a swift kick in the nuts!
-    await member.kick(reason)
-      .catch(error => message.reply(`Desculpe ${message.author} Eu não posso kickar : Causa = ${error}`));
-    message.reply(`${member.user.tag} foi kickado por ${message.author.tag} Motivo = ${reason}`);
-
-  }
-
-
 
 
 
   
-  if(command === "ban") {
-    // Most of this command is identical to kick, except that here we'll only let admins do it.
-    // In the real world mods could ban too, but this is just an example, right? ;)
-    if(!message.member.roles.some(r=>["Mestre"].includes(r.name)) )
-      return message.reply("Você não tem permissão para usar este comando.");
-    
-    let member = message.mentions.members.first();
-    if(!member)
-      return message.reply("Por favor digite um nome válido.");
-    if(!member.bannable) 
-      return message.reply("Eu não posso banir este usuário.");
-
-    let reason = args.slice(1).join(' ');
-    if(!reason)
-      return message.reply("Por favor informe o motivo do ban.");
-    
-    await member.ban(reason)
-      .catch(error => message.reply(`Desculpe ${message.author} Eu não posso banir : Causa = ${error}`));
-    message.reply(`${member.user.tag} foi banido pory ${message.author.tag} Motivo = ${reason}`);
-  }
-
 
 
 
@@ -545,44 +308,7 @@ bot.on('message', message =>
 
 
    
-    if(command === "kick")
-    {//inicio
-        //mod
-        let modRole = message.guild.roles.find("name", "Mestre");
-        if (!message.member.roles.has(modRole.id))
-        {
-            return message.reply("Você não tem poder para usar este comando! ").catch(console.error);
-        }
-
-
-        //digite um nome para kickar
-        if(message.mentions.users.size < 1)
-        {
-            return message.reply("Digite um nome correto para kickar.").catch(console.error);
-        }
-        let kickMember = message.guild.member(message.mentions.users.first());
-
-
-        //digite um nome correto para kickar
-        if(!kickMember)
-        {
-            return message.reply("O usuário digitado não existe.");
-        }
-
-
-        //caso o bot não conseguir kickar
-        if (!message.guild.member(bot.user).hasPermission("KICK_MEMBERS"))
-        {   
-            return message.reply("Eu não tenho permissão para kickar este usuário.").catch(console.error);
-        }
-
-
-        //kickado com sucesso
-        kickMember.kick().then(member =>
-        {
-            message.reply('${member.user.username} foi kickado do servidor com sucesso. ').catch(console.error);
-        }).catch(console.error)
-    }//fim
+    
 
 
 
@@ -618,10 +344,16 @@ client.commands = new Discord.Collection();
 
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
-//client.commands.set('sinfo', require('./commands/serverinfo.js')); EM TESTES
+//client.commands.set('sinfo', require('./commands/serverinfo.js')); EM TESTE
 client.commands.set('ajuda', require('./commands/ajuda.js'));
 client.commands.set('limpar', require('./commands/limpar.js'));
+client.commands.set('ban', require('./commands/ban.js'));
+client.commands.set('kick', require('./commands/kick.js'));
+client.commands.set('unban', require('./commands/unban.js'));
+client.commands.set('roll', require('./commands/roll.js'));
 
+
+//
 
 
 client.on('message', message => require('./events/message.js')(client, message));
