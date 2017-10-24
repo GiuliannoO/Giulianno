@@ -9,7 +9,7 @@ module.exports = (client, message, args) => {
     "• **`!ping`** - Mostra o seu ping atual.\n"+
     "• **`!roll`** - Rolar um dado comum de 6 lados.\n"+
     "• **`Mover outros usuários de canal`** - Clique, segure e arraste o alvo desejado.\n"+                                    
-    "• **`O sistema de webhook`** é Gerenciado pelo **Mestre.**```\n");
-    " \n"+
+    "• **`O sistema de webhook`** é Gerenciado pelo **Mestre.**\n"+
+    "``` \n");
     
   };
