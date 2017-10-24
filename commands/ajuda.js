@@ -1,7 +1,7 @@
 module.exports = (client, message, args) => {
 
     message.channel.sendMessage("Lista de comandos para usar. \n"+
-    "• '**!ajuda**' - Listar todos os comandos liberados para usuários normais.\n"+
+    "• `**!ajuda**` - Listar todos os comandos liberados para usuários normais.\n"+
     "• **!limpar** - Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
     "*( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
     "• **salvar msgs ou links importantes** - Use o canal de chat **#salvos**.\n"+
