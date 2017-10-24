@@ -14,73 +14,6 @@ const config = require("./config.json");
 
 
 
-//inicio commando
-bot.on('message', message =>
-{ //inicio para prefixo comando
-    if(message.author.bot) return;
-    if(!message.content.startsWith(config.prefix)) return;
-
-    let command = message.content.split(" ")[0];
-    command = command.slice(config.prefix.length);
-
-    let args = message.content.split(" ").slice(1);
-
-
-
-
-
-
-
-
-
-
-
-     
-    //somar
-    if(command === "soma")    { let numArray = args.map(n=> parseInt(n));    let total = numArray.reduce( (p,c) => p+c);  message.channel.sendMessage(total);   }
-
-    //subtrair
-    if(command === "sub")   { let numArray = args.map(n=> parseInt(n));   let total = numArray.reduce( (p,c) => p-c);  message.channel.sendMessage(total);    }
-
-    //multiplicar
-    if(command === "mult")  { let numArray = args.map(n=> parseInt(n));  let total = numArray.reduce( (p,c) => p*c); message.channel.sendMessage(total);  }
-
-
-
-
-
-
-
-
-
-
-    //bot.commands.set('falar', require('./comandos/falar.js'));
-    
-    //Faz o bot dizer alguma coisa
-    if(command === "falar")
-    {//inicio
-        let modRole = message.guild.roles.find("name", "Mestre");
-        if(message.member.roles.has(modRole.id))
-        {//inicio if 
-            message.channel.sendMessage(args.join(" "));    
-        }//fim if
-        else
-        {//inicio else  
-            message.reply("Você não tem poder para usar este comando!");   
-        }//fim else
-    }//fim
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     
@@ -320,6 +253,10 @@ client.commands.set('unban', require('./commands/unban.js'));
 client.commands.set('roll', require('./commands/roll.js'));
 client.commands.set('bot', require('./commands/conversaBot.js'));
 client.commands.set('morra', require('./commands/conversaMorra.js'));
+client.commands.set('soma', require('./commands/calcularSoma.js'));
+client.commands.set('sub', require('./commands/calcularSub.js'));
+client.commands.set('mult', require('./commands/calcularMult.js'));
+client.commands.set('div', require('./commands/calcularDiv.js'));
 
 
 //
