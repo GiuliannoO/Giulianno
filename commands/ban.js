@@ -22,9 +22,6 @@ module.exports = (client, message, args) => {
 
       //
 
-      /*if(command === "ban")
-      {//inicio
-          //mod
           let modRole = message.guild.roles.find("name", "Mestre");
           if (!message.member.roles.has(modRole.id))
           {
@@ -59,6 +56,6 @@ module.exports = (client, message, args) => {
           {
               message.reply('${member.user.username} foi banido do servidor com sucesso.').catch(console.error);
           }).catch(console.error)
-      }//fim*/
+      
 
   };
