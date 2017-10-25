@@ -1,3 +1,4 @@
 {
-    "prefix" : "!"
+    "prefix" : "!",
+    "stream": "https://listen.moe/stream"
 }
