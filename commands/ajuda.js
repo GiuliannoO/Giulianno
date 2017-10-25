@@ -11,7 +11,6 @@ module.exports = (client, message, args) => {
       " *( O canal **#salvos** está configurado para não deletar msgs. )*\n"+
       " **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+
       " **Cálculos**  -  **!soma num num** , **!sub num num** , **!mult num num** , **!div num num**.\n"+
-      " *( A divisão por 0 está configurada para sempre retornar o valor 0. )*\n"+
       " **!limpar**  -  Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
       " *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
       " **!ban nome**  -  Banir um usuário do servidor.\n"+
