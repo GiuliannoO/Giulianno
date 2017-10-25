@@ -23,6 +23,7 @@ client.commands.set('sub', require('./commands/calcularSub.js'));
 client.commands.set('mult', require('./commands/calcularMult.js'));
 client.commands.set('div', require('./commands/calcularDiv.js'));
 client.commands.set('fsalvos', require('./commands/canalSalvos.js'));
+client.commands.set('resp', require('./commands/resp.js'));
 
 
 //
