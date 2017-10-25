@@ -1,6 +1,6 @@
 module.exports = (client, message, args) => {
     
-    //if(command === "kick") {
+    /*if(command === "kick") {
         // This command must be limited to mods and admins. In this example we just hardcode the role names.
         // Please read on Array.some() to understand this bit: 
         if(!message.member.roles.some(r=>["Mestre", "Admin"].includes(r.name)) )
@@ -24,7 +24,7 @@ module.exports = (client, message, args) => {
           .catch(error => message.reply(`Desculpe ${message.author} Eu não posso kickar : Causa = ${error}`));
         message.reply(`${member.user.tag} foi kickado por ${message.author.tag} Motivo = ${reason}`);
     
-      //}
+      }*/
 
 
 
@@ -32,9 +32,6 @@ module.exports = (client, message, args) => {
       //
 
 
-      /*if(command === "kick")
-      {//inicio
-          //mod
           let modRole = message.guild.roles.find("name", "Mestre");
           if (!message.member.roles.has(modRole.id))
           {
@@ -69,7 +66,7 @@ module.exports = (client, message, args) => {
           {
               message.reply('${member.user.username} foi kickado do servidor com sucesso. ').catch(console.error);
           }).catch(console.error)
-      }//fim*/
+      
 
 
   };
