@@ -8,7 +8,7 @@ module.exports = (client, message, args) => {
     
     
 
-    message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
-    
+    if (args[1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
+    else message.channel.sendMessage("Eu não entendi o que você quer dizer.");
 
   };
