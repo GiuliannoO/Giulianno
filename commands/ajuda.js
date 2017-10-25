@@ -22,7 +22,7 @@ module.exports = (client, message, args) => {
     message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos para usar",
-      "description": " ```**!ajuda**```  -  Mostra todos os comandos usados no servidor."
+      "description": " **`!ajuda`**  -  Mostra todos os comandos usados no servidor."
 
     }});
 
