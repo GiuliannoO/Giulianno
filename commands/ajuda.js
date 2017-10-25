@@ -9,7 +9,7 @@ module.exports = (client, message, args) => {
       " **!roll**  -  Rolar um dado comum de 6 lados.\n"+
       " **Para salvar coisas importantes**  -  Use o canal de chat **#salvos**.\n"+
       " *( O canal **#salvos** está configurado para não deletar msgs. )*\n"+
-      " **Mover outros usuários de canal`  -  Clique, segure e arraste o alvo desejado.\n"+
+      " **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+
       " **Cálculos**  -  **!soma num num** , **!sub num num** , **!mult num num** , **!div num num**.\n"+
       " **!limpar**  -  Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
       " *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
