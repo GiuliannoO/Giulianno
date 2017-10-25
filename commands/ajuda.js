@@ -1,8 +1,8 @@
 module.exports = (client, message, args) => {
 
-    
+    content:{
 
-    message.channel.sendMessage({embed:  ("Lista de comandos para usar. \n"+
+    message.channel.sendMessage("Lista de comandos para usar. \n"+
     "• **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
     "• **!ping**  -  Mostra o seu ping atual.\n"+
     "• **!roll**  -  Rolar um dado comum de 6 lados.\n"+
@@ -17,7 +17,7 @@ module.exports = (client, message, args) => {
     "• ~~**!kick nome**~~  -  Kicka um usuário do servidor\n"+ 
     "• ~~**!sinfo**~~  -  Mostra as informações do servidor\n"+  
     "• ~~**!falar xx**~~  -  Comandos de fala especial\n"+                         
-    "• **O sistema de webhook** é Gerenciado pelo **Mestre.**\n")});
+    "• **O sistema de webhook** é Gerenciado pelo **Mestre.**\n");  }
 
     
     
