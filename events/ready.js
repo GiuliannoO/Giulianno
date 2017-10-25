@@ -4,7 +4,7 @@ module.exports = (client) => {
 
   let channel = client.channels.get('372892589252411393');
   //ou via nome
-  channel = client.channels.find('name', 'Musica');
+  //channel = client.channels.find('name', 'Musica');
 
   channel.join()
   .then(connection => console.log('Conectado'))
