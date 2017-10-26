@@ -60,8 +60,7 @@ module.exports = (client, message, args) => {
               return message.reply("Eu não tenho permissão para kickar este usuário.").catch(console.error);
           }
   
-  
-          //kickado com sucesso
+            //kickado com sucesso
           kickMember.kick().then(member =>
           {
               message.reply('${member.user.username} foi kickado do servidor com sucesso. ').catch(console.error);
