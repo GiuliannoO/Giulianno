@@ -24,6 +24,7 @@ client.commands.set('mult', require('./commands/calcularMult.js'));
 client.commands.set('div', require('./commands/calcularDiv.js'));
 client.commands.set('fsalvos', require('./commands/canalSalvos.js'));
 client.commands.set('resp', require('./commands/resp.js'));
+client.commands.set('play', require('./commands/play.js'));
 
 
 //
@@ -34,6 +35,8 @@ client.on('guildCreate', guild => require('./events/guildCreate.js')(client, gui
 client.on('ready', () => require('./events/ready.js')(client));
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
+
+
 
 
 
