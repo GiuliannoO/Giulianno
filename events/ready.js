@@ -8,7 +8,7 @@ module.exports = (client) => {
   //ou via nome
   //channel = client.channels.find('name', 'Musica');
 
-  channel.join();
+  channel.join()
   //.then(connection => console.log('Conectado'))
   //.catch(console.error);
  
