@@ -1,12 +1,12 @@
+const channel = message.member.voiceChannel;
+
 module.exports = (client, message, args) => {   
     
-/*const channel = message.member.voiceChannel;
-
     channel.join()
     .then(connection => console.log('Conectado!'))
-    .catch(console.error);*/
+    .catch(console.error);
 
-    if (!memberHasManageGuild(msg.member)) return
+    /*if (!memberHasManageGuild(msg.member)) return
     
         let member = msg.member
         let channelId = member.voiceState ? member.voiceState.channelID : null
@@ -18,7 +18,7 @@ module.exports = (client, message, args) => {
             writeGuildConfig(msg.channel.guild.id, {Musica: channelId})
             joinVoice(client, msg.channel.guild.id, channelId)
             client.createMessage(msg.channel.id, '\\o/')
-        }
+        }*/
 
 
 };
