@@ -1,10 +1,10 @@
-const channel = message.member.voiceChannel;
+//const channel = message.member.voiceChannel;
 
 module.exports = (client, message, args) => {   
     
-    channel.join()
+    /*channel.join()
     .then(connection => console.log('Conectado!'))
-    .catch(console.error);
+    .catch(console.error);*/
 
     /*if (!memberHasManageGuild(msg.member)) return
     
