@@ -1,7 +1,7 @@
 module.exports = (client, message, args) => {
     
-    //if(command === "unban")
-    //{
+    /*if(command === "unban")
+    {
         
         let modRole = message.guild.roles.find("name", "Mestre");
         if (!message.member.roles.has(modRole.id))
@@ -18,6 +18,6 @@ module.exports = (client, message, args) => {
 
         //desbanido com sucesso
         message.guild.unban(user);        
-    //}
+    }*/
     
   };
