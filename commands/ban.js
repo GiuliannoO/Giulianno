@@ -22,7 +22,7 @@ module.exports = (client, message, args) => {
 
       //
 
-          /*let modRole = message.guild.roles.find("name", "Mestre");
+          let modRole = message.guild.roles.find("name", "Mestre");
           if (!message.member.roles.has(modRole.id))
           {
               return message.reply("Você não tem poder para usar este comando!").catch(console.error);
@@ -55,7 +55,7 @@ module.exports = (client, message, args) => {
           banir.ban().then(member =>
           {
               message.reply('${member.user.username} foi banido do servidor com sucesso.').catch(console.error);
-          }).catch(console.error)*/
+          }).catch(console.error)
       
 
   };
