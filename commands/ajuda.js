@@ -13,9 +13,9 @@ module.exports = (client, message, args) => {
       " **Cálculos**  -  **!soma num num** , **!sub num num** , **!mult num num** , **!div num num**.\n"+
       " **!limpar**  -  Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
       " *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
-      " **!ban nome**  -  Banir um usuário do servidor.\n"+
+      " ~~!ban nome~~  -  Banir um usuário do servidor.\n"+
       " ~~!unban nome~~  -  Retira o ban de um usuário.\n"+
-      " **!kick nome**  -  Kicka um usuário do servidor.\n"+
+      " ~~!kick nome~~  -  Kicka um usuário do servidor.\n"+
       " **!falar xx**  -  Comandos de fala especial.\n"+
       " ~~!sinfo~~  -  Mostra as informações do servidor.\n"+
       " **O sistema de webhook** é Gerenciado pelo **Mestre.**\n"
