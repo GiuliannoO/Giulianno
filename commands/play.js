@@ -12,12 +12,12 @@ module.exports = (client, message, args) => {
         let channelId = member.voiceState ? member.voiceState.channelID : null
         if (!channelId) {
             // fail
-            c.createMessage(msg.channel.id, 'Entre em um canal primeiro!')
+            client.createMessage(msg.channel.id, 'Entre em um canal primeiro!')
         } else {
             // oh dang hello
-            writeGuildConfig(msg.channel.guild.id, {vc: channelId})
-            joinVoice(c, msg.channel.guild.id, channelId)
-            c.createMessage(msg.channel.id, '\\o/')
+            writeGuildConfig(msg.channel.guild.id, {Musica: channelId})
+            joinVoice(client, msg.channel.guild.id, channelId)
+            client.createMessage(msg.channel.id, '\\o/')
         }
 
 
