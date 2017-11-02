@@ -1,7 +1,12 @@
 const Discord = require('discord.js');
+const weather = require('weather-js');
 const client = new Discord.Client();
+
+
+
 client.config = require('./config.json');
 client.log = require('./functions/log.js');
+
 
 
 client.commands = new Discord.Collection();
@@ -25,6 +30,7 @@ client.commands.set('div', require('./commands/calcularDiv.js'));
 client.commands.set('fsalvos', require('./commands/canalSalvos.js'));
 client.commands.set('resp', require('./commands/resp.js'));
 client.commands.set('play', require('./commands/play.js'));
+client.commands.set('tempo', require('./commands/tempo.js'));
 
 
 //
