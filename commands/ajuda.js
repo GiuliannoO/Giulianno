@@ -4,7 +4,7 @@ module.exports = (client, message, args) => {
     message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
-      "description": " **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
+      "description": "  **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
       " **!ping**  -  Mostra a sua API latencia e latencia atual.\n"+
       " **!roll**  -  Rolar um dado comum de 6 lados.\n"+
       " **Para salvar coisas importantes**  -  Use o canal de chat **#salvos**.\n"+
