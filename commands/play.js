@@ -20,9 +20,9 @@ module.exports = (client, message, args) => {
             client.createMessage(msg.channel.id, '\\o/')
         }*/
 
-        voiceChannel.join()
+        /*voiceChannel.join()
         .then(connection => console.log('Conectado!'))
-        .catch(console.error);
+        .catch(console.error);*/
 
 
 };
