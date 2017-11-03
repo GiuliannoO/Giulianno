@@ -10,7 +10,7 @@ module.exports = (client, message, args) => {
         .setAuthor(member.user.username)
         .setDescription("Informação do usuário!")
         .setColor("#9B59B6")
-        .setField("Nome", message.author.tag)
+        .setField("Nome", member.user.tag)
         .addField("ID", member.user.id)
         .addField("Criado em", member.user.createdAt);
 
