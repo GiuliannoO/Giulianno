@@ -5,7 +5,7 @@ npm install opusscript
 npm install node-opus*/ 
 
 //https://listen.moe/stream
-//https://tunein.com/embed/player/s54119
+//http://momori.animenfo.com:8000/;?.mp3
 //id canal musica = 375842517566095360
 
 
