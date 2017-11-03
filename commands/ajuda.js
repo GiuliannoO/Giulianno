@@ -11,7 +11,7 @@ module.exports = (client, message, args) => {
       " *( O canal **#salvos** está configurado para não deletar msgs. )*\n"+
       "• **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+
       "• **Cálculos**  -  **!soma num num** , **!sub num num** , **!mult num num** , **!div num num**.\n"+
-      "• **!play**  -  Ligar o Music BoT e tocar músicas de animes 24/7 no canal de áudio Música.\n"+
+      "• **!play**  -  Liga a rádio do BoT para tocar músicas de animes 24/7 no canal de áudio Música.\n"+
       " *( Volume - Click direito no BoT e ajuste o volume do usuário. )*\n"+
       " *( Caso desejar escutar outras músicas, informe os Admins. )*\n"+
       "• **!limpar**  -  Deleta __**permanentemente**__ todas as msg do canal atual.\n"+
