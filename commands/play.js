@@ -1,5 +1,5 @@
 //"https://listen.moe/stream"
-connection.playArbitraryInput('https://listen.moe/stream');
+
 
 module.exports = (client, message, args) => {   
     
@@ -8,6 +8,7 @@ module.exports = (client, message, args) => {
               message.member.voiceChannel.join()
                 .then(connection => { 
                   message.reply('Eu conectei no canal com sucesso!');
+                  connection.playArbitraryInput('https://listen.moe/stream');
                 })
                 .catch(console.log);
             } else {
