@@ -15,9 +15,9 @@ module.exports = (client, message, args) => {
                   message.reply('Eu conectei no canal com sucesso!');
                 })
                 .catch(console.log);
-            } else {
+            } /*else {
               message.reply('Você precisa estar em um canal de voz para digitar o comando!');
-            }
+            }*/
 
         }else{
             message.reply("Você não tem poder para usar este comando! ");
