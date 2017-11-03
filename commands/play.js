@@ -5,6 +5,7 @@ npm install opusscript
 npm install node-opus*/ 
 
 //https://listen.moe/stream
+//https://tunein.com/embed/player/s54119
 //id canal musica = 375842517566095360
 
 
@@ -18,8 +19,8 @@ module.exports = (client, message, args) => {
               channel.join()
                 .then(connection => { 
                   message.reply('Eu conectei no canal com sucesso!');
-                  //connection.playArbitraryInput('https://listen.moe/stream');
-                  connection.playFile('./radio/anime01.pls');
+                  connection.playArbitraryInput('https://tunein.com/embed/player/s54119');
+                  //connection.playFile('./radio/anime01.pls');
                 })
                 .catch(console.log);
                 } /*else {
