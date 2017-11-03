@@ -1,8 +1,8 @@
-/*INSTALL
+/*INSTALL-
 ffmpeg - npm install ffmpeg-binaries
 an opus encoder, choose one from below:
 npm install opusscript
-npm install node-opus*/
+npm install node-opus*/ 
 
 //https://listen.moe/stream
 //http://momori.animenfo.com:8000/listen.pls
