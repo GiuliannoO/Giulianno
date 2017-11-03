@@ -12,8 +12,8 @@ module.exports = (client) => {
   .then(connection => console.log('Conectado'))
   .catch(console.error);*/
 
-  voiceChannel.join()
+  /*voiceChannel.join()
   .then(connection => console.log('Conectado!'))
-  .catch(console.error);
+  .catch(console.error);*/
  
 };
