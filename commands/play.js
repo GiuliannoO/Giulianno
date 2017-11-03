@@ -4,6 +4,11 @@
 module.exports = (client, message, args) => {   
     
     
+
+    let modRole = message.guild.roles.find("name", "Mestre");
+    if(message.member.roles.has(modRole.id))
+    {
+        
             if (message.member.voiceChannel) {
               message.member.voiceChannel.join()
                 .then(connection => { 
@@ -13,7 +18,15 @@ module.exports = (client, message, args) => {
                 .catch(console.log);
             } else {
               message.reply('Você precisa estar em um canal de voz para digitar o comando!');
-            }          
+            }    
+            
+    }
+    else
+    { 
+        message.reply("Você não tem poder para usar este comando!");   
+    }
+
+            
 
 
 };
