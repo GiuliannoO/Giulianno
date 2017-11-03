@@ -19,7 +19,7 @@ module.exports = (client, message, args) => {
               channel.join()
                 .then(connection => { 
                   message.reply('Eu conectei no canal com sucesso!');
-                  connection.playArbitraryInput('https://tunein.com/embed/player/s54119');
+                  connection.playArbitraryInput('http://animenfo.radio.net/');
                   //connection.playFile('./radio/anime01.pls');
                 })
                 .catch(console.log);
