@@ -1,4 +1,11 @@
-//"https://listen.moe/stream"
+/*INSTALL
+ffmpeg - npm install ffmpeg-binaries
+an opus encoder, choose one from below:
+npm install opusscript
+npm install node-opus*/
+
+//https://listen.moe/stream
+//http://momori.animenfo.com:8000/listen.pls
 //id canal musica = 375842517566095360
 
 
@@ -12,7 +19,7 @@ module.exports = (client, message, args) => {
               channel.join()
                 .then(connection => { 
                   message.reply('Eu conectei no canal com sucesso!');
-                  connection.playArbitraryInput('https://listen.moe/stream');
+                  connection.playArbitraryInput('http://momori.animenfo.com:8000/listen.pls');
                 })
                 .catch(console.log);
                 } /*else {
