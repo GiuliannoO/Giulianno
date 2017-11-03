@@ -19,7 +19,7 @@ module.exports = (client, message, args) => {
               channel.join()
                 .then(connection => { 
                   message.reply('Eu conectei no canal com sucesso!');
-                  connection.playArbitraryInput('http://www.surfmusic.de/radio-station/animenfo-radio,12764.html');
+                  connection.playArbitraryInput('http://www.surfmusic.de/m3u/animenfo-radio,12764.m3u');
                   //connection.playFile('./radio/anime01.pls');
                 })
                 .catch(console.log);
