@@ -6,7 +6,7 @@ module.exports = (client, message, args) => {
       title: "Lista de comandos do servidor",
       "description": "• **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
       //"-------------------------------------------------------------------------------------------------\n"+
-      "-\n"+
+      "---\n"+
       "• **!ping**  -  Mostra a sua API latencia e latencia atual.\n"+
       "-\n"+
       "• **!roll**  -  Rolar um dado comum de 6 lados.\n"+
