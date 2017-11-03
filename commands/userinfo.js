@@ -1,6 +1,6 @@
 module.exports = (client, message, args) => {  
     
-    let member = message.mentions.members.first();
+    /*let member = message.mentions.members.first();
     if(!member){
       return message.reply("Please mention a valid member of this server");
 
@@ -17,7 +17,7 @@ module.exports = (client, message, args) => {
 
         message.channel.sendEmbed(embed);
 
-        return;  }
+        return;  }*/
             
 
 };
