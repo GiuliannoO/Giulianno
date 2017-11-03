@@ -5,7 +5,7 @@ npm install opusscript
 npm install node-opus*/ 
 
 //https://listen.moe/stream
-//http://momori.animenfo.com:8000/listen.pls
+//https://tunein.com/radio/AnimeNfo-Radio-s54119/
 //id canal musica = 375842517566095360
 
 
@@ -19,7 +19,7 @@ module.exports = (client, message, args) => {
               channel.join()
                 .then(connection => { 
                   message.reply('Eu conectei no canal com sucesso!');
-                  connection.playArbitraryInput('http://momori.animenfo.com:8000/listen.pls');
+                  connection.playArbitraryInput('https://tunein.com/radio/AnimeNfo-Radio-s54119/');
                 })
                 .catch(console.log);
                 } /*else {
