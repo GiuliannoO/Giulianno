@@ -28,8 +28,12 @@ module.exports = (client, message, args) => {
     }else{
     
       
-      message.reply(member.user.avatarURL);
-      message.reply(member.user.tag);
+      message.channel.send({embed: {
+        color: 3447003,
+        title: "Informações do Usuário"+ message.channel.sendMessage(member),
+        "description": "● bla bla bla\n"
+  
+      }});
          
 
           }
