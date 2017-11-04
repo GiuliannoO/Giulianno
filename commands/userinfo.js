@@ -15,7 +15,7 @@ module.exports = (client, message, args) => {
         .setColor("#9B59B6")
         .setField("Nome", member.user.tag)
         .addField("ID", member.user.id)
-        .addField("Criado em", member.user.createdAt);
+        .addField("Criado em", member.user.createdAt)
 
         //message.channel.sendEmbed(embed);
         message.channel.send({embed});
