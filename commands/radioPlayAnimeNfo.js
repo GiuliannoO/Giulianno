@@ -20,7 +20,7 @@ module.exports = (client, message, args) => {
               
               channel.join()
                 .then(connection => { 
-                  message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio AnimeNfo Japan!');
+                  message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio AnimeNfo!');
                   connection.playArbitraryInput('http://momori.animenfo.com:8000/;?.mp3');
                   //connection.playFile('./radio/anime01.pls');
                 })
