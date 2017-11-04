@@ -28,7 +28,7 @@ module.exports = (client, message, args) => {
     }else{
     
       
-        message.reply(message.author.avatar);
+      message.reply(member.user.avatarURL);
          
 
           }
