@@ -30,8 +30,8 @@ module.exports = (client, message, args) => {
       
       message.channel.send({embed: {
         color: 3447003,
-        title: "Informações do Usuário"+ message.channel.sendMessage(member),
-        "description": "● bla bla bla\n"
+        title: "Informações do Usuário: " + message.channel.sendMessage('member'),
+        "description": "● Avatar: " + message.reply(message.author.avatarURL)
   
       }});
          
