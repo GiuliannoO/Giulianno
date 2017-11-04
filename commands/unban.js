@@ -18,6 +18,6 @@ module.exports = (client, message, args) => {
 
         //desbanido com sucesso
         message.guild.unban(user);        
-    }*/
+    }*/    
     
   };
