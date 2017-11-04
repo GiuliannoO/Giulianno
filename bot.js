@@ -40,7 +40,7 @@ client.commands.set('userinfo', require('./commands/userinfo.js'));
 
 client.on('message', message => require('./events/message.js')(client, message));
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
-client.on('ready', () => require('./events/ready.js')(client,channel));
+client.on('ready', () => require('./events/ready.js')(client));
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
