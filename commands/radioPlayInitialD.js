@@ -6,7 +6,7 @@ npm install node-opus*/
 
 //Radio Moe : https://listen.moe/stream
 //Radio AnimeNfo : http://momori.animenfo.com:8000/;?.mp3
-//Radio Initial D : http://go2id.net:9001/home.html?sid=1
+//Radio Initial D : http://go2id.net:9001/;?.mp3
 
 //id canal musica = 375842517566095360
 
