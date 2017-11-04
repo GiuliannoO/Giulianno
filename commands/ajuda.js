@@ -19,7 +19,7 @@ module.exports = (client, message, args) => {
       "  **!soma num num**  -  Somar dois números.\n"+
       "  **!sub num num**  -  Subtrair dois números.\n"+
       "  **!mult num num**  -  Multiplicar dois números.\n"+
-      "  **!div num num**\n  -  Dividir dois números.\n"+
+      "  **!div num num**  -  Dividir dois números.\n"+
       "\n"+
       "● Escutar música 24/7 no canal de voz **Música**\n"+
       "  **!playinitiald**  -  Escutar a rádio Initial D World.\n"+
