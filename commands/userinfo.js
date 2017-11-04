@@ -29,12 +29,11 @@ module.exports = (client, message, args) => {
     
       
         //message.reply(message.author.avatar);
-        message.setAuthor(member.user.username)
-        message.setDescription("Informação do usuário!")
-        message.setColor("#9B59B6")
-        message.setField("Nome", member.user.tag)
-        message.addField("ID", member.user.id)
-        message.addField("Criado em", member.user.createdAt);
+        message.reply(member.user.username)
+        message.reply("Informação do usuário!")
+        message.reply("Nome", member.user.tag)
+        message.reply("ID", member.user.id)
+        message.reply("Criado em", member.user.createdAt);
         
   
     
