@@ -29,6 +29,7 @@ module.exports = (client, message, args) => {
     
       
       message.reply(member.user.avatarURL);
+      message.reply(member.user.tag);
          
 
           }
