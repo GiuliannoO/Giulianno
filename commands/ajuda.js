@@ -15,13 +15,13 @@ module.exports = (client, message, args) => {
       "\n"+
       "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+
       "\n"+
-      "● **Cálculos**\n"+
+      "● **Cálculos matemáticos**\n"+
       "    **!soma num num**  -  Somar dois números.\n"+
       "    **!sub num num**  -  Subtrair dois números.\n"+
       "    **!mult num num**  -  Multiplicar dois números.\n"+
       "    **!div num num**  -  Dividir dois números.\n"+
       "\n"+
-      "● Escutar música 24/7 no canal de voz **Música**\n"+
+      "● Música 24/7 no canal de voz **Música** - Apenas uma rádio pode ser tocada por vez.\n"+
       "    **!playinitiald**  -  Escutar a rádio Initial D World.\n"+
       "    **!playanimenfo**  -  Escutar a rádio AnimeNfo.\n"+
       "    **!playmoe**  -  Escutar a rádio anime Moe.\n"+
