@@ -21,7 +21,7 @@ module.exports = (client, message, args) => {
               channel.join()
                 .then(connection => { 
                   message.reply('Eu conectei no canal com sucesso!');
-                  connection.playArbitraryInput('http://go2id.net:9001/home.html?sid=1');
+                  connection.playArbitraryInput('http://go2id.net:9001/;?.mp3');
                   //connection.playFile('./radio/anime01.pls');
                 })
                 .catch(console.log);
