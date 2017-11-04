@@ -27,19 +27,18 @@ module.exports = (client, message, args) => {
 
     }else{
     
-      const embed = new Discord.RichEmbed()
-      //.setAuthor(member.user.username)
-      //.setDescription("Informação do usuário!")
-      .setColor("#9B59B6")
-      .setField("Nome", member.user.tag)
-      .addField("ID", member.user.id)
-      .addField("Criado em", member.user.createdAt);
-
-      message.channel.send({embed});
+      
+        //message.reply(message.author.avatar);
+        message.setAuthor(member.user.username)
+        message.setDescription("Informação do usuário!")
+        message.setColor("#9B59B6")
+        message.setField("Nome", member.user.tag)
+        message.addField("ID", member.user.id)
+        message.addField("Criado em", member.user.createdAt);
+        
   
-     
     
-        //message.reply(member.user.avatarURL);
+        
         
 
         return;  }
