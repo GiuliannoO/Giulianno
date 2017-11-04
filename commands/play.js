@@ -6,7 +6,7 @@ npm install node-opus*/
 
 //Radio Moe : https://listen.moe/stream
 //Radio AnimeNfo : http://momori.animenfo.com:8000/;?.mp3
-//Radio Initial D : http://go2id.net:9001/index.html?sid=1
+//Radio Initial D : http://go2id.net:9001/home.html?sid=1
 
 //id canal musica = 375842517566095360
 
@@ -21,7 +21,7 @@ module.exports = (client, message, args) => {
               channel.join()
                 .then(connection => { 
                   message.reply('Eu conectei no canal com sucesso!');
-                  connection.playArbitraryInput('http://go2id.net:9001/index.html?sid=1');
+                  connection.playArbitraryInput('http://go2id.net:9001/home.html?sid=1');
                   //connection.playFile('./radio/anime01.pls');
                 })
                 .catch(console.log);
