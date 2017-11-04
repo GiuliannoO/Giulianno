@@ -15,13 +15,17 @@ module.exports = (client, message, args) => {
       "\n"+
       "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+
       "\n"+
-      "● **Cálculos**  -  **!soma num num** , **!sub num num** , **!mult num num** , **!div num num**.\n"+
+      "● **Cálculos**\n"+
+      "  **!soma num num**  -  Somar dois números.\n"+
+      "  **!sub num num**  -  Subtrair dois números.\n"+
+      "  **!mult num num**  -  Multiplicar dois números.\n"+
+      "  **!div num num**\n  -  Dividir dois números.\n"+
       "\n"+
-      "● **Música**\n"+
-      "      ● **!playinitiald**  -  Escutar a rádio Initial D World.\n"+
-      "      ● **!playanimenfo**  -  Escutar a rádio AnimeNfo.\n"+
-      "      ● **!playmoe**  -  Escutar a rádio anime Moe.\n"+
-      "● **!stop**  -  Desligar a rádio.\n"+
+      "● Escutar música 24/7 no canal de voz **Música**\n"+
+      "  **!playinitiald**  -  Escutar a rádio Initial D World.\n"+
+      "  **!playanimenfo**  -  Escutar a rádio AnimeNfo.\n"+
+      "  **!playmoe**  -  Escutar a rádio anime Moe.\n"+
+      "  **!stop**  -  Desligar a rádio.\n"+
       "*( Volume - Click direito no BoT e ajuste o volume do usuário. )*\n"+
       "\n"+
       "● **!limpar**  -  Deleta __**permanentemente**__ todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
