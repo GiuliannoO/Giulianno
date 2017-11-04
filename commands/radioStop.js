@@ -5,7 +5,7 @@ module.exports = (client, message, args) => {
             //if (message.member.voiceChannel) {
                 if (channel) {
               
-                    channel.leaveVoiceChannel()
+                    channel.leave();
                     message.reply('A rádio foi desligada! Para ligar novamente selecione uma rádio!');
               } /*else {
               message.reply('Você precisa estar em um canal de voz para digitar o comando!');
