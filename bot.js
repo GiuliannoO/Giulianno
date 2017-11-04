@@ -44,8 +44,6 @@ client.on('ready', () => require('./events/ready.js')(client));
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
-client.on('entrou', function(entrou) { client.sendMessage(entrou, "O BoT está online!"); });
-
 
 
 
