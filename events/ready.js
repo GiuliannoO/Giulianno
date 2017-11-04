@@ -1,9 +1,8 @@
 //const Discord = require('discord.js');
 
-module.exports = (client, message) => {
+module.exports = (client) => {
   client.log('Log', `Entrou como ${client.user.tag}!`);
   client.user.setPresence({ game: { name: 'Digite !ajuda', type: 0 } });
-  message.channel.sendMessage("O BoT está online!");
   
   /*let channel = client.channels.get('372892589252411393');
   //ou via nome
