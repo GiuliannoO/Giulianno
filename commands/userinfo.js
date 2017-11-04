@@ -28,8 +28,8 @@ module.exports = (client, message, args) => {
     }else{
     
       const embed = new Discord.RichEmbed()
-      .setAuthor(member.user.username)
-      .setDescription("Informação do usuário!")
+      //.setAuthor(member.user.username)
+      //.setDescription("Informação do usuário!")
       .setColor("#9B59B6")
       .setField("Nome", member.user.tag)
       .addField("ID", member.user.id)
