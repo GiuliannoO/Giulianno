@@ -8,5 +8,5 @@ module.exports = (client, message, args) => {
     .addField('Members', `${message.guild.members.filter(member => member.user.bot).size} bots of ${message.guild.memberCount} members.`)
     .addField('Channels', `${message.guild.channels.filter(chan => chan.type === 'voice').size} voice / ${message.guild.channels.filter(chan => chan.type === 'text').size} text`)
     .addField('Roles', message.guild.roles.map(role => role.name).join(', '));
-  message.channel.send({ embed });*/
+  message.channel.send({ embed })*/
 };
