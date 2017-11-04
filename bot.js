@@ -41,7 +41,7 @@ client.commands.set('serverinfo', require('./commands/serverinfo.js'));
 
 client.on('message', message => require('./events/message.js')(client, message));
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
-client.on('ready', () => require('./events/ready.js')(client));
+client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("O BoT está online!"); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
