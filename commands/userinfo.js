@@ -8,6 +8,7 @@ module.exports = (client, message, args) => {
     
     let embed = new DynamicsCompressorNode.RichEmbed()
     
+        message.reply(message.author.avatarURL);
         .setAuthor(member.user.username)
         .setDescription("Informação do usuário!")
         .setColor("#9B59B6")
@@ -18,6 +19,19 @@ module.exports = (client, message, args) => {
         message.channel.sendEmbed(embed);
 
         return;  }*/
+
+
+        let member = message.mentions.members.first();
+    if(!member){
+      return message.reply("Por favor digite um nome válido!");
+
+    }else{
+    
+    
+        message.reply(member.user.avatarURL);
+        
+
+        return;  }
             
 
 };
