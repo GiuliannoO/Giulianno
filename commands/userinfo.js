@@ -27,8 +27,19 @@ module.exports = (client, message, args) => {
 
     }else{
     
+      const embed = new Discord.RichEmbed()
+      .setAuthor(member.user.username)
+      .setDescription("Informação do usuário!")
+      .setColor("#9B59B6")
+      .setField("Nome", member.user.tag)
+      .addField("ID", member.user.id)
+      .addField("Criado em", member.user.createdAt);
+
+      message.channel.send({embed});
+  
+     
     
-        message.reply(member.user.avatarURL);
+        //message.reply(member.user.avatarURL);
         
 
         return;  }
