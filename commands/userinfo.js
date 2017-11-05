@@ -21,12 +21,13 @@ module.exports = (client, message, args) => {
         //url: "http://google.com",
         description: "Informações do usuário.",
         fields: [{
-            name: `Nome: ${message.author.username}.`//,
-            //value: "They can have different fields with small headlines."
+            name: `Nome: ${message.author.username}.`,
+            value: "They can have different fields with small headlines."
         },
           {
-            name: `ID: ${message.author.id}.`//,
-            //value: "You can put [masked links](http://google.com) inside of rich embeds."
+            name: `ID: ${message.author.id}.`,
+            value: "You can put [masked links](http://google.com) inside of rich embeds."
+            //value: "[link](http://google.com)."
           }
         ],
         timestamp: new Date(),
