@@ -1,15 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-
+//
 
 client.config = require('./config.json');
 client.log = require('./functions/log.js');
 
-
+//
 
 client.commands = new Discord.Collection();
 
+//
 
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
@@ -34,10 +35,7 @@ client.commands.set('stop', require('./commands/radioStop.js'));
 client.commands.set('userinfo', require('./commands/userinfo.js'));
 client.commands.set('serverinfo', require('./commands/serverinfo.js'));
 
-
-
 //
-
 
 client.on('message', message => require('./events/message.js')(client, message));
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
@@ -45,9 +43,7 @@ client.on('ready', () => { var channel = client.channels.get('167715230082662401
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
-
-
-
+//
 
 //bot.login(config.token)
 client.login(process.env.BOT_TOKEN);

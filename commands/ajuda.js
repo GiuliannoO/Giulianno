@@ -1,11 +1,15 @@
+//"-------------------------------------------------------------------------------------------------\n"+
+      
+
 module.exports = (client, message, args) => {
 
     
     message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
-      "description": "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
-      //"-------------------------------------------------------------------------------------------------\n"+
+      "description": "● Tip **num**  =  Número.\n"+
+      "­\n"+
+      "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
       "­\n"+
       "● **!ping**  -  Mostra a sua API latencia e latencia atual.\n"+
       "\n"+
@@ -32,7 +36,7 @@ module.exports = (client, message, args) => {
       "    **!stop**  -  Desligar a rádio.\n"+
       "*( Volume - Click direito no BoT e ajuste o volume do usuário. )*\n"+
       "\n"+
-      "● **!limpar**  -  Deleta __**permanentemente**__ todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
+      "● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
       "\n"+
       "● *( Admin+ )* **!falar xx**  -  Comandos de fala especial.\n"+
       "\n"+
