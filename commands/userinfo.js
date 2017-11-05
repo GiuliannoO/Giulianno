@@ -20,7 +20,6 @@ module.exports = (client, message, args) =>
             { name: `Apelido escolhido: `, value: `${member.user.discriminator}` },
             { name: `Número do ID: `, value: `${member.user.id}` },
             { name: `Conta verificada: `, value: member.user.verified },
-            { name: `Conta Premium: `, value: member.user.premium === 'boolean' ? member.user.premium : null },
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
           timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
