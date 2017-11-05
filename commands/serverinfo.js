@@ -9,7 +9,4 @@ module.exports = (client, message, args) => {
     .addField('Channels', `${message.guild.channels.filter(chan => chan.type === 'voice').size} voice / ${message.guild.channels.filter(chan => chan.type === 'text').size} text`)
     .addField('Roles', message.guild.roles.map(role => role.name).join(', '));
   message.channel.send({ embed })*/
-
-  embed.add_field(`${message.author.tag}`);
-
 };
