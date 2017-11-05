@@ -38,7 +38,7 @@ module.exports = (client, message, args) => {
       "    **!stop**  -  Desligar a rádio.\n"+
       "*( Volume - Click direito no BoT e ajuste o volume do usuário. | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio online + port. Ex: http:// site.com:8888/ )*\n"+
       "\n"+
-      "● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. Caso alguma msg ainda continuar na tela: Isso é um bug do cliente Discord. Fechando e re-abrindo o cliente você verá que a msg foi apagada. )*\n"+
+      "● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. Caso alguma msg ainda continuar na tela: Isso é um bug do cliente Discord. Fechando e re-abrindo o cliente você verá que a msg foi apagada. Para quem usa o Discord no celular/telemovel em alguns casos irá precisar apagar o cache nas config do aparelho. )*\n"+
       "\n"+
       "● *( Admin+ )* **!falar xx**  -  Comandos de fala especial.\n"+
       "\n"+
