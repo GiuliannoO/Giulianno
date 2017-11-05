@@ -35,7 +35,7 @@ client.commands.set('playanimenfo', require('./commands/radioPlayAnimeNfo.js'));
 client.commands.set('stop', require('./commands/radioStop.js'));
 client.commands.set('userinfo', require('./commands/userinfo.js'));
 client.commands.set('serverinfo', require('./commands/serverinfo.js'));
-client.commands.set('tempo', require('./commands/tempo.js'));
+//client.commands.set('tempo', require('./commands/tempo.js'));
 
 //
 

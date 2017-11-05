@@ -1,10 +1,10 @@
 // Variables
-var current = result[0].current; // This is a variable for the current part of the JSON output
-var location = result[0].location; // This is a variable for the location part of the JSON output
+//var current = result[0].current; // This is a variable for the current part of the JSON output
+//var location = result[0].location; // This is a variable for the location part of the JSON output
 
 module.exports = (client, message, args) => {
     
-    weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { // Make sure you get that args.join part, since it adds everything after weather.
+    /*weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { // Make sure you get that args.join part, since it adds everything after weather.
         if (err) message.channel.send(err);
     
         // We also want them to know if a place they enter is invalid.
@@ -13,9 +13,31 @@ module.exports = (client, message, args) => {
             return; // This exits the code so the rest doesn't run.
         }
         else
-        {    
-        
-        // Let's use an embed for this.
+        {  
+            message.channel.send({embed:{
+                color: 3447003,
+                author: {  name: current.observationpoint, icon_url: current.imageUrl },
+                title: `Informações do tempo.`, description: `${current.skytext}`,
+                fields: 
+                [
+                  { name: `Fuso horário: `, value: `UTC${location.timezone}` },
+                  { name: `Tipo de grau: `, value: location.degreetype },
+                  { name: `Temperatura: `, value: `${current.temperature} Graus` },
+                  { name: `Parece: `, value: `${current.feelslike} Graus` },
+                  { name: `Vento: `, value: current.winddisplay },
+                  { name: `Humidade: `, value: `${current.humidity}%` }
+                ],
+                timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
+            }
+          })
+        }
+    }); */
+};
+
+
+
+
+// Let's use an embed for this.
         /*const embed = new Discord.RichEmbed()
             .setDescription(`**${current.skytext}**`) // This is the text of what the sky looks like, remember you can find all of this on the weather-js npm page.
             .setAuthor(`Weather for ${current.observationpoint}`) // This shows the current location of the weather.
@@ -30,24 +52,3 @@ module.exports = (client, message, args) => {
     
             // Now, let's display it when called
             message.channel.send({embed});*/
-
-
-            message.channel.send({embed:{
-                color: 3447003,
-                author: {  name: current.observationpoint, icon_url: current.imageUrl },
-                title: `Informações do tempo.`,  /*url: "http://google.com",*/ description: `${current.skytext}`,
-                fields: 
-                [
-                  { name: `Fuso horário: `, value: `UTC${location.timezone}` /*value: "[link](http://google.com)."*/ },
-                  { name: `Tipo de grau: `, value: location.degreetype },
-                  { name: `Temperatura: `, value: `${current.temperature} Graus` },
-                  { name: `Parece: `, value: `${current.feelslike} Graus` },
-                  { name: `Vento: `, value: current.winddisplay },
-                  { name: `Humidade: `, value: `${current.humidity}%` }
-                ],
-                timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
-            }
-          })
-        }
-    }); 
-};
