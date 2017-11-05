@@ -22,11 +22,11 @@ module.exports = (client, message, args) => {
         description: "Informações do usuário.",
         fields: [{
             name: `Nome: ${message.author.username}.`,
-            value: " "
+            value: "asdf "
         },
           {
             name: `ID: ${message.author.id}.`,
-            value: " "
+            value: "asdf "
             //value: "[link](http://google.com)."
           }
         ],
