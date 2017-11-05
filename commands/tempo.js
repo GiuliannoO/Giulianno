@@ -11,7 +11,9 @@ module.exports = (client, message, args) => {
         if (result.length === 0) {
             message.channel.send('**Digite uma localidade válida.**') // This tells them in chat that the place they entered is invalid.
             return; // This exits the code so the rest doesn't run.
-        }    
+        }
+        else
+        {    
         
         // Let's use an embed for this.
         /*const embed = new Discord.RichEmbed()
@@ -46,5 +48,6 @@ module.exports = (client, message, args) => {
                 timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
             }
           });
+        }
     }); 
 };
