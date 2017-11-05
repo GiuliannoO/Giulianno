@@ -1,10 +1,6 @@
 const Discord = require('discord.js');
 const weather = require('weather-js');
 
-// Variables
-var current = result[0].current; // This is a variable for the current part of the JSON output
-var location = result[0].location; // This is a variable for the location part of the JSON output
-
 module.exports = (client, message, args) => {
     
     weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { // Make sure you get that args.join part, since it adds everything after weather.
@@ -17,6 +13,10 @@ module.exports = (client, message, args) => {
         }
         else
         {  
+            // Variables
+            var current = result[0].current; // This is a variable for the current part of the JSON output
+            var location = result[0].location; // This is a variable for the location part of the JSON output
+
             message.channel.send({embed:{
                 color: 3447003,
                 author: {  name: current.observationpoint, icon_url: current.imageUrl },
