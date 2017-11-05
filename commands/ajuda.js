@@ -17,6 +17,8 @@ module.exports = (client, message, args) => {
       "\n"+
       "● **!userinfo @nome**  -  Mostra as informações do usuário escolhido.\n"+
       "\n"+
+      "● **!serverinfo**  -  Mostra as informações do servidor.\n"+
+      "\n"+
       "● **Cálculos matemáticos**\n"+
       "    **!soma num num**  -  Somar dois números.\n"+
       "    **!sub num num**  -  Subtrair dois números.\n"+
