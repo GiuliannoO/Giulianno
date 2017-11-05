@@ -16,7 +16,7 @@ module.exports = (client, message, args) =>
           title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${member.user.tag}`,
           fields: 
           [
-            { name: `Nome: `, value: `${member.user.username}.` /*value: "[link](http://google.com)."*/ },
+            { name: `Nome: `, value: `${member.user.username}` /*value: "[link](http://google.com)."*/ },
             { name: `Número do ID: `, value: `${member.user.id}` },
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
