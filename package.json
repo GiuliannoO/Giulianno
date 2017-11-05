@@ -10,7 +10,6 @@
     "discord.js": "^11.2.1",
     "ffmpeg-binaries": "^3.2.2-3",
     "opusscript": "0.0.4",
-    //"prism-media": "github:hydrabolt/prism-media",
     "weather-js": "^2.0.0"
   }
 }
