@@ -10,6 +10,6 @@ module.exports = (client, message, args) => {
     .addField('Roles', message.guild.roles.map(role => role.name).join(', '));
   message.channel.send({ embed })*/
 
-  embed.setThumbnail(message.guild.iconURL());
+  embed.add_field(`${message.author.tag}`);
 
 };
