@@ -15,6 +15,8 @@ module.exports = (client, message, args) => {
       "\n"+
       "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+
       "\n"+
+      "● **!userinfo @nome**  -  Mostra as informações do usuário escolhido.\n"+
+      "\n"+
       "● **Cálculos matemáticos**\n"+
       "    **!soma num num**  -  Somar dois números.\n"+
       "    **!sub num num**  -  Subtrair dois números.\n"+
