@@ -8,7 +8,7 @@ module.exports = (client, message, args) => {
         if (err) message.channel.send(err);
     
         // We also want them to know if a place they enter is invalid.
-        if (result.length === 0) {
+        if (result === undefined || result.length === 0) {
             message.channel.send('**Digite uma localidade válida.**') // This tells them in chat that the place they entered is invalid.
             return; // This exits the code so the rest doesn't run.
         }
