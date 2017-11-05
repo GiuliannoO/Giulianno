@@ -20,9 +20,8 @@ module.exports = (client, message, args) => {
         title: `Informações do usuário ${message.author.tag}.`,
         //url: "http://google.com",
         description: "Informações do usuário.",
-        name: `Nome: ${message.author.username}.`,
         fields: [{
-            name: `Nome: ${message.author.username}.`,
+            name: `Nome: ${message.author.username}.` + `auheuaea`,
             value: "asdf "
         },
           {
