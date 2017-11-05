@@ -15,6 +15,8 @@ module.exports = (client, message, args) => {
       "\n"+
       "● **!roll**  -  Rolar um dado comum de 6 lados.\n"+
       "\n"+
+      "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida. *( Ex: !tempo goiania )*\n"+
+      "\n"+
       "● **Para salvar coisas importantes**  -  Use o canal de chat **#salvos**. *( O canal **#salvos** está configurado para não deletar msgs. )*\n"+
       "\n"+
       "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+

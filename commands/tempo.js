@@ -1,3 +1,6 @@
+const Discord = require('discord.js');
+const weather = require('weather-js');
+
 module.exports = (client, message, args) => {
     
     weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
