@@ -17,6 +17,9 @@ Radio Moe : https://listen.moe/stream
 Radio AnimeNfo : http://momori.animenfo.com:8000/;?.mp3
 Radio Initial D : http://go2id.net:9001/;?.mp3
 ------------------------------------
+Bot falar mensagens TTS
+bot.sendMessage({ to: "userID/channelID", message: "Hello World", tts: true });
+------------------------------------
 ->git bash
 .gitignore
 gitstatus
