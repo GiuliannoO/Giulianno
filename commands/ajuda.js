@@ -7,7 +7,7 @@ module.exports = (client, message, args) => {
     message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
-      "description": "● Tip **num**  =  Número.\n"+
+      "description": "● Tip **num**  =  Número. | *( O api do site que o BoT se comunica está em inglês, então o retorno de algumas coisas será em inglês. )*\n"+
       "­\n"+
       "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
       "­\n"+
@@ -15,7 +15,7 @@ module.exports = (client, message, args) => {
       "\n"+
       "● **!roll**  -  Rolar um dado comum de 6 lados.\n"+
       "\n"+
-      "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida. *( Ex: !tempo goiania )* *( O api do site está em inglês, então o retorno será em inglês. )*\n"+
+      "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida. *( Ex: !tempo goiania )*\n"+
       "\n"+
       "● **Para salvar coisas importantes**  -  Use o canal de chat **#salvos**. *( O canal **#salvos** está configurado para não deletar msgs. )*\n"+
       "\n"+
