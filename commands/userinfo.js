@@ -17,7 +17,7 @@ module.exports = (client, message, args) => {
           name: client.user.username,
           icon_url: client.user.avatarURL
         },
-        //title: `Informações do usuário ${message.author.tag}.`,
+        title: `Informações do usuário ${message.author.tag}.`,
         //url: "http://google.com",
         description: "Informações do usuário ${message.author.tag}.",
         fields: [{
