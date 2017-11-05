@@ -19,7 +19,8 @@ module.exports = (client, message, args) =>
             { name: `Nome cadastrado: `, value: `${member.user.username}` /*value: "[link](http://google.com)."*/ },
             { name: `Número do ID: `, value: `${member.user.id}` },
             { name: `Conta verificada: `, value: `${member.user.verified}` },
-            { name: `Descrição do profile: `, value: `${member.user.notes}` },
+            { name: `Descrição do profile: `, value: `${client.user.notes}` },
+            { name: `Mobile: `, value: `${member.user.mobile}` },            
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
           timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
