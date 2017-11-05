@@ -1,10 +1,12 @@
+const weather = require('weather-js');
+
 // Variables
-//var current = result[0].current; // This is a variable for the current part of the JSON output
-//var location = result[0].location; // This is a variable for the location part of the JSON output
+var current = result[0].current; // This is a variable for the current part of the JSON output
+var location = result[0].location; // This is a variable for the location part of the JSON output
 
 module.exports = (client, message, args) => {
     
-    /*weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { // Make sure you get that args.join part, since it adds everything after weather.
+    weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { // Make sure you get that args.join part, since it adds everything after weather.
         if (err) message.channel.send(err);
     
         // We also want them to know if a place they enter is invalid.
@@ -29,9 +31,9 @@ module.exports = (client, message, args) => {
                 ],
                 timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
             }
-          })
+          });
         }
-    }); */
+    })
 };
 
 
