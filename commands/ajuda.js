@@ -34,7 +34,7 @@ module.exports = (client, message, args) => {
       "    **!playanimenfo**  -  Escutar a rádio AnimeNfo.\n"+
       "    **!playmoe**  -  Escutar a rádio anime Moe.\n"+
       "    **!stop**  -  Desligar a rádio.\n"+
-      "*( Volume - Click direito no BoT e ajuste o volume do usuário. )*\n"+
+      "*( Volume - Click direito no BoT e ajuste o volume do usuário. | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio + port. Ex: http://site.com:8888/ )*\n"+
       "\n"+
       "● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. Caso alguma msg ainda continuar na tela: Isso é um bug do cliente Discord. Fechando e re-abrindo o cliente você verá que a msg foi apagada. )*\n"+
       "\n"+
