@@ -13,22 +13,12 @@ module.exports = (client, message, args) => {
 
       message.channel.send({embed: {
         color: 3447003,
-        author: {
-          name: client.user.username,
-          icon_url: client.user.avatarURL
-        },
-        title: `Informações do usuário ${message.author.tag}.`,
-        //url: "http://google.com",
-        description: "Informações do usuário.",
-        fields: [{
-            name: "**Nome:** ",
-            value: `${message.author.username}.`
-        },
-          {
-            name: `ID: ${message.author.id}.`,
-            value: "asdf "
-            //value: "[link](http://google.com)."
-          }
+        author: {  name: client.user.username, icon_url: client.user.avatarURL },
+        title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${message.author.tag}`,        
+        fields: [
+          { name: `Nome: `, value: `${message.author.username}.` /*value: "[link](http://google.com)."*/ },
+          { name: `Número do ID: `, value: `${message.author.id}` },
+          { name: `Data de criação: `, value: `${message.author.createdAt}` }
         ],
         timestamp: new Date(),
         footer: {
