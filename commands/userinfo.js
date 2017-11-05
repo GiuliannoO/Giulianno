@@ -17,17 +17,17 @@ module.exports = (client, message, args) => {
           name: client.user.username,
           icon_url: client.user.avatarURL
         },
-        title: `Informações do usuário`,
-        url: "http://google.com",
-        description: "This is a test embed to showcase what they look like and what they can do.",
+        //title: `Informações do usuário ${message.author.tag}.`,
+        //url: "http://google.com",
+        description: "Informações do usuário ${message.author.tag}.",
         fields: [{
-            name: `Nome: ${message.author.tag}`,
-            value: "They can have different fields with small headlines."
-        }/*,
+            name: `Nome: ${message.author.username}.`//,
+            //value: "They can have different fields with small headlines."
+        },
           {
-            name: "Masked links",
-            value: "You can put [masked links](http://google.com) inside of rich embeds."
-          }*/
+            name: `ID: ${message.author.id}.`//,
+            //value: "You can put [masked links](http://google.com) inside of rich embeds."
+          }
         ],
         timestamp: new Date(),
         footer: {
