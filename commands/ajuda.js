@@ -2,7 +2,6 @@
       
 
 module.exports = (client, message, args) => {
-
     
     message.channel.send({embed: {
       color: 3447003,
