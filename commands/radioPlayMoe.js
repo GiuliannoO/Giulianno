@@ -7,7 +7,7 @@ module.exports = (client, message, args) => {
       channel.join()
       .then(connection => 
       { 
-        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio Moe!');
+        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **anime Moe**!');
         connection.playArbitraryInput('https://listen.moe/stream');
         //connection.playFile('./radio/anime01.pls'); 
       })
