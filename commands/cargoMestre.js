@@ -5,4 +5,5 @@ module.exports = (client, message, args) => {
     let membersWithRole = message.guild.roles.get(myRole).members;
     //console.log(`Got ${membersWithRole.size} members with that role.`);  
     message.reply(`Got ${membersWithRole.size} members with that role.`);
+    
 };
