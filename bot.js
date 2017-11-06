@@ -28,6 +28,7 @@ client.commands.set('sub', require('./commands/calcularSub.js'));
 client.commands.set('mult', require('./commands/calcularMult.js'));
 client.commands.set('div', require('./commands/calcularDiv.js'));
 client.commands.set('fsalvos', require('./commands/canalSalvos.js'));
+client.commands.set('fprincipal', require('./commands/canalPrincipal.js'));
 client.commands.set('resp', require('./commands/resp.js'));
 client.commands.set('playinitiald', require('./commands/radioPlayInitialD.js'));
 client.commands.set('playmoe', require('./commands/radioPlayMoe.js'));
