@@ -10,6 +10,7 @@ module.exports = (client, message, args) => {
       [
         { name: `Nome: `, value: `${message.guild.name}` /*value: "[link](http://google.com)."*/ },
         { name: `Número do ID: `, value: `${message.guild.id}` },
+        { name: `Localização: `, value: `${message.guild.region}` },
         { name: `Data de criação: `, value: `${message.guild.createdAt}` },
         { name: `Dono: `, value: `${message.guild.owner.user.tag}` },
         { name: `Número do ID do dono: `, value: `${message.guild.owner.user.id}` },
