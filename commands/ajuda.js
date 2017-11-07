@@ -9,9 +9,7 @@ module.exports = (client, message, args) => {
       message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
-      "description": "● Tip **num** = número. | Os comandos/Mensagens enviadas para/pelo BoT serão apagados automaticamente depois de 1 minuto.\n"+
-      "­\n"+
-      "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
+      "description": "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
       "­\n"+
       "● **!ping**  -  Mostra a sua API latencia e latencia atual.\n"+
       "\n"+
