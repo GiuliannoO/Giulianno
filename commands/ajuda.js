@@ -40,8 +40,8 @@ module.exports = (client, message, args) => {
       "    **!stop**  -  Desligar a rádio.\n"+
       "*( Volume - Click direito no BoT e ajuste o volume do usuário. | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio online + port. Ex: http:// site.com:8888/ )*\n"+
       "\n"+
-      "● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
-      "\n"+
+      //"● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
+      //"\n"+
       "● *( Admin+ )* **!falar xx**  -  Comandos de fala especial.\n"+
       "\n"+
       "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"
@@ -49,8 +49,6 @@ module.exports = (client, message, args) => {
     }}).then(msg => {
       msg.delete(60000)
     });
-
-  //}, 5000);
 
     message.delete();    
     
