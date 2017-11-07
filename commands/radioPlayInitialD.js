@@ -14,4 +14,5 @@ module.exports = (client, message, args) => {
     .catch(console.log);
     } 
     /*else { message.reply('Você precisa estar em um canal de voz para digitar o comando!');  }  */
+    message.delete();
 };
