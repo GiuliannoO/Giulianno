@@ -6,7 +6,7 @@ module.exports = (client, message, args) => {
     message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
-      "description": "● Tip **num**  =  Número. | *( O api do site que o BoT se comunica está em inglês, então o retorno de algumas coisas será em inglês. )*\n"+
+      "description": "● Tip **num** = número.\n"+
       "­\n"+
       "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
       "­\n"+
@@ -16,7 +16,7 @@ module.exports = (client, message, args) => {
       "\n"+
       "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida. *( Ex: !tempo goiania )*\n"+
       "\n"+
-      "● **Para salvar coisas importantes**  -  Use o canal de chat **#salvos**. *( O canal **#salvos** está configurado para não deletar msgs. )*\n"+
+      "● **Para salvar links ou msgs importantes**  -  Use o canal de chat **#salvos**.\n"+
       "\n"+
       "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+
       "\n"+
@@ -37,7 +37,7 @@ module.exports = (client, message, args) => {
       "    **!stop**  -  Desligar a rádio.\n"+
       "*( Volume - Click direito no BoT e ajuste o volume do usuário. | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio online + port. Ex: http:// site.com:8888/ )*\n"+
       "\n"+
-      "● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. Caso alguma msg ainda continuar na tela: Isso é um bug do cliente Discord. Fechando e re-abrindo o cliente você verá que a msg foi apagada. Para quem usa o Discord no celular/telemovel em alguns casos irá precisar apagar o cache nas config do aparelho. )*\n"+
+      "● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
       "\n"+
       "● *( Admin+ )* **!falar xx**  -  Comandos de fala especial.\n"+
       "\n"+
