@@ -18,7 +18,7 @@ module.exports = (client, message, args) =>
           fields: 
           [
             { name: `Nome cadastrado: `, value: `${member.user.username}` /*value: "[link](http://google.com)."*/ },
-            { name: `Apelido usado: `, value: message.channel.server.detailsOf(member.user).nick },
+            { name: `Apelido usado: `, value: `${member.user.nick}` },
             { name: `Número do ID: `, value: `${member.user.id}` },
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
