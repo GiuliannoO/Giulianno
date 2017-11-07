@@ -7,7 +7,6 @@ module.exports = (client, message, args) => {
     }
     else
     {
-        message.channel.bulkDelete(messages.user); 
-        message.delete();
+        message.user.delete();
     }
 };
