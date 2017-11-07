@@ -4,5 +4,5 @@ module.exports = (client, message, args) => {
     //message.reply(`Pong! **Latencia** = ${msg.createdTimestamp - message.createdTimestamp}ms. **API Latencia** =  ${Math.round(client.ping)}ms`); 
     //}) ;
       
-    message.reply(client.ping);
+    message.reply(`${Math.round(client.ping)}ms`);
 };
