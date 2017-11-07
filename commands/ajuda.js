@@ -9,7 +9,7 @@ module.exports = (client, message, args) => {
       message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
-      "description": "● Tip **num** = número. | As msgs enviadas pelo BoT serão deletadas depois de 1 minuto.\n"+
+      "description": "● Tip **num** = número. | Os comandos/Mensagens enviadas para/pelo BoT serão apagados automaticamente depois de 1 minuto.\n"+
       "­\n"+
       "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n"+
       "­\n"+
@@ -19,7 +19,7 @@ module.exports = (client, message, args) => {
       "\n"+
       "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida. *( Ex: !tempo goiania )*\n"+
       "\n"+
-      "● **Para salvar links ou msgs importantes**  -  Use o canal de chat **#salvos**.\n"+
+      "● **Para salvar links ou mensagens importantes**  -  Use o canal de chat **#salvos**.\n"+
       "\n"+
       "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n"+
       "\n"+
@@ -42,8 +42,8 @@ module.exports = (client, message, args) => {
       "\n"+
       //"● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n"+
       //"\n"+
-      "● *( Admin+ )* **!falar xx**  -  Comandos de fala especial.\n"+
-      "\n"+
+      //"● *( Admin+ )* **!falar xx**  -  Comandos de fala especial.\n"+
+      //"\n"+
       "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"
 
     }}).then(msg => {
