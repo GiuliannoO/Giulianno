@@ -6,11 +6,7 @@
 
 module.exports = (client, message, args) => {
 
-  //setTimeout(() => {
-    //message.channel.send("stuff");
-
-    
-      client.channels.get('377290228207190018').send({embed: {
+      message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
       "description": "● Tip **num** = número.\n"+
@@ -51,7 +47,7 @@ module.exports = (client, message, args) => {
       "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"
 
     }}).then(msg => {
-      msg.delete(10000)
+      msg.delete(60000)
     });
 
   //}, 5000);
