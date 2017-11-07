@@ -22,5 +22,8 @@ module.exports = (client, message, args) => {
       ],
       timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
     }
+  }).then(msg => {
+    msg.delete(60000)
   });
+  message.delete();
 };

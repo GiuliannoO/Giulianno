@@ -7,7 +7,9 @@ module.exports = (client, message, args) => {
       channel.join()
       .then(connection => 
       { 
-        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **AnimeNfo**!');
+        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **AnimeNfo**!').then(msg => {
+          msg.delete(60000)
+        });
         connection.playArbitraryInput('http://momori.animenfo.com:8000/;?.mp3');
         //connection.playFile('./radio/anime01.pls');
       })
