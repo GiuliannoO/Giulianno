@@ -46,6 +46,7 @@ module.exports = (client, message, args) => {
       "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"
 
     }});
-    
+
+    message.delete();    
     
   };
