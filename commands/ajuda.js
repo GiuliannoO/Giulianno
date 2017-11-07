@@ -1,9 +1,11 @@
 //"-------------------------------------------------------------------------------------------------\n"+
-      
+//377290228207190018 id canal bot
+//client.channels.get('').
+//message.channel.send(
 
 module.exports = (client, message, args) => {
     
-    message.channel.send({embed: {
+      client.channels.get('377290228207190018').send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
       "description": "● Tip **num** = número.\n"+
