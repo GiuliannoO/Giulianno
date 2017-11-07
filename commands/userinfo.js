@@ -10,6 +10,7 @@ module.exports = (client, message, args) =>
     //member.user. (com busca)
     //message.author. (sem busca)
     //client.user. (bot info)
+    //message.channel.server.detailsOf(message.author).nick
     message.channel.send({embed:{
           color: 3447003,
           author: {  name: member.user.username, icon_url: member.user.avatarURL },
@@ -17,7 +18,7 @@ module.exports = (client, message, args) =>
           fields: 
           [
             { name: `Nome cadastrado: `, value: `${member.user.username}` /*value: "[link](http://google.com)."*/ },
-            { name: `Apelido usado: `, value: `${client.nickname }` },
+            { name: `Apelido usado: `, value: message.channel.server.detailsOf(message.author).nick },
             { name: `Número do ID: `, value: `${member.user.id}` },
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
