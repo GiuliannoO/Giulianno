@@ -3,11 +3,11 @@ module.exports = (client, message, args) => {
     let member = message.mentions.members.first();
     if(!member)
     {
-      return message.reply("Por favor, informe um nome correto!");
+        return message.reply("Por favor, informe um nome correto!");
     }
     else
     {
-     message.channel.bulkDelete(messages.user.member); 
-     message.delete();
+        message.channel.bulkDelete(messages.user); 
+        message.delete();
     }
 };
