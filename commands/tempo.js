@@ -37,7 +37,7 @@ module.exports = (client, message, args) => {
           });
         }
     })
-    message.delete();
+    message.delete(60000);
 };
 
 

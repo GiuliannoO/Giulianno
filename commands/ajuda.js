@@ -50,6 +50,6 @@ module.exports = (client, message, args) => {
       msg.delete(60000)
     });
 
-    message.delete();    
+    message.delete(60000);    
     
   };

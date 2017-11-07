@@ -3,5 +3,5 @@ module.exports = (client, message, args) => {
     client.channels.get('167715230082662401').sendMessage(args.join(" ")).then(msg => {
         msg.delete(60000)
       });
-    message.delete();
+    message.delete(60000);
 };

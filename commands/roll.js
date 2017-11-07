@@ -3,5 +3,5 @@ module.exports = (client, message, args) => {
      message.reply("Você tirou " + roll).then(msg => {
         msg.delete(60000)
       });
-      message.delete(); 
+      message.delete(60000); 
 };
