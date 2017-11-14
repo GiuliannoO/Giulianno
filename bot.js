@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-var fs = require('fs');
+const fs = require('fs');
 
 //
 
-var userData = JSON.parse(fs.readFileSync('./Storage/userData.json', 'utf8'));
+let userData = JSON.parse(fs.readFileSync('./Storage/userData.json', 'utf8'));
 
 //
 
@@ -47,11 +47,10 @@ client.commands.set('afk', require('./commands/joinAway.js'));
 //
 
 client.on('message', message => {
-var sender = message.author;
-if(!userData[sender.id]) userData[sender.id] = {
+if(!userData[message.author.id]) userData[message.author.id] = {
     messagesSent: 0
 }
-userData[sender.id].messagesSent++;
+userData[message.author.id].messagesSent++;
 fs.writeFile('./Storage/userData.json', JSON.stringify(userData),(err) => {
 if (err) console.error(err); });
 require('./events/message.js')(client, message)});
