@@ -45,7 +45,7 @@ client.commands.set('xp', require('./commands/xp.js'));
 
 //mysql Heroku connect database
 var con;
-if(process.env.JAWSDB_URL) { con = mysql.createConnection(process.env.DATABASE_URL); }
+if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); }
 
 //
 
