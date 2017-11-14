@@ -1,11 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-const fs = require('fs');
-
-//
-
-let userData = JSON.parse(fs.readFileSync('./Storage/userData.json', 'utf8'));
 
 //
 
@@ -46,17 +41,7 @@ client.commands.set('afk', require('./commands/joinAway.js'));
 
 //
 
-client.on('message', message => {
-if(!userData[message.author.id]) userData[message.author.id] = {
-    messagesSent: 0
-}
-userData[message.author.id].messagesSent++;
-fs.writeFile('./Storage/userData.json', JSON.stringify(userData),(err) => {
-if (err) console.error(err); });
-require('./events/message.js')(client, message)});
-
-//
-
+client.on('message', message => require('./events/message.js')(client, message));
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
@@ -64,14 +49,14 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
 
 //
 
-client.on('voiceStateUpdate', (oldMember, newMember) => {
+/*client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel
     let oldUserChannel = oldMember.voiceChannel  
     if(oldUserChannel === undefined && newUserChannel !== undefined) {
        // usuario entra no canal BOT manda MSG
     } else if(newUserChannel === undefined){
       // usuario sai no canal BOT manda MSG
-    }});
+    }});*/
 
 //
 
