@@ -2,8 +2,12 @@
 
 module.exports = (client, message, args) => { 
 
-    //await client.send_message(message.channel, 'Moving');
-    await client.move_member(message.author, client.get_channel('167715581150101504'));    
+    let channel = client.channels.get('375842517566095360');
+    
+    setVoiceChannel(channel) 
+    {
+        return client.edit({ channel });
+    }  
 
         
 };
