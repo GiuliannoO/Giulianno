@@ -4,9 +4,14 @@ module.exports = (client, message, args) => {
     let channel = client.channels.get('167715581150101504');
     
     
-    guild.setVoiceChannel(channel)
-    message.channel.send(`O usuário ${message.author.username} está Away!`)
-    
+    if (!message.mentions.users.first()) {
+        message.channel.send("You have to tag someone my dude.")
+        
+    }
+    var member = (message.mentions.users.first())
+    guild.member(member).setVoiceChannel(channel)
+    message.channel.send(":right_facing_fist: " + member)
+
     
     
 };
