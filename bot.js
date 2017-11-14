@@ -49,25 +49,7 @@ if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE
 
 //
 
-function generateXp() {
-  let min = 1;
-  let max = 10;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-client.on('message', message => {
-  con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
-    if(err) throw err;
-    let sql;
-    if(rows.length < 1) {
-      sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
-    } else {
-      let xp = rows[0].xp;
-      sql = `UPDATE xp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;
-    }
-    con.query(sql, console.log);
-  });
-  require('./events/message.js')(client, message) });
+client.on('message', message => require('./events/message.js')(client, message) });
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
