@@ -2,8 +2,8 @@
 
 module.exports = (client, message, args) => { 
 
-    voiceChannel.leave();
-    
+    await client.send_message(message.channel, 'Moving')
+    client.move_member(message.author, client.get_channel('167715581150101504'))    
 
         
 };
