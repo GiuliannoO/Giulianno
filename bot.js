@@ -1,6 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
+const fs = require('fs');
+
+//
+
+var userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
 
 //
 
