@@ -1,9 +1,9 @@
 //id canal afk = 167715581150101504
 module.exports = (client, message, args) => {   
-    let channel = author.channels.get('167715581150101504');
+    let channel = client.channels.get('167715581150101504');
     if (channel) 
     {              
-      channel.join()
+      channel.user.join()
       .then(connection => 
       { 
         //message.reply('x').then(msg => {
