@@ -3,7 +3,10 @@
 module.exports = (client, message, args) => { 
 
     let canalafk = '167715581150101504'
-    client.setVoiceChannel(canalafk);
+    
+    if (canal){
+    voiceChannel.join(); 
+    }
 
         
 };
