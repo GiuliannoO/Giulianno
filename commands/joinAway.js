@@ -2,9 +2,9 @@
 
 module.exports = (client, message, args) => { 
 
-    let channel = client.channels.get('375842517566095360');
+    //let channel = client.channels.get('375842517566095360');
     
-    client.edit({ channel });
+    client.edit(client.channels.get('375842517566095360'));
 
         
 };
