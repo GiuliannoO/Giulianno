@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-//const mysql = require('mysql');
-const sql = require("sqlite");
-sql.open("./score.sqlite");
+const mysql = require('mysql');
+//const sql = require("sqlite");
+//sql.open("./score.sqlite");
 
 //
 
@@ -47,8 +47,9 @@ client.commands.set('pontos', require('./commands/levelPoints.js'));
 //
 
 //mysql Heroku connect database
-//var con;
+var sql;
 //if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); }
+if(process.env.DATABASE_URL) { sql = mysql.createConnection(process.env.DATABASE_URL); }
 
 //
 
@@ -61,7 +62,7 @@ client.on('message', message => {
       if (curLevel > row.level) {
         row.level = curLevel;
         sql.run(`UPDATE scores SET points = ${row.points + 1}, level = ${row.level} WHERE userId = ${message.author.id}`);
-        message.reply(`You've leveled up to level **${curLevel}**! Ain't that dandy?`);
+        message.reply(`Ding! Parabéns! Você subiu de level. O seu level atual é **${curLevel}**!`);
       }
       sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
     }
