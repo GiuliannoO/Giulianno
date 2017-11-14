@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-const fs = require('fs');
+var fs = require('fs');
 
 //
 
