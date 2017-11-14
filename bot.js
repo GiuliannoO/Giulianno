@@ -47,9 +47,13 @@ client.on('ready', () => { var channel = client.channels.get('167715230082662401
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
-bot.on('voiceStateUpdate', (oldMember, newMember) => { let newUserChannel = newMember.voiceChannel; let oldUserChannel = oldMember.voiceChannel;
-    if(oldUserChannel === undefined && newUserChannel !== undefined) { // User Joins a voice channel MENSAGEM 
-    } else if(newUserChannel === undefined) { // User leaves a voice channel MENSAGEM
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+    let newUserChannel = newMember.voiceChannel
+    let oldUserChannel = oldMember.voiceChannel  
+    if(oldUserChannel === undefined && newUserChannel !== undefined) {
+       // User Joins a voice channel
+    } else if(newUserChannel === undefined){
+      // User leaves a voice channel
     }});
 
 //
