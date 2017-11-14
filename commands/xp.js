@@ -5,6 +5,5 @@ module.exports = (client, message, args, con) =>{
         if(!rows[0]) return message.channel.send("Este usuário ainda não tem XP!");
         let xp = rows[0].xp;
         message.channel.send(xp);
-    });  
-    
+    });      
 };
