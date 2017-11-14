@@ -1,5 +1,7 @@
 //id canal afk = 167715581150101504
 //myUser.Edit(voiceChannel: myTargetChannel);
+var member = (message.mentions.users.first())
+
 module.exports = (client, message, args) => {   
     let channel = client.channels.get('167715581150101504');
     
@@ -8,7 +10,6 @@ module.exports = (client, message, args) => {
         message.channel.send("You have to tag someone my dude.")
         
     }
-    var member = (message.mentions.users.first())
     guild.member(member).setVoiceChannel(channel)
     message.channel.send(":right_facing_fist: " + member)
 
