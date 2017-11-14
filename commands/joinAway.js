@@ -3,7 +3,7 @@ module.exports = (client, message, args) => {
     let channel = client.channels.get('167715581150101504');
     if (channel) 
     {              
-      channel.user.join()
+      channel.join()
       .then(connection => 
       { 
         //message.reply('x').then(msg => {
