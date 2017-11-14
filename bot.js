@@ -60,5 +60,26 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
 
 //
 
+
+
+//mysql
+/*
+var connection;
+if(process.env.JAWSDB_URL) {
+  //Heroku deployment
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  //local host
+    connection = mysql.createConnection({
+        root: 3000,
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "db_name",
+    });
+};
+*/
+
+
 //bot.login(config.token)
 client.login(process.env.BOT_TOKEN);
