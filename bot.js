@@ -50,7 +50,7 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
 bot.on('voiceStateUpdate', (oldMember, newMember) => { let newUserChannel = newMember.voiceChannel; let oldUserChannel = oldMember.voiceChannel;
     if(oldUserChannel === undefined && newUserChannel !== undefined) { // User Joins a voice channel MENSAGEM 
     } else if(newUserChannel === undefined) { // User leaves a voice channel MENSAGEM
-    }
+    }});
 
 //
 
