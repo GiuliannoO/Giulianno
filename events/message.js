@@ -1,4 +1,4 @@
-module.exports = (client, message) => {
+module.exports = (client, message, sql) => {
   if (message.author.bot) return;
 
   if (message.content.indexOf(client.config.prefix) !== 0) return;
@@ -7,6 +7,6 @@ module.exports = (client, message) => {
   const command = args.shift().toLowerCase();
 
   if (client.commands.has(command)) {
-    client.commands.get(command)(client, message, args);
+    client.commands.get(command)(client, message, args, sql);
   }  
 };

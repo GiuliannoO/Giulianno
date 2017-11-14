@@ -2,6 +2,10 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
 //const mysql = require('mysql');
+//const sql = require("sqlite");
+//sql.open("./score.sqlite");
+var pg = require("postgres-pure");
+var sql = new pg.connect(process.env.DATABASE_URL);
 
 //
 
@@ -39,7 +43,8 @@ client.commands.set('userinfo', require('./commands/userinfo.js'));
 client.commands.set('serverinfo', require('./commands/serverinfo.js'));
 client.commands.set('tempo', require('./commands/tempo.js'));
 client.commands.set('afk', require('./commands/joinAway.js'));
-client.commands.set('xp', require('./commands/xp.js'));
+client.commands.set('level', require('./commands/levelXp.js'));
+client.commands.set('pontos', require('./commands/levelPoints.js'));
 
 //
 
@@ -49,7 +54,26 @@ client.commands.set('xp', require('./commands/xp.js'));
 
 //
 
-client.on('message', message => require('./events/message.js')(client, message));
+client.on('message', message => {
+  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+    if (!row) {
+      sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
+    } else {
+      let curLevel = Math.floor(0.1 * Math.sqrt(row.points + 1));
+      if (curLevel > row.level) {
+        row.level = curLevel;
+        sql.run(`UPDATE scores SET points = ${row.points + 1}, level = ${row.level} WHERE userId = ${message.author.id}`);
+        message.reply(`You've leveled up to level **${curLevel}**! Ain't that dandy?`);
+      }
+      sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
+    }
+  }).catch(() => {
+    console.error;
+    sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
+      sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
+    });
+  }); 
+  require('./events/message.js')(client, message, sql) });
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
