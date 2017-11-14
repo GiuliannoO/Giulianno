@@ -18,16 +18,6 @@ client.commands = new Discord.Collection();
 
 //
 
-//xp
-    if(!userData[sender.id]) userData[sender.id] = {
-        messagesSent: 0
-    }
-    userData[sender.id].messagesSent++;
-    fs.writeFile('Storage/userData.json', JSON.stringify(userData),(err) => {
-    if (err) console.error(err); });
-
-//
-
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
 client.commands.set('ajuda', require('./commands/ajuda.js'));
@@ -56,7 +46,17 @@ client.commands.set('afk', require('./commands/joinAway.js'));
 
 //
 
-client.on('message', message => require('./events/message.js')(client, message));
+client.on('message', message => {
+if(!userData[sender.id]) userData[sender.id] = {
+    messagesSent: 0
+}
+userData[sender.id].messagesSent++;
+fs.writeFile('Storage/userData.json', JSON.stringify(userData),(err) => {
+if (err) console.error(err); });
+require('./events/message.js')(client, message)});
+
+//
+
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
