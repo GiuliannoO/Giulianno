@@ -5,7 +5,7 @@ var fs = require('fs');
 
 //
 
-var userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
+var userData = JSON.parse(fs.readFileSync('./Storage/userData.json', 'utf8'));
 
 //
 
@@ -51,7 +51,7 @@ if(!userData[message.author.id]) userData[message.author.id] = {
     messagesSent: 0
 }
 userData[message.author.id].messagesSent++;
-fs.writeFile('Storage/userData.json', JSON.stringify(userData),(err) => {
+fs.writeFile('./Storage/userData.json', JSON.stringify(userData),(err) => {
 if (err) console.error(err); });
 require('./events/message.js')(client, message)});
 
