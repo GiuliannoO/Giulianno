@@ -13,8 +13,8 @@ module.exports = (client, message, args) => {
       "­\n"+
       "● **!ping**  -  Mostra a sua API latencia e latencia atual.\n"+
       "\n"+
-      "● **!level** e **!pontos**  -  Ver o seu XP e quantidade de Pontos no servidor.\n"+
-      "\n"+      
+      //"● **!level** e **!pontos**  -  Ver o seu XP e quantidade de Pontos no servidor.\n"+
+      //"\n"+      
       "● **!afk**  -  Inicia o modo Ausente.\n"+
       "\n"+      
       "● **!roll**  -  Rolar um dado comum de 6 lados.\n"+

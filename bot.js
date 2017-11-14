@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-const mysql = require('mysql');
-//const sql = require("sqlite");
-//sql.open("./score.sqlite");
+//const mysql = require('mysql');
+const sql = require("sqlite");
+sql.open("./score.sqlite");
 
 //
 
@@ -47,9 +47,8 @@ client.commands.set('pontos', require('./commands/levelPoints.js'));
 //
 
 //mysql Heroku connect database
-var sql;
+//var con;
 //if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); }
-if(process.env.DATABASE_URL) { sql = mysql.createConnection(process.env.DATABASE_URL); }
 
 //
 
