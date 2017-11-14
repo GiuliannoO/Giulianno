@@ -2,9 +2,9 @@
 
 module.exports = (client, message, args) => { 
 
-    let canalafk = '167715581150101504'
+    //let canalafk = '167715581150101504'
     
-    voiceChannel.join(canalafk); 
+    voiceChannel.join(); 
     
 
         
