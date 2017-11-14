@@ -1,10 +1,9 @@
 //id canal afk = 167715581150101504
-
-module.exports = (client, message, args) => { 
-    
-    //const channel = message.guild.channels.find('name', 'voicechannel')
+module.exports = (client, message, args) => {     
     let channel = client.channels.get('167715581150101504')
     message.member.setVoiceChannel(channel)
-
-        
+    message.send(`O usuário ${message.author.username} agora está Away!`).then(msg => {
+        msg.delete(60000)
+      });    
+    message.delete(60000);        
 };
