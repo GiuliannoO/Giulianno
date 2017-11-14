@@ -47,10 +47,10 @@ client.commands.set('afk', require('./commands/joinAway.js'));
 //
 
 client.on('message', message => {
-if(!userData[sender.id]) userData[sender.id] = {
+if(!userData[message.author.id]) userData[message.author.id] = {
     messagesSent: 0
 }
-userData[sender.id].messagesSent++;
+userData[message.author.id].messagesSent++;
 fs.writeFile('Storage/userData.json', JSON.stringify(userData),(err) => {
 if (err) console.error(err); });
 require('./events/message.js')(client, message)});
