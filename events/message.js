@@ -8,13 +8,5 @@ module.exports = (client, message) => {
 
   if (client.commands.has(command)) {
     client.commands.get(command)(client, message, args);
-  }
-
-  //xp
-  if(!userData[sender.id]) userData[sender.id] = {
-    messagesSent: 0
-  }
-  userData[sender.id].messagesSent++;
-  fs.writeFile('Storage/userData.json', JSON.stringify(userData),(err) => {
-  if (err) console.error(err); });
+  }  
 };

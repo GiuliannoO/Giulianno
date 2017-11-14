@@ -18,6 +18,16 @@ client.commands = new Discord.Collection();
 
 //
 
+//xp
+    if(!userData[sender.id]) userData[sender.id] = {
+        messagesSent: 0
+    }
+    userData[sender.id].messagesSent++;
+    fs.writeFile('Storage/userData.json', JSON.stringify(userData),(err) => {
+    if (err) console.error(err); });
+
+//
+
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
 client.commands.set('ajuda', require('./commands/ajuda.js'));
