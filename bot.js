@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
+const mysql = require('mysql');
 
 //
 
@@ -38,10 +39,35 @@ client.commands.set('userinfo', require('./commands/userinfo.js'));
 client.commands.set('serverinfo', require('./commands/serverinfo.js'));
 client.commands.set('tempo', require('./commands/tempo.js'));
 client.commands.set('afk', require('./commands/joinAway.js'));
+client.commands.set('xp', require('./commands/xp.js'));
 
 //
 
-client.on('message', message => require('./events/message.js')(client, message));
+//mysql Heroku connect database
+var con;
+if(process.env.JAWSDB_URL) { con = mysql.createConnection(process.env.DATABASE_URL); }
+
+//
+
+function generateXp() {
+  let min = 1;
+  let max = 10;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+client.on('message', message => {
+  con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
+    if(err) throw err;
+    let sql;
+    if(rows.length < 1) {
+      sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
+    } else {
+      let xp = rows[0].xp;
+      sql = `UPDATE xp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;
+    }
+    con.query(sql, console.log);
+  });
+  require('./events/message.js')(client, message, con) });
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
@@ -60,26 +86,6 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
 
 //
 
-
-
-//mysql
-/*
-var connection;
-if(process.env.JAWSDB_URL) {
-  //Heroku deployment
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  //local host
-    connection = mysql.createConnection({
-        root: 3000,
-        host: "localhost",
-        user: "root",
-        password: "",
-        database: "db_name",
-    });
-};
-*/
-
-
+//Heroku connect token
 //bot.login(config.token)
 client.login(process.env.BOT_TOKEN);

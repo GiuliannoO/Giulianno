@@ -9,6 +9,7 @@
   "dependencies": {
     "discord.js": "^11.2.1",
     "ffmpeg-binaries": "^3.2.2-3",
+    "mysql": "^2.15.0",
     "opusscript": "0.0.4",
     "weather-js": "^2.0.0"
   }
