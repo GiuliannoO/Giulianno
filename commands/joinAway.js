@@ -4,9 +4,8 @@ module.exports = (client, message, args) => {
 
     let canalafk = '167715581150101504'
     
-    if (canal){
-    voiceChannel.join(); 
-    }
+    voiceChannel.join(canalafk); 
+    
 
         
 };
