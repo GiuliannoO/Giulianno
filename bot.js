@@ -4,8 +4,6 @@ const weather = require('weather-js');
 //const mysql = require('mysql');
 const sql = require("sqlite");
 sql.open("./score.sqlite");
-//var pg = require("postgres-pure");
-//var sql = new pg.connect(process.env.DATABASE_URL);
 
 //
 
