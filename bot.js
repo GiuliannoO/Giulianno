@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-const mysql = require('mysql');
+//const mysql = require('mysql');
 
 //
 
@@ -44,8 +44,8 @@ client.commands.set('xp', require('./commands/xp.js'));
 //
 
 //mysql Heroku connect database
-var con;
-if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); }
+//var con;
+//if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); }
 
 //
 
