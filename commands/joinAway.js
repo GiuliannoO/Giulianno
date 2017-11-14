@@ -3,7 +3,7 @@
 module.exports = (client, message, args) => { 
 
     let canalafk = '167715581150101504'
-    newMember.setVoiceChannel(canalafk);
-        
+    user.setVoiceChannel(canalafk);
+
         
 };
