@@ -67,23 +67,23 @@ client.on('ready', () => { var channel = client.channels.get('167715230082662401
 
 //GUILD
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
-client.on('guildMemberAdd', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Seja bem vindo(a) '+member.user.username+'!').then(msg => {msg.delete(60000)}) } );
-client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus '+member.user.username+'!').then(msg => {msg.delete(60000)}) } );
-client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário '+oldMember+' **atualizou** os seus dados!').then(msg => {msg.delete(60000)}) } );
-client.on('guildUpdate', (guild, oldGuild, newGuild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O servidor '+oldGuild+' foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
-client.on('guildBanAdd', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário '+user+' foi **banido**!').then(msg => {msg.delete(60000)}) } );
-client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário '+user+' foi **desbanido**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildMemberAdd', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Seja bem vindo(a) **'+member.user.username+'**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus **'+member.user.username+'**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário **'+oldMember+'** **atualizou** os seus dados!').then(msg => {msg.delete(60000)}) } );
+client.on('guildUpdate', (guild, oldGuild, newGuild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O servidor **'+oldGuild+'** foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildBanAdd', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário **'+user+'** foi **banido**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário **'+user+'** foi **desbanido**!').then(msg => {msg.delete(60000)}) } );
 
 //EMOJI
-client.on('emojiCreate', (emoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Um novo **Emoji** foi adicionado!').then(msg => {msg.delete(60000)}) } );
-client.on('emojiDelete', (emoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Um **Emoji** foi deletado!!').then(msg => {msg.delete(60000)}) } );
-client.on('emojiUpdate', (emoji, oldEmoji, newEmoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O '+oldEmoji+' foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
+client.on('emojiCreate', (emoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O **Emoji** '+emoji+' foi adicionado!').then(msg => {msg.delete(60000)}) } );
+client.on('emojiDelete', (emoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O **Emoji** '+emoji+' foi deletado!!').then(msg => {msg.delete(60000)}) } );
+client.on('emojiUpdate', (emoji, oldEmoji, newEmoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O emoji '+oldEmoji+' foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
 
 //CANAL
-client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova **sala de conversa** foi **criada**!').then(msg => {msg.delete(60000)}) } );
-client.on('channelDelete', (channel, guild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma **sala de conversa** foi **deletada**!').then(msg => {msg.delete(60000)}) } );
-client.on('channelPinsUpdate', (channel, time) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova mensagem foi **fixada** em '+time+'!').then(msg => {msg.delete(60000)}) } );
-client.on('channelUpdate', (channel, oldChannel, newChannel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A **sala de conversa** '+oldChannel+' foi atualizada!').then(msg => {msg.delete(60000)}) } );
+client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A sala de conversa **'+channel+'** foi **criada**!').then(msg => {msg.delete(60000)}) } );
+client.on('channelDelete', (channel, guild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A sala de conversa **'+channel+'** foi **deletada**!').then(msg => {msg.delete(60000)}) } );
+client.on('channelPinsUpdate', (channel, time) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova mensagem foi **fixada** em **'+time+'**!').then(msg => {msg.delete(60000)}) } );
+client.on('channelUpdate', (channel, oldChannel, newChannel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A sala de conversa **'+oldChannel+'** foi atualizada!').then(msg => {msg.delete(60000)}) } );
 
 //----------------------------------------------------------------------------------------------------------------------------------
 //-----Nao usado por causa de spam
