@@ -61,8 +61,8 @@ client.on('message', message => {
   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
   sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
   //FILTRO DE PALAVRÃO
-  for (x = 0; x < profanities.length; x++){ if (message.content.toUpperCase() == profanities[x].toUpperCase()) {
-  message.channel.reply('Não diga palavões! RHrumn!!!').then(msg => {msg.delete(60000)}); message.delete(); return;  } }
+  const msgbanida = message.content.toUpperCase();
+  if (msgbanida.includes('PPPPP')) { message.delete(); message.author.send('Não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
