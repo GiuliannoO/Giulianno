@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
 //const mysql = require('mysql');
-//const sql = require("sqlite");
-//sql.open("./score.sqlite");   
+const sql = require("sqlite");
+sql.open("./score.sqlite");   
 
 //
 
@@ -54,7 +54,7 @@ client.commands.set('pontos', require('./commands/levelPoints.js'));
 //
 
 client.on('message', message => {
-  /*sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
     if (!row) {
       sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
     } else {
@@ -71,7 +71,7 @@ client.on('message', message => {
     sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
       sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
     });
-  }); */
+  }); 
   require('./events/message.js')(client, message) });
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
