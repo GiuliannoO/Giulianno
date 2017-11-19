@@ -1,10 +1,10 @@
 module.exports = (client, message, sql) => {
   if (message.author.bot) return;
 
+  if (message.content.indexOf(client.config.prefix) !== 0) return;
+
   const msgbanida = message.content.toUpperCase();
   if (msgbanida.includes('LETTUCE')) { message.delete(); message.author.send('Não diga palavrões!!! Rhrumnn!!!'); }
-
-  if (message.content.indexOf(client.config.prefix) !== 0) return;
 
   const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
