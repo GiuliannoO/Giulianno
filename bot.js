@@ -74,14 +74,12 @@ client.on('message', message => {
   }); 
   require('./events/message.js')(client, message, sql) });
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
-client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
+client.on('ready', () => { channel.guild.defaultChannel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
-client.on('channelCreate', (channel) => { if(channel.type == 'text'){
-  let guild = channel.guild;
-  guild.defaultChannel.sendMessage('Entrada do canal!')
-}});
+client.on('channelCreate', (channel) => { if(channel.type == 'text'){ channel.guild.defaultChannel.sendMessage('Um novo canal de **#Chat** foi criado pelo Admin!').then(msg => {msg.delete(60000)}) }
+  else if(channel.type == 'voice'){ channel.guild.defaultChannel.sendMessage('Um novo canal de **#Voz** foi criado pelo Admin!').then(msg => {msg.delete(60000)}) } });
 
 
 //
