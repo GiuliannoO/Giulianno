@@ -78,6 +78,12 @@ client.on('ready', () => { var channel = client.channels.get('167715230082662401
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
+client.on('channelCreate', (channel) => { if(channel.type == 'text'){
+  let guild = channel.guild;
+  guild.defaultChannel.sendMessage('Entrada do canal!')
+}});
+
+
 //
 
 
