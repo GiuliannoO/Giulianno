@@ -78,7 +78,7 @@ client.on('ready', () => { channel.guild.defaultChannel.sendMessage("**O BoT est
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
-client.on('channelCreate', (channel) => { if(channel.type == 'text'){ channel.guild.defaultChannel.sendMessage('Um novo canal de **#Chat** foi criado pelo Admin!').then(msg => {msg.delete(60000)}) } });
+client.on('channelCreate', (channel) => { channel.guild.defaultChannel.sendMessage('Uma nova **sala de conversa** foi criado pelo Admin!').then(msg => {msg.delete(60000)}) } );
 
 
 //
