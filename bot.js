@@ -62,7 +62,7 @@ client.on('message', message => {
   sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
   //FILTRO DE PALAVRÃO
   const msgbanida = message.content.toUpperCase();
-  if (msgbanida.includes('PPPPP')) { message.delete(); message.channel.send('Por favor... **'+message.author.username+'**, não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
+  if (msgbanida.includes('PPPPP','NNNNN')) { message.delete(); message.channel.send('Por favor... **'+message.author.username+'**, não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------

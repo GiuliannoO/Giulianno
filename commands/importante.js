@@ -25,6 +25,9 @@ Radio Initial D : http://go2id.net:9001/;?.mp3
 Bot falar mensagens TTS
 bot.sendMessage({ to: "userID/channelID", message: "Hello World", tts: true });
 ------------------------------------
+Bot mandar PM
+message.author.send('texto');
+------------------------------------
 ->git bash
 .gitignore
 gitstatus
