@@ -79,6 +79,7 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
 
 //
 
+
 /*client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel
     let oldUserChannel = oldMember.voiceChannel  
