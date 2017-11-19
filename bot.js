@@ -84,7 +84,7 @@ client.on('guildCreate', guild => require('./events/guildCreate.js')(client, gui
 //client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('guildMemberAdd', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Seja bem vindo(a) '+member.user.username+'!').then(msg => {msg.delete(60000)}) } );
 client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus '+member.user.username+'!').then(msg => {msg.delete(60000)}) } );
-client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário '+member.user.username+' atualizou os seus dados!').then(msg => {msg.delete(60000)}) } );
+client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); newMember.channel.sendMessage('O usuário '+member.user.username+' atualizou os seus dados!').then(msg => {msg.delete(60000)}) } );
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
 //CANAL
