@@ -10,7 +10,10 @@
     "discord.js": "^11.2.1",
     "ffmpeg-binaries": "^3.2.2-3",
     "opusscript": "0.0.4",
-    "weather-js": "^2.0.0"
+    "weather-js": "^2.0.0",
+    "prism-media": "^0.0.2",
+    "node-opus": "^0.2.0",
+    "sqlite": "^2.8.0"
   },
   "engines": {
     "node": "9.x"
