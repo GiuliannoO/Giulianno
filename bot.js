@@ -72,10 +72,10 @@ client.on('message', message => {
     });
   }); 
   require('./events/message.js')(client, message, sql) });
-client.on('guildCreate', (client, guild) => require('./events/guildCreate.js')(client, guild));
+client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', (client, member) => require('./events/guildMemberAdd.js')(client, member));
-client.on('messageReactionAdd', (client, reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
+client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
 //
 
