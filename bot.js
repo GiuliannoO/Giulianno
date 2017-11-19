@@ -77,11 +77,11 @@ client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get
 //EMOJI
 client.on('emojiCreate', (emoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O **Emoji** '+emoji+' foi adicionado!').then(msg => {msg.delete(60000)}) } );
 client.on('emojiDelete', (emoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O **Emoji** '+emoji+' foi deletado!!').then(msg => {msg.delete(60000)}) } );
-client.on('emojiUpdate', (emoji, oldEmoji, newEmoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O emoji '+oldEmoji+' foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
+client.on('emojiUpdate', (emoji, oldEmoji, newEmoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O **Emoji** '+oldEmoji+' foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
 
 //CANAL
-client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A sala de conversa **'+channel+'** foi **criada**!').then(msg => {msg.delete(60000)}) } );
-client.on('channelDelete', (channel, guild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A sala de conversa **'+channel+'** foi **deletada**!').then(msg => {msg.delete(60000)}) } );
+client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova **sala de conversa** foi **criada**!').then(msg => {msg.delete(60000)}) } );
+client.on('channelDelete', (channel, guild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma **sala de conversa** foi **deletada**!').then(msg => {msg.delete(60000)}) } );
 client.on('channelPinsUpdate', (channel, time) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova mensagem foi **fixada** em **'+time+'**!').then(msg => {msg.delete(60000)}) } );
 client.on('channelUpdate', (channel, oldChannel, newChannel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A sala de conversa **'+oldChannel+'** foi atualizada!').then(msg => {msg.delete(60000)}) } );
 
