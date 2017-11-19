@@ -3,20 +3,20 @@ const client = new Discord.Client();
 const weather = require('weather-js');
 //const mysql = require('mysql');
 const sql = require("sqlite");
-sql.open("./score.sqlite");   
 
-//
+//----------------------------------------------------------------------------------------------------------------------------------
+
+sql.open("./score.sqlite");
+
+//----------------------------------------------------------------------------------------------------------------------------------
 
 client.config = require('./config.json');
 client.log = require('./functions/log.js');
-
-//
-
 client.commands = new Discord.Collection();
 
-//  
+//---------------------------------------------------------------------------------------------------------------------------------- 
 
-
+//COMANDOS
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
 client.commands.set('ajuda', require('./commands/ajuda.js'));
@@ -45,18 +45,11 @@ client.commands.set('afk', require('./commands/joinAway.js'));
 client.commands.set('level', require('./commands/levelXp.js'));
 client.commands.set('pontos', require('./commands/levelPoints.js'));     
 
-//
-
-//mysql Heroku connect database
-//var con;
-//if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); }
-
-//
+//----------------------------------------------------------------------------------------------------------------------------------
 
 //MENSAGEM
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 //----------------------------------------------------------------------------------------------------------------------------------
-//MSG e BD
 client.on('message', message => { 
   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => 
   { if (!row) { sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
@@ -77,7 +70,9 @@ client.on('guildCreate', guild => require('./events/guildCreate.js')(client, gui
 client.on('guildMemberAdd', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Seja bem vindo(a) '+member.user.username+'!').then(msg => {msg.delete(60000)}) } );
 client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus '+member.user.username+'!').then(msg => {msg.delete(60000)}) } );
 client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário '+oldMember+' **atualizou** os seus dados!').then(msg => {msg.delete(60000)}) } );
-client.on('guildUpdate', (guild, oldGuild, newGuild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O servidor '+oldGuild+' foi **atualizou**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildUpdate', (guild, oldGuild, newGuild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O servidor '+oldGuild+' foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildBanAdd', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário '+user+' foi **banido**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário '+user+' foi **desbanido**!').then(msg => {msg.delete(60000)}) } );
 
 //CANAL
 client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova **sala de conversa** foi **criada**!').then(msg => {msg.delete(60000)}) } );
@@ -85,20 +80,14 @@ client.on('channelDelete', (channel, guild) => { var channel = client.channels.g
 client.on('channelPinsUpdate', (channel, time) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova mensagem foi **fixada** em '+time+'!').then(msg => {msg.delete(60000)}) } );
 client.on('channelUpdate', (channel, oldChannel, newChannel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A **sala de conversa** '+oldChannel+' foi atualizada!').then(msg => {msg.delete(60000)}) } );
 
-//
+//----------------------------------------------------------------------------------------------------------------------------------
+//-----Nao usado por causa de spam
+/*client.on('voiceStateUpdate', (oldMember, newMember) => { let newUserChannel = newMember.voiceChannel; let oldUserChannel = oldMember.voiceChannel;
+if(oldUserChannel === undefined && newUserChannel !== undefined) { entra no canal --- CODIGO de msg aqui } else if(newUserChannel === undefined){ sai no canal --- CODIGO de msg aqui }}); */
+//----------------------------------------------------------------------------------------------------------------------------------
+//-----mysql Heroku connect database
+/*var con;
+if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); } */
 
-
-/*client.on('voiceStateUpdate', (oldMember, newMember) => {
-let newUserChannel = newMember.voiceChannel
-let oldUserChannel = oldMember.voiceChannel  
-if(oldUserChannel === undefined && newUserChannel !== undefined) {
-// usuario entra no canal BOT manda MSG
-} else if(newUserChannel === undefined){
-// usuario sai no canal BOT manda MSG
-}});*/
-
-//
-
-//Heroku connect token
-//bot.login(config.token)
+//client.login(config.token)
 client.login(process.env.BOT_TOKEN);
