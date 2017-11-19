@@ -78,7 +78,7 @@ client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(clie
 client.on('guildMemberRemove', member => require('./events/guildMemberRemove.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 //client.on('channelUpdate', (client, channel, oldChannel, newChannel) => require('./events/channelUpdate.js')(client, channel, oldChannel, newChannel));
-client.on('channelPinsUpdate', (client, channel, time) => require('./events/channelPinsUpdate.js')(client, channel, time));
+//client.on('channelPinsUpdate', (client, channel, time) => require('./events/channelPinsUpdate.js')(client, channel, time));
 
 //
 
