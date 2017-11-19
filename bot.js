@@ -79,6 +79,11 @@ client.on('emojiCreate', (emoji) => { var channel = client.channels.get('1677152
 client.on('emojiDelete', (emoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O **Emoji** '+emoji+' foi deletado!!').then(msg => {msg.delete(60000)}) } );
 client.on('emojiUpdate', (emoji, oldEmoji, newEmoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O **Emoji** '+oldEmoji+' foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
 
+//ROLES
+client.on('roleCreate', (role) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A nova **Role** '+role+' foi adicionada!').then(msg => {msg.delete(60000)}) } );
+client.on('roleDelete', (role) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A **Role** '+emoji+' foi deletada!!').then(msg => {msg.delete(60000)}) } );
+client.on('roleUpdate', (role, oldRole, newRole) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A **Role** '+oldRole+' foi **atualizada**!').then(msg => {msg.delete(60000)}) } );
+
 //CANAL
 client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova **sala de conversa** foi **criada**!').then(msg => {msg.delete(60000)}) } );
 client.on('channelDelete', (channel, guild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma **sala de conversa** foi **deletada**!').then(msg => {msg.delete(60000)}) } );
