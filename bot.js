@@ -79,7 +79,7 @@ client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(clie
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
 client.on('channelCreate', (channel) => { if(channel.type == 'text'){ channel.guild.defaultChannel.sendMessage('Um novo canal de **#Chat** foi criado pelo Admin!').then(msg => {msg.delete(60000)}) }
-  else if(channel.type == 'voice'){ channel.guild.defaultChannel.sendMessage('Um novo canal de **#Voz** foi criado pelo Admin!').then(msg => {msg.delete(60000)}) } });
+  else { channel.guild.defaultChannel.sendMessage('Um novo canal de **#Voz** foi criado pelo Admin!').then(msg => {msg.delete(60000)}) } });
 
 
 //
