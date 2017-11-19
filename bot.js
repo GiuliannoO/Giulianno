@@ -79,7 +79,10 @@ client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(clie
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
 
-client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova **sala de conversa** foi criado pelo Admin!').then(msg => {msg.delete(60000)}) } );
+client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova **sala de conversa** foi **criada**!').then(msg => {msg.delete(60000)}) } );
+client.on('channelDelete', (channel, guild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma **sala de conversa** foi **deletada**!').then(msg => {msg.delete(60000)}) } );
+
+client.on('channelPinsUpdate', (channel, time) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova mensagem foi **fixada** em '+time+'!').then(msg => {msg.delete(60000)}) } );
 
 
 //
