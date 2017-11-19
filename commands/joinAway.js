@@ -3,7 +3,8 @@ module.exports = (client, message, args) => {
     let channel = client.channels.get('167715581150101504');
     if (channel){
     message.member.setVoiceChannel(channel);
-    message.channel.send(`O usuário @${message.author.username} agora está Away!`).then(msg => {
+    //message.channel.send(`O usuário @${message.author.username} agora está Away!`).then(msg => {
+        message.channel.send('O usuário '+message.author.username+' agora está Away!').then(msg => {
         msg.delete(60000)
       });
     }

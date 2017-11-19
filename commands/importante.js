@@ -13,6 +13,10 @@ an opus encoder, choose one from below:
 npm install opusscript
 npm install node-opus
 ------------------------------------
+npm install sqlite
+npm install mysql
+add dependencies no json
+------------------------------------
 Radios
 Radio Moe : https://listen.moe/stream
 Radio AnimeNfo : http://momori.animenfo.com:8000/;?.mp3

@@ -10,6 +10,7 @@ module.exports = (client, message, args) => {
       title: "Lista de comandos do servidor",
       "description": "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n\n"+
       "● **!ping**  -  Mostra a sua API latencia e latencia atual.\n\n"+
+      //"● **!bot**  -  Chamar a atenção do BoT.\n\n"+
       //"● **!level** e **!pontos**  -  Ver o seu XP e quantidade de Pontos no servidor.\n\n"+
       "● **!afk**  -  Inicia o modo Ausente.\n\n"+
       "● **!roll**  -  Rolar um dado comum de 6 lados.\n\n"+
@@ -31,7 +32,10 @@ module.exports = (client, message, args) => {
       "*( Volume - Click direito no BoT e ajuste o volume do usuário. | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio online + port. Ex: http:// site.com:8888/ )*\n\n"+
       //"● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual. *( Nao abuse deste comando! Ele deleta as msg para todo mundo. )*\n\n"+
       //"● *( Admin+ )* **!falar xx**  -  Comandos de fala especial.\n\n"+
-      "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"
+      //"● *( Admin+ )* **!fsalvos xx**  -  Comandos de fala especial.\n\n"+
+      //"● *( Admin+ )* **!fprincipal xx**  -  Comandos de fala especial.\n\n"+
+      "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"+
+      "*( Os comandos enviados para/pelo BoT são apagados automaticamente após 1 minutos. )*"
 
     }}).then(msg => {
       msg.delete(60000)
