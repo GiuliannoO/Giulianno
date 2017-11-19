@@ -77,6 +77,7 @@ client.on('ready', () => { var channel = client.channels.get('167715230082662401
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
+
 //
 
 /*client.on('voiceStateUpdate', (oldMember, newMember) => {
