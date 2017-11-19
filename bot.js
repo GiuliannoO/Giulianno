@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
 const sql = require("sqlite");
-const profanities = require("profanities");
 //const mysql = require('mysql');
 
 //----------------------------------------------------------------------------------------------------------------------------------
