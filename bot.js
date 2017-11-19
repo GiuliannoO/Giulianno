@@ -79,7 +79,6 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
 
 //
 
-
 /*client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel
     let oldUserChannel = oldMember.voiceChannel  
@@ -90,7 +89,6 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
     }});*/
 
 //
-
 
 //Heroku connect token
 //bot.login(config.token)
