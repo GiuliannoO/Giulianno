@@ -16,7 +16,6 @@ client.commands = new Discord.Collection();
 
 //
 
-
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
 client.commands.set('ajuda', require('./commands/ajuda.js'));
