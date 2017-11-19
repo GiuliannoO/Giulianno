@@ -73,29 +73,37 @@ client.on('message', message => {
     });
   }); 
   require('./events/message.js')(client, message, sql) });
-client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
+
+//READY
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
-client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
+
+//GUILD
+client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
+
+//MEMBRO
+//client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
+client.on('guildMemberAdd', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Seja bem vindo(a) '+member.user.username+'!').then(msg => {msg.delete(60000)}) } );
+client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus '+member.user.username+'!').then(msg => {msg.delete(60000)}) } );
+client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário '+member.user.username+' atualizou os seus dados!').then(msg => {msg.delete(60000)}) } );
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
-
+//CANAL
 client.on('channelCreate', (channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova **sala de conversa** foi **criada**!').then(msg => {msg.delete(60000)}) } );
 client.on('channelDelete', (channel, guild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma **sala de conversa** foi **deletada**!').then(msg => {msg.delete(60000)}) } );
-
 client.on('channelPinsUpdate', (channel, time) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Uma nova mensagem foi **fixada** em '+time+'!').then(msg => {msg.delete(60000)}) } );
-
+client.on('channelUpdate', (channel, oldChannel, newChannel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A **sala de conversa** '+oldChannel+' foi atualizada!').then(msg => {msg.delete(60000)}) } );
 
 //
 
 
 /*client.on('voiceStateUpdate', (oldMember, newMember) => {
-    let newUserChannel = newMember.voiceChannel
-    let oldUserChannel = oldMember.voiceChannel  
-    if(oldUserChannel === undefined && newUserChannel !== undefined) {
-       // usuario entra no canal BOT manda MSG
-    } else if(newUserChannel === undefined){
-      // usuario sai no canal BOT manda MSG
-    }});*/
+let newUserChannel = newMember.voiceChannel
+let oldUserChannel = oldMember.voiceChannel  
+if(oldUserChannel === undefined && newUserChannel !== undefined) {
+// usuario entra no canal BOT manda MSG
+} else if(newUserChannel === undefined){
+// usuario sai no canal BOT manda MSG
+}});*/
 
 //
 

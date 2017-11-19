@@ -1,4 +1,4 @@
-module.exports = (client, member) => {
+/*module.exports = (client, member) => {
   client.log('Log', `${member.user.tag} (${member.id}) se juntou a ${member.guild.name} (${member.guild.id})`);
   const welcomeChannel = member.guild.channels.find('name', 'principal');
   if (welcomeChannel) {
@@ -6,4 +6,4 @@ module.exports = (client, member) => {
       msg.delete(60000)
     });
   }
-};
+};*/
