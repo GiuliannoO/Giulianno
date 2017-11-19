@@ -72,7 +72,7 @@ client.on('message', message => {
       sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
     });
   }); 
-  require('./events/message.js')(client, message) });
+  require('./events/message.js')(client, message, sql) });
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
