@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const weather = require('weather-js');
+/*const weather = require('weather-js');
 //const mysql = require('mysql');
 const sql = require("sqlite");
-sql.open("./score.sqlite");
+sql.open("./score.sqlite");   */
 
 //
 
@@ -14,7 +14,8 @@ client.log = require('./functions/log.js');
 
 client.commands = new Discord.Collection();
 
-//
+//  
+/*
 
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
@@ -42,7 +43,7 @@ client.commands.set('serverinfo', require('./commands/serverinfo.js'));
 client.commands.set('tempo', require('./commands/tempo.js'));
 client.commands.set('afk', require('./commands/joinAway.js'));
 client.commands.set('level', require('./commands/levelXp.js'));
-client.commands.set('pontos', require('./commands/levelPoints.js'));
+client.commands.set('pontos', require('./commands/levelPoints.js'));     */
 
 //
 
@@ -72,10 +73,10 @@ client.on('message', message => {
     });
   }); 
   require('./events/message.js')(client, message, sql) });
-client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
+//client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
 client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage("**O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
-client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
-client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
+//client.on('guildMemberAdd', member => require('./events/guildMemberAdd.js')(client, member));
+//client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 
 //
 
