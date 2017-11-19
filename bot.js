@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-//const mysql = require('mysql');
 const sql = require("sqlite");
+const profanities = require("profanities");
+//const mysql = require('mysql');
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -51,6 +52,7 @@ client.commands.set('pontos', require('./commands/levelPoints.js'));
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 //----------------------------------------------------------------------------------------------------------------------------------
 client.on('message', message => { 
+  //BANCO DE DADOS
   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => 
   { if (!row) { sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
   } else {  let curLevel = Math.floor(0.1 * Math.sqrt(row.points + 1));
@@ -59,6 +61,10 @@ client.on('message', message => {
   }).catch(() => { console.error;
   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
   sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
+  //FILTRO DE PALAVRÃO
+  for (x = 0; x < profanities.length; x++){ if (message.content.toUpperCase() == profanities[x].toUpperCase()) {
+  message.channel.reply('Não diga palavões! RHrumn!!!').then(msg => {msg.delete(60000)}); message.delete(); return;  } }
+  //MENSAGEM REQUIRE
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
 
