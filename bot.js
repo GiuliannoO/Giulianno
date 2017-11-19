@@ -81,7 +81,7 @@ client.on('emojiUpdate', (emoji, oldEmoji, newEmoji) => { var channel = client.c
 
 //ROLES
 client.on('roleCreate', (role) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A nova **Role** '+role+' foi adicionada!').then(msg => {msg.delete(60000)}) } );
-client.on('roleDelete', (role) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A **Role** '+emoji+' foi deletada!!').then(msg => {msg.delete(60000)}) } );
+client.on('roleDelete', (role) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A **Role** '+role+' foi deletada!!').then(msg => {msg.delete(60000)}) } );
 client.on('roleUpdate', (role, oldRole, newRole) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('A **Role** '+oldRole+' foi **atualizada**!').then(msg => {msg.delete(60000)}) } );
 
 //CANAL
