@@ -1,4 +1,4 @@
-var palavroes = [
+const palavroes = [
 
 'PPPPP',
 'NNNNN',
