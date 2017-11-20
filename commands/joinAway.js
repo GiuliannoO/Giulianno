@@ -1,5 +1,5 @@
 //id canal afk = 167715581150101504
-module.exports = (client, message, args) => {     
+module.exports = (client, message, args, user) => {     
     let channel = client.channels.get('167715581150101504');
     if (channel){
     message.member.setVoiceChannel(channel);
