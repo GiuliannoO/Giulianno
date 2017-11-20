@@ -1,3 +1,11 @@
+var palavroes = [
+    
+  'PPPPP',
+  'NNNNN',
+  'QQQQQ'
+  
+  ];
+
 module.exports = (client, message, sql) => {
   if (message.author.bot) return;
 
