@@ -2,12 +2,12 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
 const sql = require("sqlite");
+const palavroes = require('./profanity/palavroes.js');
 //const mysql = require('mysql');
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
 sql.open("./score.sqlite");
-const palavroes = require('./profanity/palavroes.js');
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,12 +62,9 @@ client.on('message', message => {
   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
   sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
   //FILTRO DE PALAVRÃO
-  if( palavroes.some(palavra => message.content.includes(palavra)) ) {
-    message.reply("Pffff!!!");
-    // Or just do message.delete();
-   }
-  //const msgbanida = message.content.toUpperCase();
-  //if (msgbanida.includes(palavroes)) { message.channel.edit('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
+    if( palavroes.some(palavra => message.content.toUpperCase().includes(palavra)) ) {
+  message.delete();
+  message.reply('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE  
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
