@@ -1,4 +1,4 @@
-const palavroes = [
+module.exports = [
 
 'PPPPP',
 'NNNNN',
@@ -6,4 +6,3 @@ const palavroes = [
 
 ];
 
-module.exports = palavroes;

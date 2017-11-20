@@ -7,6 +7,7 @@ const sql = require("sqlite");
 //----------------------------------------------------------------------------------------------------------------------------------
 
 sql.open("./score.sqlite");
+const palavroes = require('./profanity/palavroes.js');
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -67,8 +68,7 @@ client.on('message', message => {
    }
   //const msgbanida = message.content.toUpperCase();
   //if (msgbanida.includes(palavroes)) { message.channel.edit('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
-  //MENSAGEM REQUIRE
-  require('./profanity/palavroes.js');
+  //MENSAGEM REQUIRE  
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
 
