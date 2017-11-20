@@ -9,23 +9,23 @@ module.exports = (client, message, args) => {
       message.channel.send({embed: {
       color: 3447003,
       title: "Lista de comandos do servidor",
-      "description": ":large_blue_circle: **!ajuda**  -  Mostra todos os comandos usados no servidor.\n\n"+
-      ":large_blue_circle: **!ping**  -  Mostra a sua latencia e API latencia atual.\n\n"+
+      "description": "● **!ajuda**  -  Mostra todos os comandos usados no servidor.\n\n"+
+      "● **!ping**  -  Mostra a sua latencia e API latencia atual.\n\n"+
       //"● **!bot**  -  Chamar a atenção do BoT.\n\n"+
       //"● **!level** e **!pontos**  -  Ver o seu XP e quantidade de Pontos no servidor.\n\n"+
-      ":large_blue_circle: **!afk**  -  Inicia o modo Ausente.\n\n"+
-      ":large_blue_circle: **!roll**  -  Rolar um dado comum de 6 lados.\n\n"+
-      ":large_blue_circle: **!tempo cidade**  -  Mostra o tempo atual na região escolhida. *( Ex: !tempo goiania )*\n\n"+
-      ":large_blue_circle: **Para salvar links ou mensagens importantes**  -  Use o canal de chat **#salvos**.\n\n"+
-      ":large_blue_circle: **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n\n"+
-      ":large_blue_circle: **!userinfo @nome**  -  Mostra as informações do usuário escolhido.\n\n"+
-      ":large_blue_circle: **!serverinfo**  -  Mostra as informações do servidor.\n\n"+
+      "● **!afk**  -  Inicia o modo Ausente.\n\n"+
+      "● **!roll6**  -  Rolar um dado comum de 6 lados.\n\n"+
+      "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida. *( Ex: !tempo goiania )*\n\n"+
+      "●**Para salvar links ou mensagens importantes**  -  Use o canal de chat **#salvos**.\n\n"+
+      "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado.\n\n"+
+      "● **!userinfo @nome**  -  Mostra as informações do usuário escolhido.\n\n"+
+      "● **!serverinfo**  -  Mostra as informações do servidor.\n\n"+
       //"● **Cálculos matemáticos**\n"+
       //"    **!soma num num**  -  Somar dois números.\n"+
       //"    **!sub num num**  -  Subtrair dois números.\n"+
       //"    **!mult num num**  -  Multiplicar dois números.\n"+
       //"    **!div num num**  -  Dividir dois números.\n\n"+
-      ":large_blue_circle: Rádio 24/7 no canal de voz **Música** - Apenas uma rádio pode ser tocada por vez.\n\n"+
+      "● Rádio 24/7 no canal de voz **Música** - Apenas uma rádio pode ser tocada por vez.\n\n"+
       "    **!playinitiald**  -  Escutar a rádio Initial D World.\n"+
       "    **!playanimenfo**  -  Escutar a rádio AnimeNfo.\n"+
       "    **!playmoe**  -  Escutar a rádio anime Moe.\n"+
@@ -35,7 +35,7 @@ module.exports = (client, message, args) => {
       //"● *( Admin+ )* **!falar xx**  -  Comandos de fala especial.\n\n"+
       //"● *( Admin+ )* **!fsalvos xx**  -  Comandos de fala especial.\n\n"+
       //"● *( Admin+ )* **!fprincipal xx**  -  Comandos de fala especial.\n\n"+
-      ":large_blue_circle: **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"+
+      "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"+
       "*( Os comandos enviados para/pelo BoT são apagados automaticamente após 1 minutos. )*"
 
     }}).then(msg => {

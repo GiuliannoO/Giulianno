@@ -25,7 +25,7 @@ client.commands.set('limpar', require('./commands/limpar.js'));
 client.commands.set('ban', require('./commands/ban.js'));
 client.commands.set('kick', require('./commands/kick.js'));
 client.commands.set('unban', require('./commands/unban.js'));
-client.commands.set('roll', require('./commands/roll.js'));
+client.commands.set('roll6', require('./commands/roll6.js'));
 client.commands.set('bot', require('./commands/conversaBot.js'));
 client.commands.set('morra', require('./commands/conversaMorra.js'));
 client.commands.set('soma', require('./commands/calcularSoma.js'));
@@ -64,7 +64,7 @@ client.on('message', message => {
   //FILTRO DE PALAVRÃO
     if( palavroes.some(palavra => message.content.toUpperCase().includes(palavra)) ) {
   message.delete();
-  message.reply(':no_entry: **Atenção** :no_entry: ... A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
+  message.reply('**Atenção** ... A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE  
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
