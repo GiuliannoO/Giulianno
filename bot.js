@@ -16,6 +16,13 @@ client.commands = new Discord.Collection();
 
 //---------------------------------------------------------------------------------------------------------------------------------- 
 
+exports.filter = require('./profanity/filtro.js');
+exports.getProfaneWords = require('./profanity/getProfanity.js');
+exports.use = require('./profanity/use.js');
+exports.dictionary = require('./profanity/palavroes.js');
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
 //COMANDOS
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
@@ -61,10 +68,9 @@ client.on('message', message => {
   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
   sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
   //FILTRO DE PALAVRÃO
-  const msgbanida = message.content.toUpperCase();
-  if (msgbanida.includes(palavrao)) { message.channel.edit('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
+  //const msgbanida = message.content.toUpperCase();
+  //if (msgbanida.includes('PPPPP')) { message.channel.edit('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE
-  require ('./commands/palavrao.js')(client, message, sql);
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
 
