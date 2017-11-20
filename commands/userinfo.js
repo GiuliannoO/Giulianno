@@ -15,7 +15,7 @@ module.exports = (client, message, args) =>
     message.channel.send({embed:{
           color: 3447003,
           author: {  name: member.user.username, icon_url: member.user.avatarURL },
-          title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${message.guild.user.nickname}`,
+          title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${member.user.name}`,
           fields: 
           [
             { name: `Nome cadastrado: `, value: `${member.user.username}` /*value: "[link](http://google.com)."*/ },
