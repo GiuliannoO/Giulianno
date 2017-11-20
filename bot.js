@@ -64,7 +64,7 @@ client.on('message', message => {
   //FILTRO DE PALAVRÃO
     if( palavroes.some(palavra => message.content.toUpperCase().includes(palavra)) ) {
   message.delete();
-  message.reply('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
+  message.reply('**Atenção**... A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE  
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------

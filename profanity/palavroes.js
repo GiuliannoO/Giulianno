@@ -1,8 +1,9 @@
+//ADD aqui os palavroes para filtrar
 module.exports = [
 
-'PPPPP',
-'NNNNN',
-'QQQQQ'
+'ppppp',
+'nnnnn',
+'qqqqq'
 
 ];
 
