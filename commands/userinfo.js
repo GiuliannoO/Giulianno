@@ -15,10 +15,11 @@ module.exports = (client, message, args) =>
     message.channel.send({embed:{
           color: 3447003,
           author: {  name: member.user.username, icon_url: member.user.avatarURL },
-          title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${member.nickname}`,
+          title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${member.user.id}`,
           fields: 
           [
-            { name: `Nome cadastrado: `, value: `${member.user.username}` /*value: "[link](http://google.com)."*/ },
+            { name: `Apelido: `, value: `${member.nickname}` /*value: "[link](http://google.com)."*/ },
+            { name: `Nome cadastrado: `, value: `${member.user.username}` },
             { name: `Número do ID: `, value: `${member.user.id}` },
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
