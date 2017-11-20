@@ -7,7 +7,7 @@ module.exports = (client, message, args) => {
       channel.join()
       .then(connection => 
       { 
-        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Initial D World**!').then(msg => {
+        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Initial D World**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
         connection.playArbitraryInput('http://go2id.net:9001/;?.mp3');

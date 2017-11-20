@@ -9,7 +9,7 @@ module.exports = (client, message, args) => {
         }
         else
         { 
-            message.reply("Você não tem poder para usar este comando!").then(msg => {
+            message.reply("Desculpe, mas você não tem poder para usar este comando!").then(msg => {
                 msg.delete(60000)
               });   
         }

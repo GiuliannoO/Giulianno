@@ -4,7 +4,7 @@ module.exports = (client, message, args) => {
     if (channel) 
     {
         channel.leave();
-        message.reply('A rádio foi **desligada**! Para ligar novamente selecione uma rádio!').then(msg => {
+        message.reply(':mute: A rádio foi **desligada**! Para ligar novamente selecione uma rádio!').then(msg => {
             msg.delete(60000)
           });
     } 
