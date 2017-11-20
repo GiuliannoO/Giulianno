@@ -28,6 +28,10 @@ bot.sendMessage({ to: "userID/channelID", message: "Hello World", tts: true });
 Bot mandar PM
 message.author.send('texto');
 ------------------------------------
+Ler arquivos
+var fs = require("fs");
+var poem = fs.readFileSync("./poem.txt", {"encoding": "utf-8"});
+------------------------------------
 ->git bash
 .gitignore
 gitstatus

@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
 const sql = require("sqlite");
+require("./commands/palavrao.js");
 //const mysql = require('mysql');
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -62,7 +63,7 @@ client.on('message', message => {
   sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
   //FILTRO DE PALAVRÃO
   const msgbanida = message.content.toUpperCase();
-  if (msgbanida.includes('PPPPP')) { await message.channel.edit('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
+  if (msgbanida.includes(palavrao)) { message.channel.edit('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
