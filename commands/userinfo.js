@@ -11,10 +11,11 @@ module.exports = (client, message, args) =>
     //message.author. (sem busca)
     //client.user. (bot info)
     //message.channel.server.detailsOf(message.author).nick
+    //member.user.tag
     message.channel.send({embed:{
           color: 3447003,
           author: {  name: member.user.username, icon_url: member.user.avatarURL },
-          title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${member.user.tag}`,
+          title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${member.user.nick}`,
           fields: 
           [
             { name: `Nome cadastrado: `, value: `${member.user.username}` /*value: "[link](http://google.com)."*/ },
