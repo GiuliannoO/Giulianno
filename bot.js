@@ -16,10 +16,6 @@ client.commands = new Discord.Collection();
 
 //---------------------------------------------------------------------------------------------------------------------------------- 
 
-exports.palavroes = require('./profanity/palavroes.js');
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
 //COMANDOS
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
@@ -65,6 +61,7 @@ client.on('message', message => {
   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
   sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
   //FILTRO DE PALAVRÃO
+  exports.palavroes = require('./profanity/palavroes.js');
   const msgbanida = message.content.toUpperCase();
   if (msgbanida.includes(palavroes)) { message.channel.edit('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE
