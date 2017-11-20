@@ -4,7 +4,7 @@ var palavrao = [
     "QQQQQ"
 ];
 
-module.exports = (client, message, args) => {
+module.exports = (client, message, sql) => {
     
     //
 

@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
 const sql = require("sqlite");
-require("./commands/palavrao.js");
 //const mysql = require('mysql');
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -65,6 +64,7 @@ client.on('message', message => {
   const msgbanida = message.content.toUpperCase();
   if (msgbanida.includes(palavrao)) { message.channel.edit('**'+message.author.username+'**, A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!!').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE
+  require ('./commands/palavrao.js')(client, message, sql);
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
 
