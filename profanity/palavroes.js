@@ -1,8 +1,8 @@
 module.exports = [
 
-'ppppp',
-'nnnnn',
-'qqqqq'
+'PPPPP',
+'NNNNN',
+'QQQQQ'
 
 ];
 
