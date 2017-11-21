@@ -1,5 +1,3 @@
-import { ClientUser } from "discord.js";
-
 module.exports = (client, message, args) => 
 {  
   let member = message.mentions.members.first();
@@ -22,9 +20,9 @@ module.exports = (client, message, args) =>
             { name: `Apelido: `, value: `${member.nickname}` /*value: "[link](http://google.com)."*/ },
             { name: `Nome cadastrado: `, value: `${member.user.username}` },
             { name: `Número do ID: `, value: `${member.user.id}` },
-            { name: `Conta verificada: `, value: `${ClientUser.verified}` },
-            { name: `Usuário premium: `, value: `${ClientUser.premium}` },
-            { name: `Celular: `, value: `${ClientUser.mobile}` },
+            { name: `Conta verificada: `, value: `${client.verified}` },
+            { name: `Usuário premium: `, value: `${client.premium}` },
+            { name: `Celular: `, value: `${client.mobile}` },
             { name: `BoT: `, value: `${member.user.bot}` },
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
