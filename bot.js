@@ -64,7 +64,7 @@ client.on('message', message => {
   //FILTRO DE PALAVRÃO
     if( palavroes.some(palavra => message.content.toUpperCase().includes(palavra)) ) {
   message.delete();
-  message.reply('**Atenção** ... A sua mensagem foi deletada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
+  message.reply(':warning: **Atenção** :warning: ... A sua mensagem foi apagada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE  
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -78,8 +78,8 @@ client.on('guildMemberAdd', (member, message, channel) => { var channel = client
 client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus **'+member.user.username+'**!').then(msg => {msg.delete(60000)}) } );
 client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Os dados do usuário **'+oldMember+'** foram **atualizados**! (Cargo | Nickname)').then(msg => {msg.delete(60000)}) } );
 client.on('guildUpdate', (guild, oldGuild, newGuild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O servidor **'+oldGuild+'** foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
-client.on('guildBanAdd', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':no_entry: **Atenção** :no_entry: ... O usuário **'+user+'** foi **banido**!').then(msg => {msg.delete(60000)}) } );
-client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':no_entry: **Atenção** :no_entry: ... O usuário **'+user+'** foi **desbanido**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildBanAdd', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':warning: **Atenção** :warning: ... O usuário **'+user+'** foi **banido**!').then(msg => {msg.delete(60000)}) } );
+client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':warning: **Atenção** :warning: ... O usuário **'+user+'** foi **desbanido**!').then(msg => {msg.delete(60000)}) } );
 
 //USER
 //client.on('userNoteUpdate', (user, oldNote, newNote) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário **'+user+'** atualizou a sua **descrição** no perfil!').then(msg => {msg.delete(60000)}) } );
