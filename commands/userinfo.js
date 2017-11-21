@@ -17,9 +17,10 @@ module.exports = (client, message, args) =>
           title: `Informações do usuário`,  /*url: "http://google.com",*/ description: `${member.user.tag}`,
           fields: 
           [
-            { name: `Apelido: `, value: `${member.nickname}` /*value: "[link](http://google.com)."*/ },
-            { name: `Nome cadastrado: `, value: `${member.user.username}` },
-            { name: `Número do ID: `, value: `${member.user.id}` },
+            { name: `Apelido: `, value: `${member.nickname}` /*value: "[link](http://google.com)."*/ , "inline": true},
+            { name: `Nome cadastrado: `, value: `${member.user.username}`, "inline": true },
+            { name: `Número do ID: `, value: `${member.user.id}`, "inline": true },
+            { name: `BoT?: `, value: `${member.user.bot}`, "inline": true },
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
           timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
