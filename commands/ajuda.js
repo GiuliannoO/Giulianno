@@ -36,7 +36,7 @@ module.exports = (client, message, args) => {
       //"● *( Admin+ )* **!fsalvos xx**  -  Comandos de fala especial.\n\n"+
       //"● *( Admin+ )* **!fprincipal xx**  -  Comandos de fala especial.\n\n"+
       "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre.**\n"+
-      "*( Os comandos enviados para/pelo BoT são apagados automaticamente após 1 minutos. )*"
+      "*( Os comandos enviados pelo/para o BoT são apagados automaticamente após 1 minuto. )*"
 
     }}).then(msg => {
       msg.delete(60000)
