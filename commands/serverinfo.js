@@ -6,7 +6,6 @@ module.exports = (client, message, args) => {
       color: 3447003,
       author: {  name: message.guild.name, icon_url: message.guild.iconURL },
       title: `Informações do servidor`,  /*url: "http://google.com",*/ description: `${message.guild.name}`,
-      thumbnail: message.guild.iconURL ,
       image: {  url: "https://image.prntscr.com/image/PhnKnrL0QJC1Iv9EPRC2pA.png"  },
       fields: 
       [
