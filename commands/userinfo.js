@@ -14,7 +14,7 @@ module.exports = (client, message, args) =>
     message.channel.send({embed:{
           color: 3447003,
           author: {  name: member.nickname, icon_url: member.user.avatarURL },
-          title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${member.user.tag}`,
+          title: `Informações do usuário`,  /*url: "http://google.com",*/ description: `${member.user.tag}`,
           fields: 
           [
             { name: `Apelido: `, value: `${member.nickname}` /*value: "[link](http://google.com)."*/ },
@@ -37,7 +37,7 @@ module.exports = (client, message, args) =>
     message.channel.send({embed:{
           color: 3447003,
           author: {  name: member.nickname, icon_url: member.user.avatarURL },
-          title: `Informações do usuário.`,  /*url: "http://google.com",*/ description: `${member.user.tag}`,
+          title: `Informações do usuário`,  /*url: "http://google.com",*/ description: `${member.user.tag}`,
           fields: 
           [
             { name: `Apelido: `, value: `Usuário sem apelido` /*value: "[link](http://google.com)."*/ },

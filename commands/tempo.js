@@ -8,7 +8,7 @@ module.exports = (client, message, args) => {
     
         // lugar valido.
         if (result === undefined || result.length === 0) {
-            message.channel.send('**Digite uma localidade válida.**') 
+            message.channel.send('**Digite uma localidade válida!**') 
             return; 
         }
         else
@@ -20,7 +20,7 @@ module.exports = (client, message, args) => {
             message.channel.send({embed:{
                 color: 3447003,
                 author: {  name: current.observationpoint, icon_url: current.imageUrl },
-                title: `Informações do tempo.`, description: `${current.skytext}`,
+                title: `Informações do tempo`, description: `${current.skytext}`,
                 fields: 
                 [
                   { name: `Fuso horário: `, value: `UTC${location.timezone}` },
