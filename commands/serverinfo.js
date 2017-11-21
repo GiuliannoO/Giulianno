@@ -13,6 +13,7 @@ module.exports = (client, message, args) => {
         { name: `Localização: `, value: `${message.guild.region}`, "inline": true },
         { name: `Data de criação: `, value: `${message.guild.createdAt}` },
         { name: `Dono: `, value: `${message.guild.owner.user.tag}`, "inline": true },
+        { name: `Apelido: `, value: `${message.guild.owner.nickname}`, "inline": true },
         { name: `Número do ID do dono: `, value: `${message.guild.owner.user.id}`, "inline": true },
         { name: `Cargos existentes: `, value: message.guild.roles.map(role => role.name).join(', ') },
         { name: `Total de canais: `, value: `${message.guild.channels.filter(chan => chan.type === 'voice').size} voz / ${message.guild.channels.filter(chan => chan.type === 'text').size} texto`, "inline": true },
