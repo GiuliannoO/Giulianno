@@ -10,7 +10,6 @@ module.exports = (client, message, args) =>
     //member.user. (com busca)
     //message.author. (sem busca)
     //client.user. (bot info)
-    //message.channel.server.detailsOf(message.author).nick
     //member.user.tag
     message.channel.send({embed:{
           color: 3447003,
@@ -21,9 +20,9 @@ module.exports = (client, message, args) =>
             { name: `Apelido: `, value: `${member.nickname}` /*value: "[link](http://google.com)."*/ },
             { name: `Nome cadastrado: `, value: `${member.user.username}` },
             { name: `Número do ID: `, value: `${member.user.id}` },
-            { name: `Conta verificada: `, value: `${user.verified}` },
-            { name: `Usuário premium: `, value: `${user.premium}` },
-            { name: `Celular: `, value: `${user.mobile}` },
+            { name: `Conta verificada: `, value: `${client.user.verified}` },
+            { name: `Usuário premium: `, value: `${client.user.premium}` },
+            { name: `Celular: `, value: `${client.user.mobile}` },
             { name: `BoT: `, value: `${member.user.bot}` },
             { name: `Data de criação: `, value: `${member.user.createdAt}` }
           ],
