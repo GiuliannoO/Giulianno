@@ -24,7 +24,7 @@ module.exports = (client, message, args) => {
                 fields: 
                 [
                   { name: `Fuso horário: `, value: `UTC${location.timezone}`, "inline": true },
-                  { name: `Tipo de grau: `, value: location.degreetype , "inline": true,
+                  { name: `Tipo de grau: `, value: location.degreetype , "inline": true},
                   { name: `Temperatura: `, value: `${current.temperature} Graus`, "inline": true },
                   { name: `Parece: `, value: `${current.feelslike} Graus`, "inline": true },
                   { name: `Vento: `, value: current.winddisplay, "inline": true },
