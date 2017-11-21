@@ -10,8 +10,8 @@ module.exports = (client, message, args) => {
       [
         { name: `Nome: `, value: `${message.guild.name}` /*value: "[link](http://google.com)."*/ , "inline": true },
         { name: `Número do ID: `, value: `${message.guild.id}`, "inline": true },
-        { name: `Localização: `, value: `${message.guild.region}` },
-        { name: `Data de criação: `, value: `${message.guild.createdAt}` },
+        { name: `Localização: `, value: `${message.guild.region}`, "inline": true },
+        { name: `Data de criação: `, value: `${message.guild.createdAt}`, "inline": true },
         { name: `Dono: `, value: `${message.guild.owner.user.tag}`, "inline": true },
         { name: `Número do ID do dono: `, value: `${message.guild.owner.user.id}`, "inline": true },
         { name: `Total de canais: `, value: `${message.guild.channels.filter(chan => chan.type === 'voice').size} voz / ${message.guild.channels.filter(chan => chan.type === 'text').size} texto` },
