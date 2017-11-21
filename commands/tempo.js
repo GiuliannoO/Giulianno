@@ -23,12 +23,12 @@ module.exports = (client, message, args) => {
                 title: `Informações do tempo`, description: `${current.skytext}`,
                 fields: 
                 [
-                  { name: `Fuso horário: `, value: `UTC${location.timezone}` },
-                  { name: `Tipo de grau: `, value: location.degreetype },
-                  { name: `Temperatura: `, value: `${current.temperature} Graus` },
-                  { name: `Parece: `, value: `${current.feelslike} Graus` },
-                  { name: `Vento: `, value: current.winddisplay },
-                  { name: `Humidade: `, value: `${current.humidity}%` }
+                  { name: `Fuso horário: `, value: `UTC${location.timezone}`, "inline": true },
+                  { name: `Tipo de grau: `, value: location.degreetype , "inline": true,
+                  { name: `Temperatura: `, value: `${current.temperature} Graus`, "inline": true },
+                  { name: `Parece: `, value: `${current.feelslike} Graus`, "inline": true },
+                  { name: `Vento: `, value: current.winddisplay, "inline": true },
+                  { name: `Humidade: `, value: `${current.humidity}%`, "inline": true }
                 ],
                 timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
             }
