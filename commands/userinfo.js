@@ -19,9 +19,10 @@ module.exports = (client, message, args) =>
           [
             { name: `Apelido: `, value: `${member.nickname}` /*value: "[link](http://google.com)."*/ , "inline": true},
             { name: `Nome cadastrado: `, value: `${member.user.username}`, "inline": true },
+            { name: `Data de criação: `, value: `${member.user.createdAt}` },
             { name: `Número do ID: `, value: `${member.user.id}`, "inline": true },
-            { name: `BoT?: `, value: `${member.user.bot}`, "inline": true },
-            { name: `Data de criação: `, value: `${member.user.createdAt}` }
+            { name: `BoT?: `, value: `${member.user.bot}`, "inline": true }
+            
           ],
           timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
       }
@@ -43,9 +44,9 @@ module.exports = (client, message, args) =>
           [
             { name: `Apelido: `, value: `Usuário sem apelido` /*value: "[link](http://google.com)."*/, "inline": true },
             { name: `Nome cadastrado: `, value: `${member.user.username}`, "inline": true },
+            { name: `Data de criação: `, value: `${member.user.createdAt}` },
             { name: `Número do ID: `, value: `${member.user.id}`, "inline": true },
-            { name: `BoT?: `, value: `${member.user.bot}`, "inline": true },
-            { name: `Data de criação: `, value: `${member.user.createdAt}` }
+            { name: `BoT?: `, value: `${member.user.bot}`, "inline": true }
           ],
           timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
       }
