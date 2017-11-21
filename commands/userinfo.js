@@ -21,7 +21,7 @@ module.exports = (client, message, args) =>
             { name: `Nome cadastrado: `, value: `${member.user.username}`, "inline": true },
             { name: `Data de criação: `, value: `${member.user.createdAt}` },
             { name: `Número do ID: `, value: `${member.user.id}`, "inline": true },
-            { name: `BoT?: `, value: `${member.user.bot}`, "inline": true }
+            { name: `Usuário BoT?: `, value: `${member.user.bot}`, "inline": true }
             
           ],
           timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
@@ -46,7 +46,7 @@ module.exports = (client, message, args) =>
             { name: `Nome cadastrado: `, value: `${member.user.username}`, "inline": true },
             { name: `Data de criação: `, value: `${member.user.createdAt}` },
             { name: `Número do ID: `, value: `${member.user.id}`, "inline": true },
-            { name: `BoT?: `, value: `${member.user.bot}`, "inline": true }
+            { name: `Usuário BoT?: `, value: `${member.user.bot}`, "inline": true }
           ],
           timestamp: new Date(), footer: { icon_url: client.user.avatarURL , text: "© Verificado em" }
       }
