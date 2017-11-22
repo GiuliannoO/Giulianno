@@ -13,7 +13,7 @@ module.exports = async (client, message, args) => {
     const reactions = await msg.awaitReactions(reaction => reaction.emoji.name === sim || reaction.emoji.name === nao, {time: 60000}).then(msg => {
         msg.delete(60000)  });
     message.channel.send(`A votação acabou! Resultado: \n\n${sim} Sim = ${reactions.get(sim).count-1}\n\n${nao} Não = ${reactions.get(nao).count-1}`).then(msg => {
-    msg.delete(120000) }); 
+    msg.delete(60000) }); 
     //}
 
 
