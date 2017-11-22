@@ -3,7 +3,7 @@ const nao = "⛔";
 
 module.exports = async (client, message, args) => { 
     //let msg = await message.channel.send("Votar");
-    let msg = await message.channel.sendMessage(args.join(" ")).then(msg => { msg.delete(60000) });   
+    let msg = await message.channel.sendMessage(args.join(" ")).then(msgg => { msgg.delete(60000) });   
     await msg.react(sim);
     await msg.react(nao);
     message.delete(5000);
