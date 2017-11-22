@@ -4,7 +4,8 @@ const nao = "⛔";
 module.exports = async (client, message, args) => { 
     //let msg = await message.channel.send("Votar");
     message.delete(5000);
-    let msg = await message.channel.sendMessage(args.join(" "), {delete: 60000});
+    let msg = await message.channel.sendMessage(args.join(" ").then(msg => {
+    msg.delete(60000) }) );
     await msg.react(sim);
     await msg.react(nao);
     const reactions = await msg.awaitReactions(reaction => reaction.emoji.name === sim || reaction.emoji.name === nao, {time: 60000});
