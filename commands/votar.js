@@ -1,6 +1,7 @@
+const sim = "✅";
+const nao = "⛔";   
+
 module.exports = async (client, message, args) => { 
-    const sim = "✅";
-    const nao = "⛔";   
     let msg = await message.channel.send("Votar");
     //let msg = await message.channel.sendMessage(args.join(" "));
     await msg.react(sim);
