@@ -6,7 +6,7 @@ module.exports = async (client, message, args) => {
 
     if ((message.member.nickname) !== null){
     //let msg = await message.channel.send("Votar");
-    let msg = await message.channel.sendMessage(args.join(`Uma votação foi iniciada por: ${message.member.nickname} \n\n`," "));
+    let msg = await message.channel.sendMessage(args.join("hue "));
     //message.delete(5000);
     await msg.react(sim);
     await msg.react(nao);
