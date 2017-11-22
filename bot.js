@@ -46,7 +46,8 @@ client.commands.set('tempo', require('./commands/tempo.js'));
 client.commands.set('afk', require('./commands/joinAway.js'));
 client.commands.set('level', require('./commands/levelXp.js'));
 client.commands.set('pontos', require('./commands/levelPoints.js')); 
-client.commands.set('votar', require('./commands/votar.js'));    
+client.commands.set('votar', require('./commands/votar.js')); 
+client.commands.set('invite', require('./commands/invite.js'));     
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
