@@ -8,9 +8,9 @@ module.exports = async (client, message, args) => {
     await msg.react(nao);
     message.delete(5000);
     const reactions = await msg.awaitReactions(reaction => reaction.emoji.name === sim || reaction.emoji.name === nao, {time: 60000});
-    message.channel.send(`**Fim da votação!**\n\nAssunto: **${args}**\n\nResultado: \n\n${sim} **Sim:** **${reactions.get(sim).count-1}** | ${nao} **Não:** **${reactions.get(nao).count-1}**`).then(msg => {
+    message.channel.send(`**Fim da votação!**\n\nAssunto: **${args}**\n\nResultado: ${sim} **Sim:** **${reactions.get(sim).count-1}** | ${nao} **Não:** **${reactions.get(nao).count-1}**`).then(msg => {
     msg.delete(60000) });
-    client.messageDelete(msg);   
+    await client.messageDelete(msg);   
     
     //setTimeout(() => {
     //}, 5000);
