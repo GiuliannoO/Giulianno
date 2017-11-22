@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const weather = require('weather-js');
 const sql = require("sqlite");
 const palavroes = require('./profanity/palavroes.js');
+const await = require('await');
 //const mysql = require('mysql');
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -44,7 +45,8 @@ client.commands.set('serverinfo', require('./commands/serverinfo.js'));
 client.commands.set('tempo', require('./commands/tempo.js'));
 client.commands.set('afk', require('./commands/joinAway.js'));
 client.commands.set('level', require('./commands/levelXp.js'));
-client.commands.set('pontos', require('./commands/levelPoints.js'));     
+client.commands.set('pontos', require('./commands/levelPoints.js')); 
+client.commands.set('votar', require('./commands/votar.js'));    
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
