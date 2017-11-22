@@ -11,12 +11,12 @@ module.exports = (client, message, args) => {
       title: "Lista de comandos do servidor",
       "description": "● **!ajuda**  -  Mostra todos os comandos usados no servidor\n\n"+
       "● **!ping**  -  Mostra a sua latencia e API latencia atual\n\n"+
-      "● **!invite**  -  Gera um link para invitar novos usuários\n\n"+
+      "● **!invite**  -  Criar um link para invitar novos usuários\n\n"+
       //"● **!bot**  -  Chamar a atenção do BoT\n\n"+
       //"● **!level** e **!pontos**  -  Ver o seu XP e quantidade de Pontos no servidor\n\n"+
       "● **!afk**  -  Inicia o modo Ausente\n\n"+
       "● **!roll6**  -  Rolar um dado comum de 6 lados\n\n"+
-      "● **!votar [texto?]**  -  Inicia uma votação para Sim ou Não\n\n"+
+      "● **!votar [texto?]**  -  Inicia uma votação para **Sim** ou **Não**\n\n"+
       "*( O tempo da votação tem um total de 1 minuto para a contagem dos votos )*"+
       "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida *( Ex: !tempo goiania )*\n\n"+
       "●**Para salvar links ou mensagens importantes**  -  Use o canal de chat **#salvos**\n\n"+
