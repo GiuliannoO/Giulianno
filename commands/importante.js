@@ -17,6 +17,9 @@ npm install sqlite
 npm install mysql
 add dependencies no json
 ------------------------------------
+npm install await
+npm install --save async
+------------------------------------
 Radios
 Radio Moe : https://listen.moe/stream
 Radio AnimeNfo : http://momori.animenfo.com:8000/;?.mp3
