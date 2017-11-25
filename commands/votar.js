@@ -3,7 +3,7 @@ const nao = "❌";
 
 module.exports = async (client, message, args) => { 
     //let msg = await message.channel.send("Votar");
-    let msgg = await message.channel.sendMessage("Uma votação para **Sim**:✅ ou **Não**:❌ foi iniciada! **Assunto** = ",args.join(" "));
+    let msgg = await message.channel.sendMessage('Uma votação para **Sim**:✅ ou **Não**:❌ foi iniciada! **Assunto** = '+args.join(" "));
     await msgg.react(sim);
     await msgg.react(nao);
     const reactions = await msgg.awaitReactions(reaction => reaction.emoji.name === sim || reaction.emoji.name === nao, {time: 60000});
