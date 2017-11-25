@@ -3,7 +3,7 @@ const nao = "❌";
 
 module.exports = async (client, message, args) => { 
     //let msg = await message.channel.send("Votar");
-    let msgg = await message.channel.sendMessage('Uma votação para **Sim**:✅ ou **Não**:❌ foi iniciada! \n**Assunto** = '+args.join(" ")).then(function (message) { message.react(sim); message.react(nao); message.delete(66000); }).catch(function() {   });
+    let msgg = await message.channel.sendMessage('Uma votação para **Sim**:✅ ou **Não**:❌ foi iniciada! \n**Assunto** = '+args.join(" ")).then(function (message) { message.react(sim); message.react(nao); message.delete(90000); }).catch(function() {   });
     //await msgg.react(sim);
     //await msgg.react(nao);
     //message.channel.sendMessage('Uma votação para **Sim**:✅ ou **Não**:❌ foi iniciada! \n**Assunto** = '+args.join(" ")).then(function (message) { message.react(sim); message.react(nao); message.delete(5000); }).catch(function() {   });
