@@ -10,5 +10,5 @@ module.exports = async (client, message, args) => {
     message.channel.send(`**Fim da votação!**\n\nAssunto: **${args.join(' ')}**\n\nResultado: ${sim} **Sim:** **${reactions.get(sim).count-1}** | ${nao} **Não:** **${reactions.get(nao).count-1}**`).then(msg => {
     msg.delete(60000) });
     message.delete(5000);  
-    await message.delete();
+    await message.delete(msgg);
 };
