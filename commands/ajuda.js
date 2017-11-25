@@ -8,7 +8,7 @@ module.exports = (client, message, args) => {
 
       message.channel.send({embed: {
       color: 3447003,
-      title: "Lista de comandos do servidor",
+      title: ":question: Lista de comandos do servidor",
       "description": "● **!ajuda**  -  Mostra todos os comandos usados no servidor\n\n"+
       "● **!ping**  -  Mostra a sua latencia e API latencia atual\n\n"+
       "● **!invite**  -  Criar um link para invitar novos usuários\n\n"+
@@ -19,7 +19,7 @@ module.exports = (client, message, args) => {
       "● **!votar [texto?]**  -  Inicia uma votação para **Sim** ou **Não**\n"+
       "*( O tempo da votação tem um total de 1 minuto para o fim e contagem dos votos )*\n\n"+
       "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida *( Ex: !tempo goiania )*\n\n"+
-      "●**Para salvar links ou mensagens importantes**  -  Use o canal de chat **#salvos**\n\n"+
+      "● **Para salvar links ou mensagens importantes**  -  Use o canal de chat **#salvos**\n\n"+
       "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado\n\n"+
       "● **!userinfo @nome**  -  Mostra as informações do usuário escolhido\n\n"+
       "● **!serverinfo**  -  Mostra as informações do servidor\n\n"+
