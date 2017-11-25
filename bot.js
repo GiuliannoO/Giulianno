@@ -18,8 +18,6 @@ client.commands = new Discord.Collection();
 
 //---------------------------------------------------------------------------------------------------------------------------------- 
 
-
-
 //COMANDOS
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
@@ -50,7 +48,7 @@ client.commands.set('level', require('./commands/levelXp.js'));
 client.commands.set('pontos', require('./commands/levelPoints.js')); 
 client.commands.set('votar', require('./commands/votar.js')); 
 client.commands.set('invite', require('./commands/invite.js'));     
-client.commands.set('teste', require('./commands/teste.js')); 
+//client.commands.set('teste', require('./commands/teste.js')); 
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
