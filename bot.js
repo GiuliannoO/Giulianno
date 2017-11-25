@@ -18,7 +18,7 @@ client.commands = new Discord.Collection();
 
 //---------------------------------------------------------------------------------------------------------------------------------- 
 
-function numEmoj (n) { return `${n}\u20e3` };
+
 
 //COMANDOS
 client.commands.set('ping', require('./commands/ping.js'));

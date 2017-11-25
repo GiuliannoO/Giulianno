@@ -1,3 +1,4 @@
+function numEmoj (n) { return `${n}\u20e3` };
 var number = 6;
 module.exports = (client, message, args) => { 
     
