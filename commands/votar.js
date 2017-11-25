@@ -13,9 +13,9 @@ module.exports = async (client, message, args) => {
     //message.delete(msgg);
 
 
-    let msgg = message.channel.sendMessage(args.join(" "));
-    msgg.react(sim);
-    msgg.react(nao);
+    let msgg = await message.channel.sendMessage(args.join(" "));
+    await msgg.react(sim);
+    await msgg.react(nao);
     //const reactions = await msgg.awaitReactions(reaction => reaction.emoji.name === sim || reaction.emoji.name === nao, {time: 60000});
     if (message.content.startsWith("!votarfim")){
     message.channel.send(`**Fim da votação!**\n\nAssunto: **${args}**\n\nResultado: ${sim} **Sim:** **${reactions.get(sim).count-1}** | ${nao} **Não:** **${reactions.get(nao).count-1}**`).then(msg => {
