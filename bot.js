@@ -75,7 +75,7 @@ client.on('message', message => {
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //READY
-client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(":white_check_mark: **O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
+client.on('ready', () => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(":black_square_button: **O BoT está online!**").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
 
 //GUILD
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
