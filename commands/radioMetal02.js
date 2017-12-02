@@ -10,7 +10,7 @@ module.exports = (client, message, args) => {
         message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Hard Rock & Heavy Metal**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
-        connection.playArbitraryInput('http://uk1.internet-radio.com:8294/;?.mp3');
+        connection.playArbitraryInput('https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://uk1.internet-radio.com:8294/;?.mp3');
         //connection.playFile('./radio/anime01.pls');
       })
     .catch(console.log);

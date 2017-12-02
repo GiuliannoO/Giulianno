@@ -10,7 +10,7 @@ module.exports = (client, message, args) => {
         message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Metal & Hardcore**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
-        connection.playArbitraryInput('http://69.46.88.26:80/;?.mp3');
+        connection.playArbitraryInput('https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://69.46.88.26:80/;?.mp3');
         //connection.playFile('./radio/anime01.pls');
       })
     .catch(console.log);
