@@ -7,10 +7,10 @@ module.exports = (client, message, args) => {
       channel.join()
       .then(connection => 
       { 
-        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Metal & Hardcore**! :musical_note:').then(msg => {
+        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Heavy Metal & Hard Rock**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
-        connection.playArbitraryInput('http://www.hrhradio.com:8000/;?.mp3');
+        connection.playArbitraryInput('http://hardrockheaven.radio.net/;?.mp3');
         //connection.playFile('./radio/anime01.pls');
       })
     .catch(console.log);
