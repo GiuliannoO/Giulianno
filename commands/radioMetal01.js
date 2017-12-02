@@ -10,7 +10,7 @@ module.exports = (client, message, args) => {
         message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Heavy Metal & Hard Rock**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
-        connection.playArbitraryInput('http://hydra.cdnstream.com/;?.mp3');
+        connection.playArbitraryInput('http://hydra.cdnstream.com/1521_128/;?.mp3');
         //connection.playFile('./radio/anime01.pls');
       })
     .catch(console.log);
