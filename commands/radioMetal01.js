@@ -10,7 +10,7 @@ module.exports = (client, message, args) => {
         message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Metal & Hardcore**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
-        connection.playArbitraryInput('http://www.my-radios.com/da/radio/live/16751/;?.mp3');
+        connection.playArbitraryInput('http://bnr80smetal.radio.net/;?.mp3');
         //connection.playFile('./radio/anime01.pls');
       })
     .catch(console.log);
