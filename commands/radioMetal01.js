@@ -10,11 +10,11 @@ module.exports = (client, message, args) => {
         message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Heavy Metal & Hard Rock**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
-        connection.playArbitraryInput('http://www.hrhradio.com:369829/;?.mp3');
+        connection.playArbitraryInput('http://hydra.cdnstream.com:80/1521_128/;?.mp3'); //369829
         //connection.playFile('./radio/anime01.pls');
       })
     .catch(console.log);
     } 
-    /*else { message.reply('Você precisa estar em um canal de voz para digitar o comando!');  }  */
+    /*else { message.reply('Você precisa estar em um canal de voz para digitar o comando!');  }   */
     message.delete(60000);
 };
