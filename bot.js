@@ -40,7 +40,6 @@ client.commands.set('playinitiald', require('./commands/radioPlayInitialD.js'));
 client.commands.set('playmoe', require('./commands/radioPlayMoe.js'));
 client.commands.set('playanimenfo', require('./commands/radioPlayAnimeNfo.js'));
 client.commands.set('playmetal1', require('./commands/radioMetal01.js'));
-client.commands.set('playmetal2', require('./commands/radioMetal02.js'));
 client.commands.set('stop', require('./commands/radioStop.js'));
 client.commands.set('userinfo', require('./commands/userinfo.js'));
 client.commands.set('serverinfo', require('./commands/serverinfo.js'));
