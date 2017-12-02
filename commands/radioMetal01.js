@@ -10,7 +10,7 @@ module.exports = (client, message, args) => {
         message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Metal & Hardcore**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
-        connection.playArbitraryInput('http://www.hrhradio.com/site/popup.php');
+        connection.playArbitraryInput('http://www.hrhradio.com/site/popup.php/;?.mp3');
         //connection.playFile('./radio/anime01.pls');
       })
     .catch(console.log);
