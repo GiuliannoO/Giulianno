@@ -7,7 +7,7 @@ module.exports = (client, message, args) => {
       channel.join()
       .then(connection => 
       { 
-        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **AnimeNfo**! :musical_note:').then(msg => {
+        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Idobi (Howl) ~ Metal & Hardcore**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
         connection.playArbitraryInput('http://idobi.com/idobihowl/;?.mp3');
