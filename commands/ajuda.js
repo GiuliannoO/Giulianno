@@ -16,8 +16,6 @@ module.exports = (client, message, args) => {
       //"● **!level** e **!pontos**  -  Ver o seu XP e quantidade de Pontos no servidor\n\n"+
       "● **!afk**  -  Inicia o modo Ausente\n\n"+
       "● **!roll6**  -  Rolar um dado comum de 6 lados\n\n"+
-      "● **!votar [texto?]**  -  Inicia uma votação para **Sim** ou **Não**\n"+
-      "*( O tempo da votação tem um total de 1 minuto para o fim e contagem dos votos )*\n\n"+
       "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida *( Ex: !tempo goiania )*\n\n"+
       "● **Para salvar links ou mensagens importantes**  -  Use o canal de chat **#salvos**\n\n"+
       "● **Mover outros usuários de canal**  -  Clique, segure e arraste o alvo desejado\n\n"+
@@ -38,6 +36,8 @@ module.exports = (client, message, args) => {
       //"● *( Admin+ )* **!falar xx**  -  Comandos de fala especial\n\n"+
       //"● *( Admin+ )* **!fsalvos xx**  -  Comandos de fala especial\n\n"+
       //"● *( Admin+ )* **!fprincipal xx**  -  Comandos de fala especial\n\n"+
+      "● *( Admin+ )* **!votar [texto?]**  -  Inicia uma votação para **Sim** ou **Não**\n"+
+      "*( O tempo da votação tem um total de 1 minuto para o fim e contagem dos votos )*\n\n"+
       "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre**\n"+
       "*( Os comandos enviados pelo/para o BoT são apagados automaticamente após 1 minuto )*"
 
