@@ -39,7 +39,7 @@ client.commands.set('resp', require('./commands/resp.js'));
 client.commands.set('playinitiald', require('./commands/radioPlayInitialD.js'));
 client.commands.set('playmoe', require('./commands/radioPlayMoe.js'));
 client.commands.set('playanimenfo', require('./commands/radioPlayAnimeNfo.js'));
-client.commands.set('playmetal', require('./commands/radioMetal01.js'));
+client.commands.set('playhrh', require('./commands/radioHardRockHeaven.js'));
 client.commands.set('stop', require('./commands/radioStop.js'));
 client.commands.set('userinfo', require('./commands/userinfo.js'));
 client.commands.set('serverinfo', require('./commands/serverinfo.js'));

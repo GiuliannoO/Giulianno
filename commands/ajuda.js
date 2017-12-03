@@ -27,12 +27,12 @@ module.exports = (client, message, args) => {
       //"    **!mult num num**  -  Multiplicar dois números\n"+
       //"    **!div num num**  -  Dividir dois números\n\n"+
       "● Rádio 24/7 no canal de voz **Música** - Apenas uma rádio pode ser tocada por vez\n"+
-      //"    **!playmetal**  -  Escutar a rádio *Heavy Metal & Hard Rock**\n"+
+      "    **!playhrh**  -  Escutar a rádio *Hard Rock Heaven 80s**\n"+
       "    **!playinitiald**  -  Escutar a rádio **Initial D World**\n"+
       "    **!playanimenfo**  -  Escutar a rádio **AnimeNfo**\n"+
       "    **!playmoe**  -  Escutar a rádio **anime Moe**\n"+
       "    **!stop**  -  Desligar a rádio\n"+
-      "*( Volume - Click direito no BoT e ajuste o volume do usuário | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio online + port | Ex: http:// site.com:8888/ )*\n\n"+
+      "*( Volume - Click direito no BoT e ajuste o volume do usuário | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio online ou indique um arquivo .pls )*\n\n"+
       //"● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual *( Nao abuse deste comando! Ele deleta as msg para todo mundo )*\n\n"+
       //"● *( Admin+ )* **!falar xx**  -  Comandos de fala especial\n\n"+
       //"● *( Admin+ )* **!fsalvos xx**  -  Comandos de fala especial\n\n"+

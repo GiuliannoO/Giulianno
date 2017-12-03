@@ -7,7 +7,7 @@ module.exports = (client, message, args) => {
       channel.join()
       .then(connection => 
       { 
-        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Heavy Metal & Hard Rock**! :musical_note:').then(msg => {
+        message.reply('Eu conectei no canal com sucesso! Aproveite o som da rádio **Hard Rock Heaven 80s**! :musical_note:').then(msg => {
           msg.delete(60000)
         });
         connection.playArbitraryInput('http://hydra.cdnstream.com/1521_128'); //369829
