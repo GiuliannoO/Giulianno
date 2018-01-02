@@ -10,7 +10,7 @@ module.exports = (client, message, args) => {
           msg.delete(60000)
         });
         const dispatcher = connection.playStream(ytdl(args[1])).on('end', () => {
-            console.log('o som acabou');
+            console.log('a musica acabou');
             channel.leave();
         }).on('error', error => { 
             console.error(error);
