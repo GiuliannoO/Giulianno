@@ -16,5 +16,4 @@ module.exports = (client, message, args) => {
     .catch(console.log);
     } 
     message.delete(60000);
-
 };
