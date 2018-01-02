@@ -4,7 +4,7 @@ const weather = require('weather-js');
 const sql = require("sqlite");
 const palavroes = require('./profanity/palavroes.js');
 const await = require('await');
-const YTDL = require('ytdl-core');
+const ytdl = require('ytdl-core');
 //const mysql = require('mysql');
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -118,20 +118,6 @@ if(oldUserChannel === undefined && newUserChannel !== undefined) { entra no cana
 //-----mysql Heroku connect database
 /*var con;
 if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); } */
-
-//----------------------------------------------------------------------------------------------------------------------------------
-var servers = {};
-
-function play(connection, message){
-  var server = servers[message.guild.id];
-  server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-  server.queue.shift();
-  server.dispatcher.on("end", function() {
-    if (server.queue[0]) play(connection, message);
-    else connection.disconnnect();
-  });
-}
-
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //client.login(config.token)
