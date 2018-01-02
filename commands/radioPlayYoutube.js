@@ -7,14 +7,8 @@ module.exports = (client, message, args) => {
       .then(connection => 
       { 
         message.reply('A música no **Youtube** escolhida foi iniciada com sucesso! :musical_note:').then(msg => {
-          msg.delete(60000)
-        });
-        const dispatcher = connection.playStream(ytdl(args[1])).on('end', () => {
-            console.log('a musica acabou');
-            channel.leave();
-        }).on('error', error => { 
-            console.error(error);
-        });        
+          msg.delete(60000) });
+        const dispatcher = connection.playStream(ytdl(args[1]));        
       })
     .catch(console.log);
     } 
