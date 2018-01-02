@@ -16,7 +16,7 @@ module.exports = (client, message, args) => {
             //server.queue.push(args[1]);
             //connection.playFile('./radio/anime01.pls'); 
        })
-        .catch(console.log);
+        //.catch(console.log);
     }
     else if ((channel) && (!args[1]))
     {
