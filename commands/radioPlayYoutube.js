@@ -14,8 +14,7 @@ module.exports = (client, message, args) => {
         });
         const dispatcher = connection.playStream(ytdl(args[1]))
         .on('end', () => {
-            console.log('a musica acabou!');
-            channel.leave();
+            console.log('a musica acabou');            
         })
         .on('error', error => {
             console.error(error);
