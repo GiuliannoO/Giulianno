@@ -1,9 +1,6 @@
-import { VoiceChannel } from "discord.js";
-
 //id canal musica = 375842517566095360
 module.exports = (client, message, args) => { 
-    let channel = client.channels.get('375842517566095360');
-    
+    let channel = client.channels.get('375842517566095360');    
     if (channel) 
     {  
       channel.join()
