@@ -1,3 +1,5 @@
+import { VoiceChannel } from "discord.js";
+
 //id canal musica = 375842517566095360
 module.exports = (client, message, args) => { 
     let channel = client.channels.get('375842517566095360');
@@ -12,8 +14,8 @@ module.exports = (client, message, args) => {
         });
         const dispatcher = connection.playStream(ytdl(args[1]))
         .on('end', () => {
-            console.log('song ended');
-            channel.leave();
+            console.log('a musica acabou!');
+            VoiceChannel.leave();
         })
         .on('error', error => {
             console.error(error);
