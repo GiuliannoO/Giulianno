@@ -15,7 +15,8 @@
     "node-opus": "^0.2.0",
     "sqlite": "^2.8.0",
     "await": "^0.2.6",
-    "async": "^2.6.0"
+    "async": "^2.6.0",
+    "ytdl-core": "^0.18.5"
   },
   "engines": {
     "node": "9.x"
