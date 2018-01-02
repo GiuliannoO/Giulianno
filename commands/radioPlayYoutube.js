@@ -10,7 +10,7 @@ module.exports = (client, message, args) => {
         message.reply('A música no **Youtube** escolhida foi iniciada com sucesso! :musical_note:').then(msg => {
           msg.delete(60000)
         });
-        const dispatcher = connection.playStream(ytdl(args[1]))
+        const dispatcher = connection.playStream(ytdl(args[1]), {filter: "audioonly"})
         .on('end', () => {
             console.log('song ended');
             channel.leave();
