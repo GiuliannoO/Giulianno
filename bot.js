@@ -7,6 +7,8 @@ const await = require('await');
 const ytdl = require('ytdl-core');
 //const mysql = require('mysql');
 
+let queues = {};
+
 //----------------------------------------------------------------------------------------------------------------------------------
 
 sql.open("./score.sqlite");
