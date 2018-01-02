@@ -16,13 +16,8 @@ module.exports = (client, message, args) => {
             //server.queue.push(args[1]);
             //connection.playFile('./radio/anime01.pls'); 
        })
-        //.catch(console.log);
+        .catch(console.log);
     }
-    else if ((channel) && (!args[1]))
-    {
-        message.reply('Por favor, informe corretamente uma **URL** do **Youtube** para tocar.').then(msg => {
-        msg.delete(60000)  });
-    } 
     /*else { message.reply('Você precisa estar em um canal de voz para digitar o comando!');  }  */
     message.delete(60000);
 };
