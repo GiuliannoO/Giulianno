@@ -4,12 +4,8 @@ const weather = require('weather-js');
 const sql = require("sqlite");
 const palavroes = require('./profanity/palavroes.js');
 const await = require('await');
-const yt = require('ytdl-core');
+const YTDL = require('ytdl-core');
 //const mysql = require('mysql');
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
-//var servers = {}; //para youtube dl
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
