@@ -4,7 +4,12 @@ const weather = require('weather-js');
 const sql = require("sqlite");
 const palavroes = require('./profanity/palavroes.js');
 const await = require('await');
+const yt = require('ytdl-core');
 //const mysql = require('mysql');
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+var servers = {}; //para youtube dl
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -36,6 +41,7 @@ client.commands.set('div', require('./commands/calcularDiv.js'));
 client.commands.set('fsalvos', require('./commands/canalSalvos.js'));
 client.commands.set('fprincipal', require('./commands/canalPrincipal.js'));
 client.commands.set('resp', require('./commands/resp.js'));
+client.commands.set('play', require('./commands/radioPlayYoutube.js'));
 client.commands.set('playinitiald', require('./commands/radioPlayInitialD.js'));
 client.commands.set('playmoe', require('./commands/radioPlayMoe.js'));
 client.commands.set('playanimenfo', require('./commands/radioPlayAnimeNfo.js'));
