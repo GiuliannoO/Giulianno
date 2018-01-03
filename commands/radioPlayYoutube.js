@@ -15,9 +15,9 @@ module.exports = (client, message, args, connection) => {
         server.queue.push(args[0]);
       }
 
-      if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
+     /* if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
         play(connection, message); 
-      })
+      })*/
       //
 
 
