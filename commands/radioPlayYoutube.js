@@ -2,7 +2,7 @@ const ytdl = require('ytdl-core');
 //const streamOptions = { seek: 0, volume: 1 };
 
 //id canal musica = 375842517566095360
-module.exports = (client, message, args) => {     
+module.exports = async (client, message, args) => {     
 
     let channel = client.channels.get('375842517566095360');    
     if (channel) 
