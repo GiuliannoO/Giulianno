@@ -69,8 +69,7 @@ module.exports = (client, message, args, connection) => {
     let channel = client.channels.get('375842517566095360');
     if (channel)
     { channel.join()
-      .then(connection => 
-      {
+        .then(function(connection){
         play(connection, message); 
       })
     }
