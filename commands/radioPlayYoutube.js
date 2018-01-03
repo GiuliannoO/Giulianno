@@ -20,6 +20,7 @@ module.exports = (client, message, args) => {
     .catch(console.log);
     }
     else if ((channel) && (!args[1])) 
-    { message.reply('Por favor, informe uma **URL** para tocar.'); } 
+    { message.reply('Por favor, informe uma **URL** para tocar.').then(msg => {
+        msg.delete(60000) });; } 
     message.delete(60000);
 };
