@@ -3,7 +3,26 @@ var servers = {};
 //const streamOptions = { seek: 0, volume: 1 };
 
 //id canal musica = 375842517566095360
-module.exports = (client, message, args) => {
+module.exports = (client, message, args, connection) => {
+
+    //
+    if(!servers[message.guild.id]) servers[message.guild.id] ={ //makes sure that there is a queue value for that server
+        queue: [0]
+      }
+      var server = servers[message.guild.id]
+      if(args[0].startsWith("http")){ //checks if its a link or not
+        message.reply("Adding "+args[0]);
+        server.queue.push(args[0]);
+      } else{ //searches for it with the api if a name
+        message.reply("Adding "+(message.content.slice(6)));
+        searchfunc(message)
+      }
+      if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
+        play(connection, message); 
+      })
+      //
+
+
     
     let channel = client.channels.get('375842517566095360');    
     if (channel) 
