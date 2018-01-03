@@ -13,13 +13,13 @@ module.exports = (client, message, args) => {
         message.reply('A música no **Youtube** escolhida foi iniciada com sucesso! :musical_note:').then(msg => {
           msg.delete(60000) });
         //const dispatcher = connection.playStream(ytdl(args[1])); 
-        const stream = ytdl('', { filter : 'audioonly' });
+        const stream = ytdl(URL, { filter : 'audioonly' });
         const dispatcher = connection.playStream(stream, streamOptions);
         //dispatcher.setVolumeLogarithmic(5 / 5);              
       })
     .catch(console.log);
     }
-    else if ((channel) && (!args[1])) 
+    else if ((channel) && (args[0])) 
     { message.reply('Por favor, informe uma **URL** para tocar.').then(msg => {
         msg.delete(60000) });; } 
     message.delete(60000);
