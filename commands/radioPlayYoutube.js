@@ -25,7 +25,7 @@ var servers = {};
     server.dispatcher.on("end", function(){
       if(server.queue[0]) play(connection, message);
       else connection.disconnect();
-      message.channel.send("O som acabou...")
+      message.channel.send("O som acabou... Por favor informe outro link para continuar escutando música.")
     });
   }
 
@@ -35,7 +35,7 @@ module.exports = (client, message, args, connection) => {
     if(!args[0]) return message.channel.send("Por favor, informe um **link** correto."); //Makes sure that theres a name/link
     if(!message.member.voiceChannel) return message.reply("Entre em um **canal de áudio** primeiro para usar o comando."); //Makes sure it can join a voice chat with that person
     if(!servers[message.guild.id]) servers[message.guild.id] ={ //makes sure that there is a queue value for that server
-      queue: [0]
+      queue: []
     }
     var server = servers[message.guild.id]
     if(args[0].startsWith("http")){ //checks if its a link or not
