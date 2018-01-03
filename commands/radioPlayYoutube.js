@@ -2,23 +2,33 @@ const ytdl = require('ytdl-core');
 var servers = {};
 //const streamOptions = { seek: 0, volume: 1 };
 
+
+//
+/*if(!servers[message.guild.id]) servers[message.guild.id] ={ //makes sure that there is a queue value for that server
+    queue: []
+  }
+  var server = servers[message.guild.id]
+  if(args[0].startsWith("http")){ //checks if its a link or not
+    message.reply("Adding "+args[0]);
+    server.queue.push(args[0]);
+  }*/
+ /* if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
+    play(connection, message); 
+  })*/
+  //
+
+function play(connection, message){
+    var server = servers[message.guild.id];
+    server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
+    server.queue.shift();
+    server.dispatcher.on("end", function(){
+      if(server.queue[0]) play(connection, message);
+      else connection.disconnect();
+    });
+}
+
 //id canal musica = 375842517566095360
-module.exports = (client, message, args, connection) => {
-
-    //
-    if(!servers[message.guild.id]) servers[message.guild.id] ={ //makes sure that there is a queue value for that server
-        queue: []
-      }
-      var server = servers[message.guild.id]
-      if(args[0].startsWith("http")){ //checks if its a link or not
-        message.reply("Adding "+args[0]);
-        server.queue.push(args[0]);
-      }
-
-     /* if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
-        play(connection, message); 
-      })*/
-      //
+module.exports = (client, message, args, connection) => {  
 
 
     
@@ -34,14 +44,18 @@ module.exports = (client, message, args, connection) => {
           const stream = ytdl(ytAudioQueue.first, { filter: 'audioonly' });
           const dispatcher = connection.playStream(stream);  */
 
-          var server = servers[message.guild.id];
-          server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
-          server.queue.shift();
-          server.dispatcher.on("end", function(){
-            if(server.queue[0]) play(connection, message);
-            else connection.disconnect();     
+          
+          if (!servers[message.guild.id]) servers[message.guild.id] = {
+              queue: []
+          };
 
-          });
+          var server = servers[message.guild.id];
+
+          
+          play(connection, message);
+          
+
+          
       })
     .catch(console.log);
     }
