@@ -8,6 +8,7 @@ const ytdl = require('ytdl-core');
 //const streamOptions = { seek: 0, volume: 1 };
 //const mysql = require('mysql');
 
+var voiceChannel = null;
 var ytAudioQueue = [];
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -122,6 +123,52 @@ if(oldUserChannel === undefined && newUserChannel !== undefined) { entra no cana
 /*var con;
 if(process.env.DATABASE_URL) { con = mysql.createConnection(process.env.DATABASE_URL); } */
 //----------------------------------------------------------------------------------------------------------------------------------
+
+voiceChannel.on('speaking', (user, speaking) => {  
+      // the audio has finished playing, so remove it from the queue and start playing the next song
+      if (!speaking && ytAudioQueue.length > 1) {
+          ytAudioQueue.pop();  
+          if (voiceChannel == null) {
+              JoinCommand(bot.channels.find(val => val.type === 'voice').name).then(function() {
+                  PlayStream(ytAudioQueue.first);   });
+          } else { PlayStream(ytAudioQueue.first);  }   }
+  });
+
+
+function PlayCommand(searchTerm) {
+    //bot.sendMessage("Searching Youtube for audio...");
+    YoutubeSearch(searchTerm);
+}
+
+
+function JoinCommand(channelName) {  
+      if (voiceChannel) {
+          voiceChannel.disconnet();  
+        }  
+      let channel = client.channels.get('375842517566095360');    
+      return channel.join();
+  }
+
+
+  function QueueYtAudioStream(videoId) {
+    var streamUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    ytAudioQueue.push(streamUrl);
+}
+
+// plays a given stream
+function PlayStream(streamUrl) {
+
+    const streamOptions = {seek: 0, volume: 1};
+    console.log("Streaming audio from " + streamUrl);
+
+    if (streamUrl) {
+        const stream = ytdl(streamUrl, {filter: 'audioonly'});
+        const dispatcher = bot.voiceConnections.first().playStream(stream, streamOptions);
+    }
+}
+
+  
+
 
 //client.login(config.token)
 client.login(process.env.BOT_TOKEN);
