@@ -43,22 +43,25 @@ module.exports = (client, message, args, connection) => {
       server.queue.push(args[0]);
     }
     
-    let channel = client.channels.get('375842517566095360');
-    if ((channel) && (args[1])) 
+    //let channel = client.channels.get('375842517566095360');
+    /*if ((channel) && (args[1])) 
     {  
       channel.join()
       .then(connection => 
-      { 
+      { */
         /*message.reply('A música no **Youtube** escolhida foi iniciada com sucesso! :musical_note:').then(msg => {
           msg.delete(60000) });
           //const stream = ytdl(`${args.join(' ')}`, { filter: 'audioonly' });
           const stream = ytdl(ytAudioQueue.first, { filter: 'audioonly' });
           const dispatcher = connection.playStream(stream);  */
           
-          play(connection, message);
+       /*   play(connection, message);
           
       })
     .catch(console.log);
-    }
+    }*/
+    if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
+        play(connection, message); 
+      })
     message.delete(60000);    
 };
