@@ -5,6 +5,7 @@ const sql = require("sqlite");
 const palavroes = require('./profanity/palavroes.js');
 const await = require('await');
 const ytdl = require('ytdl-core');
+const servers = {};
 //const streamOptions = { seek: 0, volume: 1 };
 //const mysql = require('mysql');
 
