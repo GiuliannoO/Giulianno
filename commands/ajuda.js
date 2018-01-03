@@ -27,6 +27,7 @@ module.exports = (client, message, args) => {
       //"    **!mult num num**  -  Multiplicar dois números\n"+
       //"    **!div num num**  -  Dividir dois números\n\n"+
       "● Rádio 24/7 no canal de voz **Música** - Apenas uma rádio pode ser tocada por vez\n"+
+      "    **!play linkYoutube**  -  Escutar uma música escolhida no **Youtube**\n"+
       "    **!playhrh**  -  Escutar a rádio **Hard Rock Heaven 80s**\n"+
       "    **!playmh**  -  Escutar a rádio **Metal & Hardcore**\n"+
       "    **!playinitiald**  -  Escutar a rádio **Initial D World**\n"+
