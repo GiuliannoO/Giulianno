@@ -33,7 +33,11 @@ module.exports = (client, message, args, connection) => {
 
 
     
-    let channel = client.channels.get('375842517566095360');    
+    let channel = client.channels.get('375842517566095360');
+    if (!servers[message.guild.id]) servers[message.guild.id] = {
+        queue: []
+    };  
+    var server = servers[message.guild.id];  
     if (channel) 
     {  
       channel.join()
@@ -44,18 +48,8 @@ module.exports = (client, message, args, connection) => {
           //const stream = ytdl(`${args.join(' ')}`, { filter: 'audioonly' });
           const stream = ytdl(ytAudioQueue.first, { filter: 'audioonly' });
           const dispatcher = connection.playStream(stream);  */
-
-          
-          if (!servers[message.guild.id]) servers[message.guild.id] = {
-              queue: []
-          };
-
-          var server = servers[message.guild.id];
-
           
           play(connection, message);
-          
-
           
       })
     .catch(console.log);
