@@ -65,13 +65,10 @@ module.exports = (client, message, args, connection) => {
     .catch(console.log);
     }*/
 
-    //if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
-    let channel = client.channels.get('375842517566095360');
-    if (channel)
-    { channel.join()
-        .then(function(connection){
+    if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
+    
         play(connection, message); 
       })
-    }
+          
     message.delete(60000);    
 };
