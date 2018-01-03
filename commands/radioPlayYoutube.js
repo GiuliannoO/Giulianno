@@ -1,5 +1,5 @@
 const ytdl = require('ytdl-core');
-const servers = {};
+var servers = {};
 //const streamOptions = { seek: 0, volume: 1 };
 
 //id canal musica = 375842517566095360
@@ -23,7 +23,7 @@ module.exports = (client, message, args) => {
           server.dispatcher.on("end", function(){
             if(server.queue[0]) play(connection, message);
             else connection.disconnect();     
-                   
+
           });
       })
     .catch(console.log);
