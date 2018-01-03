@@ -8,6 +8,8 @@ const ytdl = require('ytdl-core');
 //const streamOptions = { seek: 0, volume: 1 };
 //const mysql = require('mysql');
 
+var servers = {};
+
 //----------------------------------------------------------------------------------------------------------------------------------
 
 sql.open("./score.sqlite");
