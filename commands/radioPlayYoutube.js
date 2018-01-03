@@ -7,14 +7,14 @@ module.exports = (client, message, args, connection) => {
 
     //
     if(!servers[message.guild.id]) servers[message.guild.id] ={ //makes sure that there is a queue value for that server
-        queue: [0]
+        queue: []
       }
       var server = servers[message.guild.id]
       if(args[0].startsWith("http")){ //checks if its a link or not
         message.reply("Adding "+args[0]);
         server.queue.push(args[0]);
       }
-      
+
       if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
         play(connection, message); 
       })
