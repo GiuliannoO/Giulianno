@@ -40,7 +40,7 @@ module.exports = (client, message, args, connection) => {
     var server = servers[message.guild.id]
     if(args[0].startsWith("http")){ //checks if its a link or not
       message.reply("Adicionando a fila "+args[0]);
-      server.queue.push(args[0]);
+      server.queue.push(`${args.join(' ')}`);
     }
     
     //let channel = client.channels.get('375842517566095360');
