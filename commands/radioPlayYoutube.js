@@ -32,14 +32,19 @@ var servers = {};
 //id canal musica = 375842517566095360
 module.exports = (client, message, args, connection) => {  
 
-
+    if(!args[0]) return message.channel.send("Please send a link/name..."); //Makes sure that theres a name/link
+    if(!message.member.voiceChannel) return message.reply("Please join a voice channel first!"); //Makes sure it can join a voice chat with that person
+    if(!servers[message.guild.id]) servers[message.guild.id] ={ //makes sure that there is a queue value for that server
+      queue: []
+    }
+    var server = servers[message.guild.id]
+    if(args[0].startsWith("http")){ //checks if its a link or not
+      message.reply("Adding "+args[0]);
+      server.queue.push(args[0]);
+    }
     
     let channel = client.channels.get('375842517566095360');
-    if (!servers[message.guild.id]) servers[message.guild.id] = {
-        queue: []
-    };  
-    var server = servers[message.guild.id];  
-    if (channel) 
+    if ((channel) && (args[1])) 
     {  
       channel.join()
       .then(connection => 
