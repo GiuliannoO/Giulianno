@@ -1,8 +1,8 @@
 //id canal musica = 375842517566095360
 module.exports = (client, message, args) => { 
 
-    let channel = client.channels.get('375842517566095360');    
-    if (channel) 
+    let voiceChannel = client.channels.get('375842517566095360');    
+    /*if (channel) 
     {  
       channel.join()
       .then(connection => 
@@ -16,5 +16,33 @@ module.exports = (client, message, args) => {
       })
     .catch(console.log);
     } 
-    message.delete(60000);
-};
+    message.delete(60000);*/
+
+    if (!voiceChannel) {
+    }
+    voiceChannel.join().then(connection => {
+    let stream = yt(args.join(" "), { audioonly: true });
+    yt.getInfo(args.join(" "), function(err, info) {
+    const title = info.title;
+    console.log(`${message.author.username}, Queued the song ${title}.`);
+    message.channel.sendMessage(`\ ${title}`);
+    });
+    const dispatcher = connection.playStream(stream);
+    dispatcher
+    .on("end", () => {
+    voiceChannel.leave();
+    var channel = message.member.voiceChannel;
+    
+            if (!message.guild.voiceConnection) channel
+                .join()
+                .then(function(connection) {
+                  play(connection, message);
+                }); 
+                console.error(Error);
+                const video= ('ytdl') 
+          
+         });
+      });
+    };          
+  //  });
+//};
