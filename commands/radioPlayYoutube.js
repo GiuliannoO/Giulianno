@@ -25,21 +25,25 @@ var servers = {};
     server.dispatcher.on("end", function(){
       if(server.queue[0]) play(connection, message);
       else connection.disconnect();
-      message.channel.send("O som acabou... Por favor informe outro link para continuar escutando música.")
+      message.channel.send("A música anterior acabou... Por favor informe outro link para continuar escutando música.").then(msg => {
+        msg.delete(60000) });
     });
   }
 
 //id canal musica = 375842517566095360
 module.exports = (client, message, args, connection) => {  
 
-    if(!args[0]) return message.channel.send("Por favor, informe um **link** correto."); //Makes sure that theres a name/link
-    if(!message.member.voiceChannel) return message.reply("Entre em um **canal de áudio** primeiro para usar o comando."); //Makes sure it can join a voice chat with that person
+    if(!args[0]) return message.channel.send("Por favor, informe um **link** correto.").then(msg => {
+        msg.delete(60000) });; //Makes sure that theres a name/link
+    if(!message.member.voiceChannel) return message.reply("Entre em um **canal de áudio** para usar o comando.").then(msg => {
+        msg.delete(60000) });; //Makes sure it can join a voice chat with that person
     if(!servers[message.guild.id]) servers[message.guild.id] ={ //makes sure that there is a queue value for that server
       queue: []
     }
     var server = servers[message.guild.id]
     if(args[0].startsWith("http")){ //checks if its a link or not
-      message.reply("Adicionando a fila "+args[0]);
+      message.reply("Adicionou uma nova música para tocar: "+args[0]).then(msg => {
+        msg.delete(60000) });;
       server.queue.push(`${args.join(' ')}`);
     }
     
@@ -60,8 +64,15 @@ module.exports = (client, message, args, connection) => {
       })
     .catch(console.log);
     }*/
-    if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
+
+    //if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){ //joins the vc
+    let channel = client.channels.get('375842517566095360');
+    if (channel)
+    { channel.join()
+      .then(connection => 
+      {
         play(connection, message); 
       })
+    }
     message.delete(60000);    
 };
