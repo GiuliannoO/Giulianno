@@ -5,7 +5,7 @@ const streamOptions = { seek: 0, volume: 1 };
 module.exports = (client, message, args) => { 
 
     let channel = client.channels.get('375842517566095360');    
-    if ((channel) && (args[1])) 
+    if (channel) 
     {  
       channel.join()
       .then(connection => 
@@ -19,8 +19,5 @@ module.exports = (client, message, args) => {
       })
     .catch(console.log);
     }
-    else if ((channel) && (args[0])) 
-    { message.reply('Por favor, informe uma **URL** para tocar.').then(msg => {
-        msg.delete(60000) });; } 
     message.delete(60000);
 };
