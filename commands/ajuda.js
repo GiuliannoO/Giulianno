@@ -34,8 +34,8 @@ module.exports = (client, message, args) => {
       "    **!playanimenfo**  -  Escutar a rádio **AnimeNfo**\n"+
       "    **!playmoe**  -  Escutar a rádio **anime Moe**\n"+
       "    **!stop**  -  Desligar a rádio\n"+
-      "*( _*Apenas para Links Youtube*_ : Caso alguma música for pedida e já existir outra música em andamento. A música desejada irá entrar na fila de espera )*"+
-      "*( Volume - Click direito no BoT e ajuste o volume do usuário | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio online ou indique um arquivo .pls )*\n\n"+
+      "*( __*Apenas para Links Youtube*__ : Caso alguma música for pedida e já existir outra música em andamento. A música desejada irá entrar na fila de espera )*\n"+
+      "*( __*Volume*__ - Click direito no BoT e ajuste o volume do usuário | Caso desejar escutar outras rádios informe os Admins com o link do stream da rádio online ou indique um arquivo .pls )*\n\n"+
       //"● **!limpar** ou **!limpar num**  -  Deleta __**permanentemente**__  um número x ou todas as msg do canal atual *( Nao abuse deste comando! Ele deleta as msg para todo mundo )*\n\n"+
       //"● *( Admin+ )* **!falar xx**  -  Comandos de fala especial\n\n"+
       //"● *( Admin+ )* **!fsalvos xx**  -  Comandos de fala especial\n\n"+
