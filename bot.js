@@ -78,6 +78,12 @@ client.on('message', message => {
     if( palavroes.some(palavra => message.content.toUpperCase().includes(palavra)) ) {
   message.delete();
   message.reply(':warning: **Atenção** :warning: ... A sua mensagem foi apagada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
+  //MENSAGEM TEMPO EM TEMPO
+  if (message.content === "$loop") { 
+    var channel = client.channels.get('167715230082662401');
+    var interval = setInterval (function () {
+      channel.sendMessage('**Mensagem automática**: Olá! Eu sou a **BoT** @Waifu! \nSou programada e hosteada pelo @Giulianno para cuidar deste servidor! \nUse o comando **!bot** para chamar a minha atenção! \nUse o comando **!ajuda** para listar os comandos usados no servidor! \nUse o comando **!invite** para criar um link e invitar alguém para o servidor. \n(Mande o link para a pessoa desejada.) (Pessoas novas no servidor começam com o status de **@everyone**! Status de **@everyone** ou **@sub** não podem usar o comando **!invite**. Peça para algum admin mudar o seu status.)').then(msg => {msg.delete(300000)})
+    }, 30 * 1000);}
   //MENSAGEM REQUIRE  
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
