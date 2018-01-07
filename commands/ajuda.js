@@ -11,9 +11,9 @@ module.exports = (client, message, args) => {
       title: ":question: Lista de comandos do servidor",
       "description": "● **!ajuda**  -  Mostra todos os comandos usados no servidor\n\n"+
       "● **!ping**  -  Mostra a sua latencia e API latencia atual\n\n"+
-      "● **!invite**  -  Criar um link para invitar novos usuários\n"+
-      "*( Usuários com status de **@everyone** ou **@Sub** não podem usar o comando **!invite** )*\n"+
-      "*( Usuários com status **@everyone** por favor peça para algum **Admin** mudar o seu status para **@Membro** )*\n\n"+
+      "● **!invite**  -  Criar um link para invitar novos usuários\n\n"+
+      //"*( Usuários com status de **@everyone** ou **@Sub** não podem usar o comando **!invite** )*\n"+
+      //"*( Usuários com status **@everyone** por favor peça para algum **Admin** mudar o seu status para **@Membro** )*\n\n"+
       //"● **!bot**  -  Chamar a atenção do BoT\n\n"+
       "● **!level** -  Mostra o seu Level e quantidade de Pontos de XP no servidor\n"+
       "*( O sistema de XP ainda está sendo implementado pelo Admin )*\n\n"+
@@ -44,9 +44,9 @@ module.exports = (client, message, args) => {
       //"● *( Admin+ )* **!fsalvos xx**  -  Comandos de fala especial\n\n"+
       //"● *( Admin+ )* **!fprincipal xx**  -  Comandos de fala especial\n\n"+
       "● *( Admin+ )* **!votar [texto?]**  -  Inicia uma votação para **Sim** ou **Não**\n"+
-      "*( O tempo da votação tem um total de 1 minuto para o fim e contagem dos votos )*\n\n"+
-      "● **O sistema de webhook** é Gerenciado apenas pelo **Mestre**\n"+
-      "*( Os comandos enviados pelo/para o BoT são apagados automaticamente após 1 minuto )*"
+      "*( O tempo da votação tem um total de 1 minuto para o fim e contagem dos votos )*"
+      //"● **O sistema de webhook** é Gerenciado apenas pelo **Mestre**\n"+
+      //"*( Os comandos enviados pelo/para o BoT são apagados automaticamente após 1 minuto )*"
 
     }}).then(msg => {
       msg.delete(60000)
