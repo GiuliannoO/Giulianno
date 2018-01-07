@@ -16,7 +16,7 @@ module.exports = (client, message, args) => {
       "*( Usuários com status **@everyone** por favor peça para algum **Admin** mudar o seu status para **@Membro** )*\n\n"+
       //"● **!bot**  -  Chamar a atenção do BoT\n\n"+
       "● **!level** -  Mostra o seu Level e quantidade de Pontos de XP no servidor\n"+
-      "*( O sistema de XP ainda está sendo implementado pelo Admin ~ **Need um banco de dados** ^^ )*\n\n"+
+      "*( O sistema de XP ainda está sendo implementado pelo Admin )*\n\n"+
       "● **!afk**  -  Inicia o modo Ausente\n\n"+
       "● **!roll6**  -  Rolar um dado comum de 6 lados\n\n"+
       "● **!tempo cidade**  -  Mostra o tempo atual na região escolhida *( Ex: !tempo goiania )*\n\n"+
