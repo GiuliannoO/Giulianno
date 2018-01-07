@@ -13,7 +13,7 @@ module.exports = (client, message, args) => {
       "● **!ping**  -  Mostra a sua latencia e API latencia atual\n\n"+
       "● **!invite**  -  Criar um link para invitar novos usuários\n"+
       "*( Usuários com status de **@everyone** ou **@Sub** não podem usar o comando **!invite** )*\n"+
-      "*( Usuários com status **@everyone** por favor peça para algum **admin** mudar o seu status para **@Membro** )*\n\n"+
+      "*( Usuários com status **@everyone** por favor peça para algum **Admin** mudar o seu status para **@Membro** )*\n\n"+
       //"● **!bot**  -  Chamar a atenção do BoT\n\n"+
       //"● **!level** e **!pontos**  -  Ver o seu XP e quantidade de Pontos no servidor\n\n"+
       "● **!afk**  -  Inicia o modo Ausente\n\n"+
