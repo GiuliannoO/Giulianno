@@ -83,7 +83,7 @@ client.on('message', message => {
     var interval = setInterval (function () {
       var channel = client.channels.get('167715230082662401');
       channel.sendMessage('**Mensagem automática**: Olá! Eu sou a **BoT** @Waifu! \nSou programada e hosteada pelo @Giulianno para cuidar deste servidor! \n● Use o comando **!bot** para chamar a minha atenção! \n● Use o comando **!ajuda** para listar os comandos usados no servidor! \n● Use o comando **!invite** para criar um link e invitar alguém para o servidor. \n( Mande o link para a pessoa desejada ) ( Pessoas novas no servidor começam com o status de **@everyone**! Status de **@everyone** ou **@Sub** não podem usar o comando **!invite**. Por favor, peça para algum admin mudar o seu status para **@Membro** )')
-    }, 1 * 1000);}
+    }, 1000);}
   //MENSAGEM REQUIRE  
   require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
