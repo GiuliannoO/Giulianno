@@ -83,7 +83,7 @@ client.on('message', message => {
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //READY
-client.on('ready', () => { var interval = setInterval (function () { var channel = client.channels.get('167715230082662401'); channel.sendMessage(":black_square_button: **Mensagem automática:** Olá! Eu me chamo **@Waifu** e sou a Bot deste dervidor \n● Use o comando **!bot** para chamar a minha atenção \n● Use o comando **!ajuda** para listar os comandos usados no servidor \n● Por favor, **diminuir** o volume do meu áudio \n( Click direito em mim e ajustar o volume do usuário. Obrigada ) ").then(msg => {msg.delete(600000)})}, 3600000); require('./events/ready.js')(client) }); 
+client.on('ready', () => { var interval = setInterval (function () { var channel = client.channels.get('377272159770247170'); channel.sendMessage(":black_square_button: Online ").then(msg => {msg.delete(600000)})}, 3600000); require('./events/ready.js')(client) }); 
 
 //GUILD
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
