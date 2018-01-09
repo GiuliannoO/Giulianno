@@ -83,7 +83,10 @@ client.on('message', message => {
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //READY
-client.on('ready', () => { var interval = setInterval (function () { var channel = client.channels.get('377272159770247170'); channel.sendMessage(":black_square_button: Online ").then(msg => {msg.delete(600000)})}, 3600000); require('./events/ready.js')(client) }); 
+//BOT informa que está online quando fica on
+client.on('ready', () => { var channel = client.channels.get('377272159770247170'); channel.sendMessage(":black_square_button: Online ").then(msg => {msg.delete(60000)}); require('./events/ready.js')(client) }); 
+//BOT envia MENSAGEM de 1 em 1 hora
+//client.on('ready', () => { var interval = setInterval (function () { var channel = client.channels.get('377272159770247170'); channel.sendMessage(" sua mensagem aqui ").then(msg => {msg.delete(600000)})}, 3600000); require('./events/ready.js')(client) }); 
 
 //GUILD
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
