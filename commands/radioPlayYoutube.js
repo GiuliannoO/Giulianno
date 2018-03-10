@@ -7,8 +7,8 @@ var servers = {};
 //Function
   function play(connection, message){
     var server = servers[message.guild.id];
-    //server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
-    server.dispatcher = connection.playStream(ytdl(server.queue[0]));
+    server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
+    //server.dispatcher = connection.playStream(ytdl(server.queue[0]));
     server.queue.shift();
     server.dispatcher.on("end", function(){
       if(server.queue[0]) play(connection, message);
