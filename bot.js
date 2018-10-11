@@ -90,16 +90,17 @@ client.on('ready', () => { var channel = client.channels.get('377272159770247170
 
 //GUILD
 client.on('guildCreate', guild => require('./events/guildCreate.js')(client, guild));
-client.on('guildMemberAdd', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Olá, seja bem vindo(a) **'+member.user.username+'** ao servidor! ... **um conselho** ... Por favor, **diminuir** o volume do meu áudio! ( Click direito em mim e ajustar o volume do usuário. Obrigada )').then(msg => {msg.delete(60000)}) } );
-client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus **'+member.user.username+'**!').then(msg => {msg.delete(60000)}) } );
-client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Os dados do usuário **'+oldMember+'** foram **atualizados**! (Cargo | Nickname)').then(msg => {msg.delete(60000)}) } );
+//client.on('guildMemberAdd', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Olá, seja bem vindo(a) **'+member.user.username+'** ao servidor! ... **um conselho** ... Por favor, **diminuir** o volume do meu áudio! ( Click direito em mim e ajustar o volume do usuário. Obrigada )').then(msg => {msg.delete(60000)}) } );
+//client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus **'+member.user.username+'**!').then(msg => {msg.delete(60000)}) } );
+//client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Os dados do usuário **'+oldMember+'** foram **atualizados**! (Cargo | Nickname)').then(msg => {msg.delete(60000)}) } );
 client.on('guildUpdate', (guild, oldGuild, newGuild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O servidor **'+oldGuild+'** foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
 client.on('guildBanAdd', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':warning: **Atenção** :warning: ... O usuário **'+user+'** foi **banido**!').then(msg => {msg.delete(60000)}) } );
 client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':warning: **Atenção** :warning: ... O usuário **'+user+'** foi **desbanido**!').then(msg => {msg.delete(60000)}) } );
 
 //USER
 //client.on('userNoteUpdate', (user, oldNote, newNote) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário **'+user+'** atualizou a sua **descrição** no perfil!').then(msg => {msg.delete(60000)}) } );
-client.on('userUpdate', (oldUser, newUser) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário **'+oldUser+'** atualizou o seu **nome de cadastro**!').then(msg => {msg.delete(60000)}) } );
+// ok abaixo
+//client.on('userUpdate', (oldUser, newUser) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário **'+oldUser+'** atualizou o seu **nome de cadastro**!').then(msg => {msg.delete(60000)}) } );
 
 //EMOJI
 client.on('emojiCreate', (emoji) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O **Emoji** '+emoji+' foi adicionado!').then(msg => {msg.delete(60000)}) } );
