@@ -8,17 +8,17 @@
   },
   "dependencies": {
     "discord.js": "^11.2.1",
-    "ffmpeg-binaries": "^3.2.2-3",
-    "opusscript": "0.0.4",
+    "ffmpeg-binaries": "^4.0.0",
+    "opusscript": "0.0.6",
     "weather-js": "^2.0.0",
-    "prism-media": "^0.0.2",
-    "node-opus": "^0.2.0",
-    "sqlite": "^2.8.0",
+    "prism-media": "^0.0.3",
+    "node-opus": "^0.3.0",
+    "sqlite": "^3.0.0",
     "await": "^0.2.6",
-    "async": "^2.6.0",
-    "ytdl-core": "^0.20.2"
+    "async": "^2.6.1",
+    "ytdl-core": "^0.26.1"
   },
   "engines": {
-    "node": "9.x"
+    "node": "10.x"
   }
 }
