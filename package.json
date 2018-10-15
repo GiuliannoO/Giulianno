@@ -16,7 +16,7 @@
     "sqlite": "^3.0.0",
     "await": "^0.2.6",
     "async": "^2.6.1",
-    "ytdl-core": "^0.26.1"
+    "ytdl-core": "^0.20.2"
   },
   "engines": {
     "node": "10.x"
