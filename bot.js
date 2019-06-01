@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-//const sql = require("sqlite");
+const sql = require("sqlite");
 const palavroes = require('./profanity/palavroes.js');
 const await = require('await');
 const ytdl = require('ytdl-core');
@@ -12,7 +12,7 @@ var servers = {};
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-//sql.open("./score.sqlite");
+sql.open("./score.sqlite");
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ client.commands.set('up', require('./commands/botUpdate.js'));
 //MENSAGEM
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 //----------------------------------------------------------------------------------------------------------------------------------
-/*client.on('message', message => { 
+client.on('message', message => { 
   //BANCO DE DADOS
   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => 
   { if (!row) { sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
@@ -79,7 +79,7 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
   message.delete();
   message.reply(':warning: **Atenção** :warning: ... A sua mensagem foi apagada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE  
-  require('./events/message.js')(client, message, sql) });*/
+  require('./events/message.js')(client, message, sql) });
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //READY
