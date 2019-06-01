@@ -25,36 +25,36 @@ client.commands = new Discord.Collection();
 //COMANDOS
 client.commands.set('ping', require('./commands/ping.js'));
 client.commands.set('falar', require('./commands/falar.js'));
-client.commands.set('ajuda', require('./commands/ajuda.js'));
-client.commands.set('limpar', require('./commands/limpar.js'));
-client.commands.set('ban', require('./commands/ban.js'));
-client.commands.set('kick', require('./commands/kick.js'));
-client.commands.set('unban', require('./commands/unban.js'));
-client.commands.set('roll6', require('./commands/roll6.js'));
+//client.commands.set('ajuda', require('./commands/ajuda.js'));
+//client.commands.set('limpar', require('./commands/limpar.js'));
+//client.commands.set('ban', require('./commands/ban.js'));
+//client.commands.set('kick', require('./commands/kick.js'));
+//client.commands.set('unban', require('./commands/unban.js'));
+//client.commands.set('roll6', require('./commands/roll6.js'));
 client.commands.set('bot', require('./commands/conversaBot.js'));
 client.commands.set('morra', require('./commands/conversaMorra.js'));
-client.commands.set('soma', require('./commands/calcularSoma.js'));
-client.commands.set('sub', require('./commands/calcularSub.js'));
-client.commands.set('mult', require('./commands/calcularMult.js'));
-client.commands.set('div', require('./commands/calcularDiv.js'));
-client.commands.set('fsalvos', require('./commands/canalSalvos.js'));
-client.commands.set('feventos', require('./commands/canalEventos.js'));
-client.commands.set('fprincipal', require('./commands/canalPrincipal.js'));
+//client.commands.set('soma', require('./commands/calcularSoma.js'));
+//client.commands.set('sub', require('./commands/calcularSub.js'));
+//client.commands.set('mult', require('./commands/calcularMult.js'));
+//client.commands.set('div', require('./commands/calcularDiv.js'));
+//client.commands.set('fsalvos', require('./commands/canalSalvos.js'));
+//client.commands.set('feventos', require('./commands/canalEventos.js'));
+//client.commands.set('fprincipal', require('./commands/canalPrincipal.js'));
 client.commands.set('resp', require('./commands/resp.js'));
-client.commands.set('play', require('./commands/radioPlayYoutube.js'));
-client.commands.set('playinitiald', require('./commands/radioPlayInitialD.js'));
-client.commands.set('playmoe', require('./commands/radioPlayMoe.js'));
-client.commands.set('playanimenfo', require('./commands/radioPlayAnimeNfo.js'));
-client.commands.set('playhrh', require('./commands/radioHardRockHeaven.js'));
-client.commands.set('playmh', require('./commands/radioMetalHardcore.js'));
-client.commands.set('stop', require('./commands/radioStop.js'));
+//client.commands.set('play', require('./commands/radioPlayYoutube.js'));
+//client.commands.set('playinitiald', require('./commands/radioPlayInitialD.js'));
+//client.commands.set('playmoe', require('./commands/radioPlayMoe.js'));
+//client.commands.set('playanimenfo', require('./commands/radioPlayAnimeNfo.js'));
+//client.commands.set('playhrh', require('./commands/radioHardRockHeaven.js'));
+//client.commands.set('playmh', require('./commands/radioMetalHardcore.js'));
+//client.commands.set('stop', require('./commands/radioStop.js'));
 client.commands.set('userinfo', require('./commands/userinfo.js'));
 client.commands.set('serverinfo', require('./commands/serverinfo.js'));
 client.commands.set('tempo', require('./commands/tempo.js'));
 client.commands.set('afk', require('./commands/joinAway.js'));
-client.commands.set('level', require('./commands/levelXp.js'));
-client.commands.set('pontos', require('./commands/levelPoints.js')); 
-client.commands.set('votar', require('./commands/votar.js')); 
+//client.commands.set('level', require('./commands/levelXp.js'));
+//client.commands.set('pontos', require('./commands/levelPoints.js')); 
+//client.commands.set('votar', require('./commands/votar.js')); 
 client.commands.set('invite', require('./commands/invite.js')); 
 client.commands.set('up', require('./commands/botUpdate.js'));     
 //client.commands.set('teste', require('./commands/teste.js')); 
@@ -64,7 +64,7 @@ client.commands.set('up', require('./commands/botUpdate.js'));
 //MENSAGEM
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 //----------------------------------------------------------------------------------------------------------------------------------
-client.on('message', message => { 
+/*client.on('message', message => { 
   //BANCO DE DADOS
   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => 
   { if (!row) { sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
@@ -79,7 +79,7 @@ client.on('message', message => {
   message.delete();
   message.reply(':warning: **Atenção** :warning: ... A sua mensagem foi apagada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE  
-  require('./events/message.js')(client, message, sql) });
+  require('./events/message.js')(client, message, sql) });*/
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //READY
@@ -93,9 +93,9 @@ client.on('guildCreate', guild => require('./events/guildCreate.js')(client, gui
 //client.on('guildMemberAdd', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Olá, seja bem vindo(a) **'+member.user.username+'** ao servidor! ... **um conselho** ... Por favor, **diminuir** o volume do meu áudio! ( Click direito em mim e ajustar o volume do usuário. Obrigada )').then(msg => {msg.delete(60000)}) } );
 //client.on('guildMemberRemove', (member, message, channel) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Adeus **'+member.user.username+'**!').then(msg => {msg.delete(60000)}) } );
 //client.on('guildMemberUpdate', (oldMember, newMember) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('Os dados do usuário **'+oldMember+'** foram **atualizados**! (Cargo | Nickname)').then(msg => {msg.delete(60000)}) } );
-client.on('guildUpdate', (guild, oldGuild, newGuild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O servidor **'+oldGuild+'** foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
-client.on('guildBanAdd', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':warning: **Atenção** :warning: ... O usuário **'+user+'** foi **banido**!').then(msg => {msg.delete(60000)}) } );
-client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':warning: **Atenção** :warning: ... O usuário **'+user+'** foi **desbanido**!').then(msg => {msg.delete(60000)}) } );
+//client.on('guildUpdate', (guild, oldGuild, newGuild) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O servidor **'+oldGuild+'** foi **atualizado**!').then(msg => {msg.delete(60000)}) } );
+//client.on('guildBanAdd', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':warning: **Atenção** :warning: ... O usuário **'+user+'** foi **banido**!').then(msg => {msg.delete(60000)}) } );
+//client.on('guildBanRemove', (guild, user) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage(':warning: **Atenção** :warning: ... O usuário **'+user+'** foi **desbanido**!').then(msg => {msg.delete(60000)}) } );
 
 //USER
 //client.on('userNoteUpdate', (user, oldNote, newNote) => { var channel = client.channels.get('167715230082662401'); channel.sendMessage('O usuário **'+user+'** atualizou a sua **descrição** no perfil!').then(msg => {msg.delete(60000)}) } );
