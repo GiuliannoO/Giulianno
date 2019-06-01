@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-const sql = require("sqlite");
+//const sql = require("sqlite");
 const palavroes = require('./profanity/palavroes.js');
 const await = require('await');
 const ytdl = require('ytdl-core');
@@ -13,7 +13,7 @@ var servers = {};
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-sql.open("./score.sqlite");
+//sql.open("./score.sqlite");
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
