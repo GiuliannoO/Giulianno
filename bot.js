@@ -74,7 +74,7 @@ client.on('message', message => {
   sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);  }
   }).catch(() => { console.error;
   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
-  sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });*/  }); 
+  sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); */
   //FILTRO DE PALAVRÃO
     if( palavroes.some(palavra => message.content.toUpperCase().includes(palavra)) ) {
   message.delete();
