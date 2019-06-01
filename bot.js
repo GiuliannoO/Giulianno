@@ -65,22 +65,22 @@ client.commands.set('up', require('./commands/botUpdate.js'));
 //MENSAGEM
 client.on('messageReactionAdd', (reaction, user) => require('./events/messageReactionAdd.js')(client, reaction, user));
 //----------------------------------------------------------------------------------------------------------------------------------
-client.on('message', message => { 
+/*client.on('message', message => { 
   //BANCO DE DADOS
-  /*sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => 
+  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => 
   { if (!row) { sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
   } else {  let curLevel = Math.floor(0.1 * Math.sqrt(row.points + 1));
     if (curLevel > row.level) { row.level = curLevel;  sql.run(`UPDATE scores SET points = ${row.points + 1}, level = ${row.level} WHERE userId = ${message.author.id}`);  message.reply(`Ding! Parabéns! Você subiu de level. O seu level atual é **${curLevel}**!`);    }
   sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);  }
   }).catch(() => { console.error;
   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
-  sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); */
+  sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
   //FILTRO DE PALAVRÃO
     if( palavroes.some(palavra => message.content.toUpperCase().includes(palavra)) ) {
   message.delete();
   message.reply(':warning: **Atenção** :warning: ... A sua mensagem foi apagada. Por favor não diga palavrões!!! Rhrumnn!!! :anger:').then(msg => {msg.delete(60000)}); }
   //MENSAGEM REQUIRE  
-  require('./events/message.js')(client, message, sql) });
+  require('./events/message.js')(client, message, sql) });*/
 //----------------------------------------------------------------------------------------------------------------------------------
 
 //READY
