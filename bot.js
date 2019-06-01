@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const weather = require('weather-js');
-const sql = require("sqlite");
+//const sql = require("sqlite");
 const palavroes = require('./profanity/palavroes.js');
 const await = require('await');
 const ytdl = require('ytdl-core');
@@ -12,7 +12,7 @@ var servers = {};
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
-sql.open("./score.sqlite");
+//sql.open("./score.sqlite");
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
@@ -66,14 +66,14 @@ client.on('messageReactionAdd', (reaction, user) => require('./events/messageRea
 //----------------------------------------------------------------------------------------------------------------------------------
 client.on('message', message => { 
   //BANCO DE DADOS
-  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => 
+  /*sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => 
   { if (!row) { sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
   } else {  let curLevel = Math.floor(0.1 * Math.sqrt(row.points + 1));
     if (curLevel > row.level) { row.level = curLevel;  sql.run(`UPDATE scores SET points = ${row.points + 1}, level = ${row.level} WHERE userId = ${message.author.id}`);  message.reply(`Ding! Parabéns! Você subiu de level. O seu level atual é **${curLevel}**!`);    }
   sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);  }
   }).catch(() => { console.error;
   sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
-  sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  }); 
+  sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);   });  });  */
   //FILTRO DE PALAVRÃO
     if( palavroes.some(palavra => message.content.toUpperCase().includes(palavra)) ) {
   message.delete();
