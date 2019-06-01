@@ -7,18 +7,18 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "discord.js": "^11.2.1",
+    "discord.js": "^11.5.1",
     "ffmpeg-binaries": "^4.0.0",
     "opusscript": "0.0.6",
     "weather-js": "^2.0.0",
-    "prism-media": "^0.0.3",
-    "node-opus": "^0.3.0",
-    "sqlite": "^3.0.0",
+    "prism-media": "^1.0.2",
+    "node-opus": "^0.3.2",
     "await": "^0.2.6",
-    "async": "^2.6.1",
-    "ytdl-core": "^0.20.2"
+    "async": "^3.0.1",
+    "ytdl-core": "^0.29.2"
   },
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   }
 }
+
